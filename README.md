@@ -19,6 +19,9 @@ Feb 27, 2018 : Started an Initial Commit in accordance to Project Guidelines
 
 --------------------------------------------------------------------------------
 
+Feb 28, 2018 : Started an Initial Commit in accordance to Project Guidelines
+--------------------------------------------------------------------------------
+
 - Phase III Sample State
   - I created a sampleState outline in my wiki. I detailed what I think my data should look like before I pass it into my components in my soon-to-be-created frontend folder/files
 - I also reorganized a few files and added a few things in.

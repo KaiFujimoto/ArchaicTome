@@ -1,0 +1,85 @@
+{
+  entities: {
+    posts: {
+      1: {
+        id: 1,
+        body: "I feel tired today",
+        author_id: 11,
+        likes: 12,
+        current_user_likes: false
+      },
+      2: {
+        id: 2,
+        body: "potatoes are delicious",
+        author_id: 12,
+        likes: 100,
+        current_user_likes: true
+      }
+    },
+
+    comments: {
+      1: {
+        id: 1,
+        body: "You are always tired lmao!",
+        author_id: 12,
+        likes: 10,
+        post_id: 1,
+        current_user_likes: false
+      },
+      2: {
+        id: 2,
+        body: "I like steak and potatoes",
+        author_id: 11,
+        likes: 100,
+        post_id: 2,
+        current_user_likes: false
+      }
+    },
+
+    events: {
+      1: {
+        id: 1,
+        event_name: "Eating Potatoes and Steak!",
+        event_description: "BYOB & Get Free Potatoes and Steak 6pm my house!"
+        host_id: 11,
+        location: "lat: 1020393 long: 1029301"
+      }
+    },
+
+    profiles: {
+      1: {
+        user_id: 11,
+        profile_picture: "img.com",
+      }
+    },
+
+    users: {
+      11: {
+        id: 11,
+        username: "ilikebacon",
+        img_url: "http://ilikebacon.com"
+      },
+      12: {
+        id: 12,
+        username: "friesbeforeguys",
+        img_url: "http://friesbeforeguys.com"
+      }
+    }
+    ui: {
+    loading: true/false
+    },
+
+    errors: {
+    login: ["Incorrect username/password combination"],
+    postForm: ["Posts should have content!"],
+    liking: ["You already liked this comment!"]
+    },
+
+    session: {
+    id: 30,
+    username: "ilikebacon",
+    img_url: "http://ilikebacon.com"
+    }
+  },
+
+}

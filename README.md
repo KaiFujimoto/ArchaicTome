@@ -19,7 +19,7 @@ Feb 27, 2018 : Started an Initial Commit in accordance to Project Guidelines
 
 --------------------------------------------------------------------------------
 
-Feb 28, 2018 : Started an Initial Commit in accordance to Project Guidelines
+Feb 28, 2018 : Fixed Errors, Changed previous day's work, Created Sample State
 --------------------------------------------------------------------------------
 
 - Phase III Sample State

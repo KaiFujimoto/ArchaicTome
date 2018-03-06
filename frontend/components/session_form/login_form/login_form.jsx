@@ -25,7 +25,7 @@ class LoginForm extends React.Component {
 
   renderErrors() {
     return(
-      <ul>
+      <ul className='login-form-errors'>
         {this.props.errors.map((error, i) => (
           <li key={`error-${i}`}>
             {error}
@@ -36,26 +36,29 @@ class LoginForm extends React.Component {
   }
 
   render () {
-
     return (
       <div className='login-form'>
-        <h4>{this.props.errors ? this.renderErrors() : ''}</h4>
+        {this.props.errors.length > 0 ? this.renderErrors() : ''}
         <form onSubmit={this.handleSubmit}>
-          <label> Email
-            <input
-              onChange={this.updateInput('email')}
-              type="text"
-              value={this.state.email}
-              ></input>
-          </label>
-          <label> Password
-            <input
-              onChange={this.updateInput('password')}
-              type="password"
-              value={this.state.password}
-              ></input>
-          </label>
-          <button onClick={() => this.props.login(this.state)}>Login</button>
+          <ul>
+            <label className='login-form-label'> Email <br />
+              <input
+                onChange={this.updateInput('email')}
+                type="text"
+                value={this.state.email}
+                ></input>
+            </label>
+         </ul>
+         <ul>
+            <label className='login-form-label'> Password <br />
+              <input
+                onChange={this.updateInput('password')}
+                type="password"
+                value={this.state.password}
+                ></input>
+            </label>
+        </ul>
+        <button className='login-form-button' onClick={() => this.props.login(this.state)}>Log In</button>
         </form>
       </div>
     );

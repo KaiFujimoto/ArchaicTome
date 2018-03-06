@@ -1,0 +1,32 @@
+.sign-in-page {
+  display: flex;
+  flex-direction: column;
+  font-family: verdana;
+  align-items: center;
+}
+
+.sign-in-page-body {
+  display: flex;
+}
+
+.sign-in-page-body > img {
+  overflow: hidden;
+  width: 800px;
+}
+
+.sign-in-page-nav {
+  background-color: #3b5998;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 25px;
+  height: 85px;
+  width: 100%;
+  align-items: center;
+}
+
+.sign-in-page-nav > h1 {
+  font-size: 40px;
+  color: white;
+  font-weight: bold;
+  padding-left: 20px;
+}

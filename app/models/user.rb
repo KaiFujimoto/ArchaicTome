@@ -4,6 +4,7 @@ class User < ApplicationRecord
     female: 'F'
   }
   validates :email, :first_name, :last_name, :password_digest, :session_token, :gender, :birth_date, presence: true
+  validates :email, uniqueness: true
   validates :password, length: { minimum: 6, allow_nil: true }
 
   after_initialize :ensure_session_token

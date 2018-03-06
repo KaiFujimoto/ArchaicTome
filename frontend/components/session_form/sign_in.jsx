@@ -27,6 +27,7 @@ const SignIn = () => {
           <SignUpFormContainer />
         </ul>
       </div>
+      <footer className="footer"></footer>
     </div>
   );
 };

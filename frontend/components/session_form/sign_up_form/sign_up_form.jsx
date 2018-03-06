@@ -33,7 +33,7 @@ class SignUpForm extends React.Component {
 
   renderErrors() {
     return(
-      <ul>
+      <ul className='sign-up-errors'>
         {this.props.errors.errors.map((error, i) => (
           <li key={`error-${i}`}>
             {error}
@@ -46,23 +46,24 @@ class SignUpForm extends React.Component {
   render() {
 
     return (
-      <div>
+      <div className="sign-up-form">
         <h1>Create a New Account</h1>
         <h3>It’s free and always will be.</h3>
-        <form onSubmit={this.handleSubmit}>
-          <ul>
+        <form className="sign-up-form-form" onSubmit={this.handleSubmit}>
+          <ul className="sign-up-form-names">
               <input
                 ref={(input) => this.first_name = input }
                 placeholder="First name"
                 type="text"
                 ></input>
+
               <input
                 ref={(input) => this.last_name = input }
                 placeholder="Last name"
                 type="text"
                 ></input>
           </ul>
-          <ul>
+          <ul className="sign-up-form-emails">
             <input
               ref={(input) => this.email = input }
               placeholder="Email"
@@ -71,27 +72,29 @@ class SignUpForm extends React.Component {
             <br />
             <input
               ref={(input) => this.password = input }
-              placeholder="New Password"
+              placeholder="New password"
               type="password"
               ></input>
           </ul>
-          <ul>
-            <select
-              defaultValue='month'
-              ref={input => this.month = input}>
-              {months}
-            </select>
-            <select
-              defaultValue='day'
-              ref={input => this.day = input}>
-              {days}
-            </select>
-            <select
-              defaultValue='year'
-              ref={input => this.year = input}>
-              {years}
-            </select>
+          <h5>Birthday</h5>
+          <ul className="sign-up-form-birthdays">
+              <select
+                defaultValue='month'
+                ref={input => this.month = input}>
+                {months}
+              </select>
+              <select
+                defaultValue='day'
+                ref={input => this.day = input}>
+                {days}
+              </select>
+              <select
+                defaultValue='year'
+                ref={input => this.year = input}>
+                {years}
+              </select>
           </ul>
+          <h6>Gender</h6>
           <ul>
             <select
               defaultValue='gender'
@@ -102,11 +105,11 @@ class SignUpForm extends React.Component {
               <option value='male'>Male</option>
             </select>
           </ul>
-          <button onClick={this.handleSubmit}>Create Account</button>
-          <ul>
-            {this.props.errors.errors ? this.renderErrors() : ''}
-          </ul>
+          <button className='sign-up-button' onClick={this.handleSubmit}>Create Account</button>
         </form>
+        <ul>
+          {this.props.errors.errors ? this.renderErrors() : ''}
+        </ul>
       </div>
     );
   }

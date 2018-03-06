@@ -23,7 +23,7 @@ export const signup = user => {
     return SessionApiUtil.signup(user).then(user => {
       dispatch(receiveCurrentUser(user));
     }, err => {
-      dispatch(receiveErrors(err.responseJSON));
+      dispatch(receiveSessionErrors(err.responseJSON));
     });
   };
 };
@@ -33,7 +33,7 @@ export const login = user => {
     return SessionApiUtil.login(user).then(user => {
       dispatch(receiveCurrentUser(user));
     }, err => {
-      dispatch(receiveErrors(err.responseJSON));
+      dispatch(receiveSessionErrors(err.responseJSON));
     });
   };
 };

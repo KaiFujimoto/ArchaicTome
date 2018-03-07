@@ -3,7 +3,7 @@ class User < ApplicationRecord
     male: 'M',
     female: 'F'
   }
-  validates :email, :first_name, :last_name, :password_digest, :session_token, :gender, :birth_date, presence: true
+  validates :first_name, :last_name, :email, :password_digest, :session_token, :gender, :birth_date, presence: true
   validates :email, uniqueness: true
   validates :password, length: { minimum: 6, allow_nil: true }
 

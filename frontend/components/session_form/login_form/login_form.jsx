@@ -38,8 +38,8 @@ class LoginForm extends React.Component {
   render () {
     return (
       <div className='login-form'>
-        {this.props.errors.length > 0 ? this.renderErrors() : ''}
         <form onSubmit={this.handleSubmit}>
+          <span>{this.props.errors.length > 0 ? this.renderErrors() : ''}</span>
           <ul>
             <label className='login-form-label'> Email <br />
               <input

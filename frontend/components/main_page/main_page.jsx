@@ -14,10 +14,14 @@ const MainPage = () => {
   return (
     <div className="main-page">
       <nav className="main-page-nav">
-        <h1>a</h1>
+        <h1>
+          <button>
+            <Link to='/feed'>a</Link>
+          </button>
+        </h1>
         <ul>
           Placeholder for Searchbar
-          image placeholder for searchbar
+          🔍
         </ul>
         <ul>
           <NavBarContainer />

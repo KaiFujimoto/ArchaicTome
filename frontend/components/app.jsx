@@ -16,7 +16,7 @@ import MainPage from './main_page/main_page.jsx';
 const App = () => {
   return (
     <div>
-      <AuthRoute path="/" component={SignIn} />
+      <AuthRoute path="/" exact component={SignIn} />
       <ProtectedRoute path="/feed" component={MainPage} />
     </div>
   );

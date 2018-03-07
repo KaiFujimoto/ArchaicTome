@@ -1,6 +1,7 @@
 .login-form {
   display: flex;
   justify-content: space-between;
+  margin-right: 100px;
 }
 
 .login-form > form {
@@ -29,6 +30,15 @@
   text-indent: 5px;
 }
 
+.login-form > form > span {
+  width: 200px;
+  display: block;
+  height: 23px;
+  color: black;
+  text-indent: 5px;
+  margin-right: 20px;
+}
+
 .login-form-button {
   background-color: #4267b2;
   color: white;
@@ -37,19 +47,21 @@
   width: 50px;
   text-align: center;
   border: 1px solid #29487d;
+  box-shadow: inset 0 1px 1px #a4e388;
   padding: 2px 2px 2px 2px;
   margin: 15px 0px 0px 5px;
   font-family: Arial;
   font-weight: bold;
 }
 
+
 .login-form-errors {
-  width: 200px;
   background-color: pink;
+  border: 1px solid red;
   font-size: 12px;
   font-weight: 300;
   align-content: center;
   text-align: center;
-  list-style: circle;
-  list-style-position: inside;
+  border-radius: 3px;
+  margin: 5px;
 }

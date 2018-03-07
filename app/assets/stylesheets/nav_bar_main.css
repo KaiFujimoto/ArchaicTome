@@ -1,0 +1,58 @@
+.main-page {
+  display: flex;
+  position: center;
+}
+.main-page-nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 42px;
+  width: 100%;
+  background-color: #4267b2;
+  color: white;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.main-page-nav > h1 > button {
+  font-size: 30px;
+  font-weight: bold;
+  width: 27px;
+  height: 30px;
+  background-color: white;
+  color: #4267b2;
+  text-align: right;
+  border-radius: 2px;
+  margin-left: 70px;
+}
+
+.main-page-nav-right-side {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 50px;
+
+}
+
+.nav-bar-pics {
+  display: flex;
+  padding: 10px;
+  align-items: center;
+}
+
+.nav-bar-people img {
+  width: 28px;
+  height: 28px;
+  padding: 2px;
+}
+
+.nav-bar-main-button {
+  background-color: #4267b2;
+  color: white;
+  font-size: 12px;
+  line-height: 18px;
+  width: 50px;
+  text-align: center;
+  border: 1px solid #29487d;
+  font-family: Arial;
+  font-weight: bold;
+}

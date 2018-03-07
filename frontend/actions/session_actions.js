@@ -40,7 +40,7 @@ export const login = user => {
 
 export const logout = () => {
   return dispatch => {
-    return SessionApiUtil.login().then(user => {
+    return SessionApiUtil.logout().then(user => {
       dispatch(receiveCurrentUser(null));
     });
   };

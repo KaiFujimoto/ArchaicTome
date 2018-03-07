@@ -1,6 +1,7 @@
 .main-page {
   display: flex;
   position: center;
+  flex-direction: column;
 }
 .main-page-nav {
   display: flex;
@@ -30,7 +31,7 @@
   justify-content: space-between;
   align-items: center;
   margin-right: 50px;
-
+  padding: 5px;
 }
 
 .nav-bar-pics {
@@ -55,4 +56,22 @@
   border: 1px solid #29487d;
   font-family: Arial;
   font-weight: bold;
+}
+
+.main-page-nav-ul {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.main-page-nav-ul > span {
+  padding: 5px;
+}
+
+.main-page-nav-ul > button {
+  padding: 5px;
+}
+
+.main-page-nav-ul > ul {
+  padding: 5px;
 }

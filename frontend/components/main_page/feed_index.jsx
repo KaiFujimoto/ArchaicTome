@@ -1,19 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-class FeedIndex extends React.Component {
+import CreatePostFormContainer from './post_form/create_post_form_container';
 
-  componentDidMount() {
-    this.props.fetchPosts();
-  }
 
-  render () {
+const FeedIndex = () => {
     return (
       <div>
-        <ul>CreatePostForm</ul>
+        <ul>
+          <CreatePostFormContainer />
+        </ul>
       </div>
     );
-  }
-}
+};
+
 
 export default FeedIndex;

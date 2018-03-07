@@ -112,3 +112,36 @@ select {
 ul > .sign-up-error-form {
   border: 1px solid red;
 }
+
+.footer-logo {
+  width: 30px;
+  height: 30px;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+footer > span {
+  padding: 10px;
+  margin: 5px;
+}
+
+footer > a {
+  padding: 10px;
+  margin: 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+footer > a > img {
+  padding-top: 5px;
+}
+
+footer > a > p {
+  padding-top: 5px;
+  padding-left: 5px;
+}

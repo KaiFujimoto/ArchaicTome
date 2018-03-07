@@ -11,12 +11,12 @@ class NavBar extends React.Component {
   render () {
     return (
       <div className="main-page-nav-right-side">
-        <ul>
+        <ul className="main-page-nav-ul">
           <span>img</span>
           <button>{this.props.currentUser.first_name}</button>
-        </ul>
-        <ul>
-          <button>Home</button>
+          <ul>
+            <button>Home</button>
+          </ul>
         </ul>
         <ul className="nav-bar-pics">
           <li className="nav-bar-people">

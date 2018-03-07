@@ -27,7 +27,16 @@ const SignIn = () => {
           <SignUpFormContainer />
         </ul>
       </div>
-      <footer className="footer"></footer>
+      <footer className="footer">
+        <a href="https://www.linkedin.com/in/1ironsochen/">
+          <img
+            className="footer-logo"
+            src="http://www.free-icons-download.net/images/linkedin-logo-icon-786.png"
+            alt="Visit My LinkedIn" />
+          <p> Visit My LinkedIn! </p>
+        </a>
+        <span>AncientTome © 2018</span>
+      </footer>
     </div>
   );
 };

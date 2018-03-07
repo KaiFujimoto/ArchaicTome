@@ -9,6 +9,7 @@ import {
 } from 'react-router-dom';
 
 import NavBarContainer from './nav_bar_container';
+import FeedIndex from './feed_index.jsx';
 
 const MainPage = () => {
   return (
@@ -27,6 +28,17 @@ const MainPage = () => {
           <NavBarContainer />
         </ul>
       </nav>
+      <ul>
+        <ul>
+          Placeholder
+        </ul>
+        <ul>
+          <FeedIndex />
+        </ul>
+        <ul>
+          Placeholder
+        </ul>
+      </ul>
     </div>
   );
 };

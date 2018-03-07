@@ -28,14 +28,14 @@ const MainPage = () => {
           <NavBarContainer />
         </ul>
       </nav>
-      <ul>
-        <ul>
+      <ul className='main-page-body'>
+        <ul className='main-page-left-menu'>
           Placeholder
         </ul>
         <ul>
           <FeedIndex />
         </ul>
-        <ul>
+        <ul className='main-page-news-feed'>
           Placeholder
         </ul>
       </ul>

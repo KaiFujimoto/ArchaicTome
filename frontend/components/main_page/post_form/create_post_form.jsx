@@ -11,17 +11,22 @@ class CreatePost extends React.Component {
   }
 
   render() {
-    debugger
     return (
-      <div>
-        <form onSubmit={() => this.props.createPost(this.state)}>
+      <div className="create-post-form">
+        <h4><span>🖋 Make Post</span></h4>
+        <ul className="create-post-insides">
+          <p>img</p>
+          <form onSubmit={() => this.props.createPost(this.state)}>
 
-          <input
-            onChange={this.updateBody.bind(this)}
-            type='textarea'
-            value={this.state.body}
-            ></input>
-        </form>
+            <input
+              placeholder="What's On Your Mind?"
+              onChange={this.updateBody.bind(this)}
+              type='textarea'
+              value={this.state.body}
+              ></input>
+
+          </form>
+        </ul>
       </div>
     );
   }

@@ -8,12 +8,16 @@ import {
   HashRouter
 } from 'react-router-dom';
 
+import { AuthRoute, ProtectedRoute } from '../util/route_util';
+
 import SignIn from './session_form/sign_in.jsx';
+import MainPage from './main_page/main_page.jsx';
 
 const App = () => {
   return (
     <div>
-      <SignIn />
+      <AuthRoute path="/" component={SignIn} />
+      <ProtectedRoute path="/feed" component={MainPage} />
     </div>
   );
 };

@@ -10,6 +10,14 @@ class User < ApplicationRecord
   after_initialize :ensure_session_token
   attr_reader :password
 
+  has_many :authored_posts,
+    class_name: :Post,
+    foreign_key: :author_id
+
+  has_many :wall_posts,
+    class_name: :Post,
+    foreign_key: :receiver_id
+
   def self.is_male?
     gender == 'M'
   end

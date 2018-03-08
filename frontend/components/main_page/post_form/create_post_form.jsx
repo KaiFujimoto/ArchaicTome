@@ -15,15 +15,12 @@ class CreatePost extends React.Component {
 
   renderErrors() {
     return(
-      <ul className='sign-up-errors'>
+      <ul className='create-post-errors'>
         {this.props.errors.map( (error, idx) => {
           return (
-            <ul>
               <li key={idx}>
                 {error}
               </li>
-              <br />
-            </ul>
           );
         })}
       </ul>

@@ -2,7 +2,6 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
 }
 
 .main-page-left-menu {
@@ -77,4 +76,18 @@
   padding-right: 20px;
   border-right: 1px solid #bdc7d8;
   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+
+.create-post-errors {
+  background-color: pink;
+  border: 1px solid red;
+  border-radius: 5px;
+  width: auto;
+  font-size: 14px;
+  font-weight: 300;
+  padding: 5px 5px 5px 5px;
+}
+
+.user-name-timestamps > span {
+  font-size: 14px;
 }

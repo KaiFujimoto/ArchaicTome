@@ -35,7 +35,7 @@ class SignUpForm extends React.Component {
   }
 
   // componentWillReceiveProps(newProps) {
-  //   if (newProps.errors.errors.length > 0) {
+  //   if (newProps.errors.length > 0) {
   //     debugger
   //     this.toggleErrorClass(newProps);
   //   }
@@ -48,22 +48,22 @@ class SignUpForm extends React.Component {
   // toggleErrorClass(newProps) {
   //   const errorTypes = ["Email", "Password", "First", "Last"];
   //   debugger
-  //     if (newProps.errors.errors.join(' ').includes(errorTypes[0])) {
+  //     if (newProps.errors.join(' ').includes(errorTypes[0])) {
   //       this.setState({email: true });
   //     }
   //     debugger
-  //     if (newProps.errors.errors.join(' ').includes(errorTypes[1])) {
+  //     if (newProps.errors.join(' ').includes(errorTypes[1])) {
   //       this.setState({password: true });
   //     }
-  //     if (newProps.errors.errors.join(' ').includes(errorTypes[2])) {
+  //     if (newProps.errors.join(' ').includes(errorTypes[2])) {
   //       this.setState({first: true });
   //     }
-  //     if (newProps.errors.errors.join(' ').includes(errorTypes[3])) {
+  //     if (newProps.errors.join(' ').includes(errorTypes[3])) {
   //       this.setState({last: true });
   //     }
   //     // const that = this;
   //     // errorTypes.forEach(type => {
-  //     //   if (newProps.errors.errors.join(' ').includes(type)) {
+  //     //   if (newProps.errors.join(' ').includes(type)) {
   //     //     const newState = merge({}, this.state.errors, {`${type}`: true});
   //     //     debugger
   //     //     that.setState({errors: newState});
@@ -79,7 +79,7 @@ class SignUpForm extends React.Component {
       password: this.password
     };
   }
-  // {this.props.errors.errors.map((error, i) => (
+  // {this.props.errors.map((error, i) => (
   //   <li key={`error-${i}`}>
   //     {error}
   //   </li>
@@ -88,7 +88,7 @@ class SignUpForm extends React.Component {
   renderErrors() {
     return(
       <ul className='sign-up-errors'>
-        {this.props.errors.errors.map( (error, idx) => {
+        {this.props.errors.map( (error, idx) => {
           return (
             <ul>
               <li key={idx}>
@@ -168,7 +168,7 @@ class SignUpForm extends React.Component {
               <button className='sign-up-button' onClick={this.handleSubmit}>Create Account</button>
             </li>
             <ul>
-              {this.props.errors.errors ? this.renderErrors() : ''}
+              {this.props.errors ? this.renderErrors() : ''}
             </ul>
           </ul>
         </form>

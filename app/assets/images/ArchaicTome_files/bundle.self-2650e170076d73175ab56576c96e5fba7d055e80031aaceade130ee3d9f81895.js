@@ -29120,7 +29120,7 @@ var SignUpForm = function (_React$Component) {
       return _react2.default.createElement(
         'ul',
         null,
-        this.props.errors.errors.map(function (error, i) {
+        this.props.errors.map(function (error, i) {
           return _react2.default.createElement(
             'li',
             { key: 'error-' + i },
@@ -29259,7 +29259,7 @@ var SignUpForm = function (_React$Component) {
           _react2.default.createElement(
             'ul',
             null,
-            this.props.errors.errors ? this.renderErrors() : ''
+            this.props.errors ? this.renderErrors() : ''
           )
         )
       );

@@ -15,7 +15,7 @@ const PostIndexItem = (props, deletePost, updatePost) => {
           </ul>
         </ul>
         <ul className="user-related-things-right">
-          dropdown menu
+          ...
         </ul>
       </ul>
       <ul className="post-body-details">

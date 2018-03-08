@@ -22,8 +22,14 @@ const PostIndexItem = (props, deletePost, updatePost) => {
         <p>{props.post.body}</p>
       </ul>
       <ul className="user-related-interactions">
-        <li>👍 like</li>
-        <li>💬 comment</li>
+        <li>
+          <img className='difficult-like' src={window.like}/>
+          <p className='sadlyfe'>Like</p>
+        </li>
+        <li>
+          <img className='difficult-comment' src={window.comment}/>
+          <p className='difficult-comment-label'>Comment</p>
+        </li>
       </ul>
     </div>
   );

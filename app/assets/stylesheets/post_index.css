@@ -44,13 +44,52 @@
 
 .user-related-interactions {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
-  align-items: center;
 }
 
 .user-related-interactions > li {
-  padding: 5px 80px 5px 80px;
+  padding: 10px 0px 0px 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+}
+
+.difficult-like {
+  width: 20px;
+  height: 20px;
+  padding-left: 20px;
+  padding-bottom: 5px;
+}
+
+.difficult-comment {
+  width: 30px;
+  height: 27px;
+  padding-bottom: 3px;
+}
+
+.sadlyfe {
+  padding-left: 6px;
+  padding-right: 20px;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  line-height: 18px;
+  font-size: 14px;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 0.6;
+    color: #4b4f56;
+}
+
+.difficult-comment-label {
+  padding-left: none;
+  padding-right: 15px;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 0.6;
+    color: #4b4f56;
 }
 
 .post-body-details {

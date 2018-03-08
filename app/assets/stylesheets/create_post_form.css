@@ -61,6 +61,17 @@
   font-size: 12px;
   font-weight: bold;
   line-height: 14px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+.create-post-form > h4 > span > img {
+  width: 15px;
+  height: 15px;
+  padding: 2px;
+  padding-left: 20px;
+  padding-right: 15px;
 }
 
 .create-post-insides {

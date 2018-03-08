@@ -4,10 +4,37 @@ class CreatePost extends React.Component {
   constructor(props) {
     super(props);
     this.state = this.props.post;
+
+    this.updateBody = this.updateBody.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   updateBody(e) {
-    this.setState({body: e.currentTarget.value});
+    this.setState({body: e.target.value});
+  }
+
+  renderErrors() {
+    return(
+      <ul className='sign-up-errors'>
+        {this.props.errors.map( (error, idx) => {
+          return (
+            <ul>
+              <li key={idx}>
+                {error}
+              </li>
+              <br />
+            </ul>
+          );
+        })}
+      </ul>
+    );
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    this.props.createPost(this.state).then(() => {
+      this.setState({body: ""});
+    });
   }
 
   render() {
@@ -16,16 +43,19 @@ class CreatePost extends React.Component {
         <h4><span>🖋 Make Post</span></h4>
         <ul className="create-post-insides">
           <p>img</p>
-          <form onSubmit={() => this.props.createPost(this.state)}>
+          <form onSubmit={this.handleSubmit}>
 
             <input
               placeholder="What's On Your Mind?"
-              onChange={this.updateBody.bind(this)}
-              type='textarea'
+              onChange={this.updateBody}
+              type='text'
               value={this.state.body}
               ></input>
 
           </form>
+        </ul>
+        <ul>
+          {this.props.errors.length > 0 ? this.renderErrors() : ''}
         </ul>
       </div>
     );

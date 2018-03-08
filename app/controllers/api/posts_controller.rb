@@ -4,6 +4,7 @@ class Api::PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.author_id = current_user.id
+    @post.receiver_id = current_user.id
     if @post.save
       render json: @post
     else
@@ -18,7 +19,7 @@ class Api::PostsController < ApplicationController
         @post << post
       end
     end
-    @post 
+    @post
   end
 
   def show

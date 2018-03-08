@@ -6,7 +6,9 @@ import CreatePost from './create_post_form';
 
 const mapStateToProps = state => {
   return ({
-    post: {body: ''}
+    post: {body: ''},
+    receiver: state.session.currentUser,
+    errors: state.errors
   });
 };
 

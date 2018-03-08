@@ -5,7 +5,6 @@ import { signup } from '../../../actions/session_actions';
 import SignUpForm from './sign_up_form';
 
 const mapStateToProps = ({errors}) => {
-   
   return ({
     errors: errors,
     formType: 'Login',

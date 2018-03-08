@@ -31,6 +31,9 @@
    background: transparent;
  }
 
+ p {
+   word-break: break-all;
+ }
 
  html {
    background-color: #e9ebee;

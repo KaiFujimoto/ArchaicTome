@@ -7,10 +7,10 @@ const PostIndexItem = (props, deletePost, updatePost) => {
       <ul className="user-related-things">
         <ul className="user-related-things-left">
           <ul>
-            img
+            <img src={props.author.image_url}></img>
           </ul>
           <ul className="user-name-timestamps">
-            <li>firstname lastname</li>
+            <li>{props.author.first_name + ' ' + props.author.last_name}</li>
             <span>{timeUtil(props.post.created_at)}</span>
           </ul>
         </ul>
@@ -30,3 +30,4 @@ const PostIndexItem = (props, deletePost, updatePost) => {
 };
 
 export default PostIndexItem;
+// <img src={"data:image/jpeg;" + imageBase64} />

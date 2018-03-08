@@ -3,6 +3,8 @@ class User < ApplicationRecord
     male: 'M',
     female: 'F'
   }
+  has_attached_file :avatar, default_url: "FBdefault.jpg"
+  validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
   validates :first_name, :last_name, :email, :password_digest, :session_token, :gender, :birth_date, presence: true
   validates :email, uniqueness: true
   validates :password, length: { minimum: 6, allow_nil: true }

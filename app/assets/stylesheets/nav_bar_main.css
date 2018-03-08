@@ -62,16 +62,41 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, '.SFNSText-Regular', sans-serif;
+  font-size: 12px;
+  -webkit-font-smoothing: antialiased;
+  font-weight: bold;
+  padding-right: 20px;
 }
 
-.main-page-nav-ul > span {
-  padding: 5px;
+.main-page-nav-ul > button > span {
+  width: 38px;
+  height: 38px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.main-page-nav-ul > button > span > img {
+  border: 1px solid rgba(0, 0, 0, .1);
+  border-radius: 50%;
+  width: 27px;
+  height: 25px;
 }
 
 .main-page-nav-ul > button {
   padding: 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  line-height: 28px;
+  padding-right: 10px;
+
 }
 
 .main-page-nav-ul > ul {
   padding: 5px;
+  border-left: 1px solid #365899;
+  padding-left: 10px;
+
 }

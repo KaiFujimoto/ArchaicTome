@@ -7,14 +7,22 @@ class SignUpForm extends React.Component {
   constructor(props) {
     super(props);
     // this.state = {
-    //     first: false,
-    //     last: false,
-    //     email: false,
-    //     password: false
+    //     first_name: '',
+    //     last_name: '',
+    //     email: '',
+    //     password: '',
+    //     birth_date: '',
+    //     gender: ''
     // };
     this.handleSubmit = this.handleSubmit.bind(this);
 
   }
+
+  // updateInput(input) {
+  //   return e => {
+  //     this.setState({[input]: e.currentTarget.value});
+  //   };
+  // }
 
   userAttributes() {
     const first_name = this.first_name.value;
@@ -105,21 +113,19 @@ class SignUpForm extends React.Component {
         <h1>Create a New Account</h1>
         <h3>It’s free and always will be.</h3>
         <form className="sign-up-form-form" onSubmit={this.handleSubmit}>
-          <ul className="sign-up-form-names">
+          <div className="sign-up-form-names">
               <input
                 ref={(input) => this.first_name = input }
                 placeholder="First name"
                 type="text"
-                required
-                />
+               />
 
               <input
                 ref={(input) => this.last_name = input }
                 placeholder="Last name"
                 type="text"
-                required
                 ></input>
-          </ul>
+          </div>
           <ul className="sign-up-form-emails">
             <input
               ref={(input) => this.email = input }

@@ -78,6 +78,13 @@
   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
 }
 
+.create-post-insides > p > img {
+  border: 1px solid rgba(0, 0, 0, .1);
+  border-radius: 50%;
+  width: 37px;
+  height: 35px;
+}
+
 .create-post-errors {
   background-color: pink;
   border: 1px solid red;

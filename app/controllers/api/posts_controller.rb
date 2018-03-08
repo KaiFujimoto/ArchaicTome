@@ -6,20 +6,23 @@ class Api::PostsController < ApplicationController
     @post.author_id = current_user.id
     @post.receiver_id = current_user.id
     if @post.save
-      render json: @post
+      render :show
     else
       render json: {errors: @post.errors.full_messages}, status: 422
     end
   end
 
   def index
-    @post = []
-    Post.all.map do |post|
-      if current_user.id == post.author_id
-        @post << post
-      end
-    end
-    @post
+    # @post = []
+    # Post.all.each do |post|
+    #   if post.author_id == current_user.id || post.receiver_id == current_user.id
+    #     @post << post
+    #   end
+    # end
+    #
+    # @post
+    @post = Post.where(author_id: current_user.id) + Post.where(receiver_id: current_user.id)
+    render :index
   end
 
   def show

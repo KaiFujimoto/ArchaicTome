@@ -8,12 +8,13 @@ const mapStateToProps = state => {
   return ({
     post: {body: ''},
     receiver: state.session.currentUser,
-    errors: state.errors
+    errors: state.errors,
+    currentUser: state.session.currentUser
   });
 };
 
 const mapDispatchToProps = dispatch => {
-   
+
   return ({
     createPost: (post) => dispatch(createPost(post))
   });

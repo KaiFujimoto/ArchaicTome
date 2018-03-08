@@ -12,8 +12,11 @@ class NavBar extends React.Component {
     return (
       <div className="main-page-nav-right-side">
         <ul className="main-page-nav-ul">
-          <span>img</span>
-          <button>{this.props.currentUser.first_name}</button>
+          <button>
+            <span>
+              <img src={this.props.currentUser.image_url}></img>
+            </span>
+          {this.props.currentUser.first_name}</button>
           <ul>
             <button>Home</button>
           </ul>

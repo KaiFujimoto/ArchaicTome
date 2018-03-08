@@ -31,6 +31,13 @@
   padding-right: 10px;
 }
 
+.user-related-things-left > ul > img {
+  border: 1px solid rgba(0, 0, 0, .1);
+  border-radius: 50%;
+  width: 37px;
+  height: 35px;
+}
+
 .user-related-things-left > ul > li {
   padding: 0px 10px 5px 10px;
 }
@@ -56,4 +63,15 @@
 
 .post-body-details > p {
   padding: 10px 10px 10px 10px;
+}
+
+.user-name-timestamps {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.user-name-timestamps > span {
+  padding-left: 10px;
+  padding-bottom: 10px;
 }

@@ -39,13 +39,14 @@ class CreatePost extends React.Component {
       <div className="create-post-form">
         <h4><span>🖋 Make Post</span></h4>
         <ul className="create-post-insides">
-          <p>img</p>
+          <p>
+            <img src={this.props.currentUser.image_url}></img>
+          </p>
           <form onSubmit={this.handleSubmit}>
 
             <input
               placeholder="What's On Your Mind?"
               onChange={this.updateBody}
-              type='text'
               value={this.state.body}
               ></input>
 

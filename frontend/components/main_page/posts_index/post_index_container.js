@@ -5,10 +5,10 @@ import { fetchPosts, updatePost, deletePost } from '../../../actions/post_action
 import PostIndex from './post_index';
 
 const mapStateToProps = state => {
-  debugger
   return ({
     posts: Object.values(state.posts).reverse(),
-    currentUser: state.session.currentUser
+    currentUser: state.session.currentUser,
+    users: state.users
   });
 };
 

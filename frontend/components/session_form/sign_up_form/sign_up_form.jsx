@@ -36,7 +36,7 @@ class SignUpForm extends React.Component {
 
   // componentWillReceiveProps(newProps) {
   //   if (newProps.errors.length > 0) {
-  //     debugger
+  //
   //     this.toggleErrorClass(newProps);
   //   }
   // }
@@ -47,11 +47,11 @@ class SignUpForm extends React.Component {
 
   // toggleErrorClass(newProps) {
   //   const errorTypes = ["Email", "Password", "First", "Last"];
-  //   debugger
+  //
   //     if (newProps.errors.join(' ').includes(errorTypes[0])) {
   //       this.setState({email: true });
   //     }
-  //     debugger
+  //
   //     if (newProps.errors.join(' ').includes(errorTypes[1])) {
   //       this.setState({password: true });
   //     }
@@ -65,7 +65,7 @@ class SignUpForm extends React.Component {
   //     // errorTypes.forEach(type => {
   //     //   if (newProps.errors.join(' ').includes(type)) {
   //     //     const newState = merge({}, this.state.errors, {`${type}`: true});
-  //     //     debugger
+  //     //
   //     //     that.setState({errors: newState});
   //     //   }
   //     // });
@@ -88,14 +88,11 @@ class SignUpForm extends React.Component {
   renderErrors() {
     return(
       <ul className='sign-up-errors'>
-        {this.props.errors.map( (error, idx) => {
+        {this.props.errors.errors.map( (error, idx) => {
           return (
-            <ul>
               <li key={idx}>
                 {error}
               </li>
-              <br />
-            </ul>
           );
         })}
       </ul>
@@ -113,12 +110,14 @@ class SignUpForm extends React.Component {
                 ref={(input) => this.first_name = input }
                 placeholder="First name"
                 type="text"
-                ></input>
+                required
+                />
 
               <input
                 ref={(input) => this.last_name = input }
                 placeholder="Last name"
                 type="text"
+                required
                 ></input>
           </ul>
           <ul className="sign-up-form-emails">
@@ -168,7 +167,7 @@ class SignUpForm extends React.Component {
               <button className='sign-up-button' onClick={this.handleSubmit}>Create Account</button>
             </li>
             <ul>
-              {this.props.errors ? this.renderErrors() : ''}
+              {this.props.errors.errors && this.props.errors.errors.length > 0 ? this.renderErrors() : ''}
             </ul>
           </ul>
         </form>

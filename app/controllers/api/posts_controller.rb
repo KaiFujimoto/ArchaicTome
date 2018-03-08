@@ -15,7 +15,7 @@ class Api::PostsController < ApplicationController
   def index
     @post = []
     Post.all.map do |post|
-      if current_user.id == post.receiver_id || current_user.id == post.author_id
+      if current_user.id == post.author_id
         @post << post
       end
     end
@@ -23,7 +23,7 @@ class Api::PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find(params[:id])
+    @post = current_user.authored_posts.find(params[:id])
   end
 
   def update

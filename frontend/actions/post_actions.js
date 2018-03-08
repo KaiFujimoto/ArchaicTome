@@ -48,7 +48,7 @@ export const fetchPost = (postId) => {
     return PostsApiUtil.fetchPost(postId).then(post => {
       dispatch(receivePost(post));
     }, err => {
-      dispatch(receivePostErrors(err.responseJSON));
+        dispatch(receivePostErrors(err.responseJSON));
     });
   };
 };
@@ -58,7 +58,9 @@ export const createPost = (post) => {
     return PostsApiUtil.createPost(post).then(post => {
       dispatch(receivePost(post));
     }, err => {
-      dispatch(receivePostErrors(err.responseJSON));
+      return (
+        dispatch(receivePostErrors(err.responseJSON))
+      );
     });
   };
 };

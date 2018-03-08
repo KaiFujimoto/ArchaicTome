@@ -13,6 +13,7 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => {
+   
   return ({
     createPost: (post) => dispatch(createPost(post))
   });

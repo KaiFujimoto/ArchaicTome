@@ -10,7 +10,7 @@ const PostIndexItem = (props, deletePost, updatePost) => {
             img
           </ul>
           <ul className="user-name-timestamps">
-            <li>{props.post.author.first_name + " " + props.post.author.last_name}</li>
+            <li>firstname lastname</li>
             <span>{timeUtil(props.post.created_at)}</span>
           </ul>
         </ul>

@@ -29104,7 +29104,7 @@ var SignUpForm = function (_React$Component) {
   }, {
     key: 'handleSubmit',
     value: function handleSubmit(e) {
-      debugger;
+       ;
       e.preventDefault();
       var user = this.userAttributes();
       this.props.signup(user);

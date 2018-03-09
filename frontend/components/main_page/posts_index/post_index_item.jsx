@@ -2,6 +2,8 @@ import React from 'react';
 import { timeUtil } from '../../../util/time_util';
 
 const PostIndexItem = (props, deletePost, updatePost) => {
+  const authorFullName = props.author.first_name + ' ' + props.author.last_name;
+  const receiverFullName = props.receiver.first_name + ' ' + props.receiver.last_name;
   return (
     <div className='post-index-detailed'>
       <ul className="user-related-things">
@@ -10,7 +12,10 @@ const PostIndexItem = (props, deletePost, updatePost) => {
             <img src={props.author.image_url}></img>
           </ul>
           <ul className="user-name-timestamps">
-            <li>{props.author.first_name + ' ' + props.author.last_name}</li>
+            <li>
+              {authorFullName}
+              {receiverFullName === authorFullName ? '' : ' ▸ ' + receiverFullName}
+            </li>
             <span>{timeUtil(props.post.created_at)}</span>
           </ul>
         </ul>

@@ -8,7 +8,7 @@ const mapStateToProps = state => {
   return ({
     posts: Object.values(state.posts).reverse(),
     currentUser: state.session.currentUser,
-    users: state.users
+    users: state.users,
   });
 };
 

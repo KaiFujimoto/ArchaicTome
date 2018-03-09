@@ -11,15 +11,13 @@ class PostIndex extends React.Component {
   render() {
     const posts = this.props.posts.map( post => {
       const author = this.props.users[post.author_id];
-      if (author === undefined) {
-        const users = this.props.users;
-         
-      }
+      const receiver = this.props.users[post.receiver_id];
       return (
         <PostIndexItem
           key={post.id}
           post={post}
           author={author}
+          receiver={receiver}
           deletePost={this.props.deletePost}
           updatePost={this.props.updatePost}
         />

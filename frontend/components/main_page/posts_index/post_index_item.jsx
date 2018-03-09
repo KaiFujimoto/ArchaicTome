@@ -1,11 +1,15 @@
 import React from 'react';
 import { timeUtil } from '../../../util/time_util';
+import PostDropdownMenuContainer from './post_dropdown_menu_container';
+import Modal from './edit_posts/modal';
 
-const PostIndexItem = (props, deletePost, updatePost) => {
+const PostIndexItem = (props) => {
   const authorFullName = props.author.first_name + ' ' + props.author.last_name;
   const receiverFullName = props.receiver.first_name + ' ' + props.receiver.last_name;
+   
   return (
     <div className='post-index-detailed'>
+      <Modal post={props.post}/>
       <ul className="user-related-things">
         <ul className="user-related-things-left">
           <ul>
@@ -16,11 +20,12 @@ const PostIndexItem = (props, deletePost, updatePost) => {
               {authorFullName}
               {receiverFullName === authorFullName ? '' : ' ▸ ' + receiverFullName}
             </li>
-            <span>{timeUtil(props.post.created_at)}</span>
+            <span>{timeUtil(props.post.updated_at)}</span>
           </ul>
         </ul>
         <ul className="user-related-things-right">
-          ...
+          { props.post.author_id === props.currentUser.id ?
+          <PostDropdownMenuContainer post={props.post}/> : '' }
         </ul>
       </ul>
       <ul className="post-body-details">

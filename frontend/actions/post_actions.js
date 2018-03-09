@@ -81,10 +81,9 @@ export const updatePost = (postId) => {
 
 export const deletePost = (postId) => {
   return dispatch => {
+     
     return PostsApiUtil.deletePost(postId).then((post) => {
       dispatch(removePost(post.id));
-    }, err => {
-      dispatch(receivePostErrors(err.responseJSON));
     });
   };
 };

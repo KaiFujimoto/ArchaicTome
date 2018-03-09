@@ -32,7 +32,8 @@ class Api::PostsController < ApplicationController
   def update
     @post = current_user.authored_posts.find(params[:id])
     if @post.update(post_params)
-      render json: @post
+      @post.updated_at = Time.new
+      render :show
     else
       render json: {errors: @post.errors.full_messages}, status: 422
     end
@@ -41,7 +42,7 @@ class Api::PostsController < ApplicationController
   def destroy
     @post = current_user.authored_posts.find(params[:id])
     @post.destroy!
-    redirect_to "/api/posts/index"
+    render :show
   end
 
   private

@@ -1,72 +1,79 @@
-// import React from 'react';
-// import ReactDOM from 'react-dom';
-// import Modal from 'react-modal';
-//
-// class EditPost extends React.Component {
-//   constructor(props) {
-//     super(props);
-//     this.state = {
-//       body: this.props.post.body,
-//     };
-//   }
-//
-//   handleKeypress(e){
-//     if (e.charCode == 13) {
-//       this.handleSubmit(e);
-//     }
-//   }
-//
-//   afterOpenModal() {
-//     this.subtitle.style.color = '#f00';
-//   }
-//
-//   closeModal() {
-//     this.setState({modalIsOpen: false});
-//   }
-//
-//   handleSubmit(e) {
-//     e.preventDefault();
-//     this.props.updatePost(this.state).then(() => {
-//       this.clostModal();
-//     });
-//   }
-//
-//   renderErrors() {
-//     return(
-//       <ul className='create-post-errors'>
-//         {this.props.errors.errors.map( (error, idx) => {
-//           return (
-//               <li key={idx}>
-//                 {error}
-//               </li>
-//           );
-//         })}
-//       </ul>
-//     );
-//   }
-//
-//   render() {
-//     return (
-//       <div>
-//         <Modal
-//           isOpen={this.state.modalIsOpen}
-//           onAfterOpen={this.afterOpenModal}
-//           onRequestClose={this.closeModal}
-//           contentLabel="Example Modal"
-//           />
-//         <h2>Edit Post</h2>
-//           <form onSubmit={this.handleSubmit}>
-//             <textarea
-//               onChange={this.updateBody}
-//               onKeyPress={this.handleKeypress}
-//               value={this.state.body}
-//               ></textarea>
-//           </form>
-//           {this.props.errors.errors && this.props.errors.errors.length > 0 ? this.renderErrors() : ''}
-//       </div>
-//     );
-//   }
-//
-// }
-//
-// export default EditPost;
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Modal from 'react-modal';
+
+class EditPost extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = this.props.post;
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleKeypress = this.handleKeypress.bind(this);
+    this.updateBody = this.updateBody.bind(this);
+  }
+
+  handleKeypress(e){
+    if (e.charCode == 13) {
+      this.handleSubmit(e);
+    }
+  }
+
+  updateBody(e) {
+    this.setState({body: e.currentTarget.value});
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    this.props.updatePost(this.state).then(() => {
+      this.props.closeModal();
+    });
+  }
+
+  renderErrors() {
+    return(
+      <ul className='create-post-errors'>
+        {this.props.errors.errors.map( (error, idx) => {
+          return (
+              <li key={idx}>
+                {error}
+              </li>
+          );
+        })}
+      </ul>
+    );
+  }
+
+  render() {
+
+    return (
+      <div className="edit-post-form">
+        <h4>
+          <p>Edit Post</p>
+          <button onClick={this.props.closeModal} className="close-x">x</button>
+        </h4>
+        <ul className="edit-post-insides">
+          <p>
+            <img src={this.props.currentUser.image_url}></img>
+          </p>
+          <form onSubmit={this.handleSubmit}>
+            <textarea
+              placeholder="What's on your mind?"
+              onChange={this.updateBody}
+              onKeyPress={this.handleKeypress}
+              value={this.state.body}
+              ></textarea>
+          </form>
+        </ul>
+        <ul className='edit-post-bottom'>
+          {this.props.errors.errors && this.props.errors.errors.length > 0 ? this.renderErrors() : ''}
+        </ul>
+        <ul className='buttons-ul'>
+          <button
+            className='button-to-save-edit' onClick={this.handleSubmit}>Save</button>
+        </ul>
+      </div>
+    );
+  }
+
+}
+
+export default EditPost;

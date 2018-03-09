@@ -1,0 +1,146 @@
+.edit-post-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 15px;
+  height: 225px;
+  width: 500px;
+  background-color: white;
+  border-radius: 3px;
+  border: 1px solid #dddfe2;
+  box-shadow: 1px 1px 1px black;
+}
+
+.edit-post-form > h4 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0px;
+  margin-bottom: 2px;
+  background-color: #f6f7f9;
+  border-bottom: 1px solid #dddfe2;
+  border-radius: 2px 2px 0 0;
+  width: 494px;
+  height: 34px;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 300px;
+  padding: 3px 3px 3px 3px;
+  color: #4b4f56;
+}
+
+.edit-post-form > h4 > p {
+  padding-left: 15px;
+  color: #1d2129;
+  font-size: 14px;
+}
+
+
+.edit-post-form > ul > form > textarea {
+  resize: none;
+  width: 400px;
+  height: 100px;
+  text-align: left;
+  padding-left: 10px;
+  padding-top: 20px;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  line-height: 18px;
+  font-size: 14px;
+  border: none;
+}
+
+.edit-post-form > h4 {
+  display: flex;
+  align-items: center;
+  margin-top: 0px;
+  margin-bottom: 2px;
+  background-color: #f6f7f9;
+  border-bottom: 1px solid #dddfe2;
+  border-radius: 2px 2px 0 0;
+  width: 494px;
+  height: 34px;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 300px;
+  padding: 3px 3px 3px 3px;
+  color: #4b4f56;
+}
+
+.edit-post-form > h4 > span {
+  padding: 5px 10px 0px 0px;
+  font-size: 16px;
+  border-right: 1px solid #ced0d4;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 14px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+.edit-post-form > h4 > span > img {
+  width: 15px;
+  height: 15px;
+  padding: 2px;
+  padding-left: 20px;
+  padding-right: 15px;
+}
+
+.edit-post-insides {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  border-bottom: 1px solid #bdc7d8;
+}
+
+.edit-post-insides > p {
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+
+.edit-post-insides > p > img {
+  border: 1px solid rgba(0, 0, 0, .1);
+  border-radius: 50%;
+  width: 37px;
+  height: 37px;
+}
+
+.edit-post-errors {
+  background-color: pink;
+  border: 1px solid red;
+  border-radius: 5px;
+  width: auto;
+  font-size: 14px;
+  font-weight: 300;
+  padding: 5px 5px 5px 5px;
+}
+
+.user-name-timestamps > span {
+  font-size: 14px;
+}
+
+.buttons-ul {
+  display: flex;
+  align-self: flex-end;
+  justify-content: center;
+  padding-right: 20px;
+  padding-top: 15px;
+}
+
+.button-to-save-edit {
+  padding: 2px 5px 5px 2px;
+  background-color: #4267b2;
+  border-color: #4267b2;
+  border-radius: 2px;
+  font-size: 12px;
+  line-height: 22px;
+  text-align: center;
+  align-self: center;
+  color: white;
+  height: 17px;
+  width: 55px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, '.SFNSText-Regular', sans-serif;
+}

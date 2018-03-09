@@ -17,6 +17,10 @@ class LoginForm extends React.Component {
     };
   }
 
+  demo(e) {
+    this.setState({email: 'chopper@strawhats.com', password: 'starwars'});
+  }
+
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
@@ -59,6 +63,7 @@ class LoginForm extends React.Component {
             </label>
         </ul>
         <button className='login-form-button'>Log In</button>
+        <button onClick={this.demo.bind(this)} className='login-form-button'>Demo</button>
         </form>
       </div>
     );

@@ -11,6 +11,7 @@ class CreatePost extends React.Component {
 
     this.updateBody = this.updateBody.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleKeypress = this.handleKeypress.bind(this);
   }
 
   updateBody(e) {
@@ -27,6 +28,11 @@ class CreatePost extends React.Component {
   //     fileReader.readAsDataURL(file);
   //   }
   // }
+  handleKeypress(e){
+    if (e.charCode == 13) {
+      this.handleSubmit(e);
+    }
+  }
 
 
   renderErrors() {
@@ -64,18 +70,16 @@ class CreatePost extends React.Component {
             <img src={this.props.currentUser.image_url}></img>
           </p>
           <form onSubmit={this.handleSubmit}>
-
-            <input
+            <textarea
               placeholder="What's On Your Mind?"
               onChange={this.updateBody}
-              type="textarea"
+              onKeyPress={this.handleKeypress}
               value={this.state.body}
-              ></input>
+              ></textarea>
           </form>
         </ul>
-        <ul>
+        <ul className='create-post-bottom'>
           {this.props.errors.errors && this.props.errors.errors.length > 0 ? this.renderErrors() : ''}
-
         </ul>
       </div>
     );

@@ -31,6 +31,8 @@ const PostIndexItem = (props, deletePost, updatePost) => {
           <p className='difficult-comment-label'>Comment</p>
         </li>
       </ul>
+      <ul>
+      </ul>
     </div>
   );
 };

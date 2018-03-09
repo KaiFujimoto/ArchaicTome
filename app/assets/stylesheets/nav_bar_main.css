@@ -12,8 +12,8 @@
   background-color: #4267b2;
   color: white;
   font-family: Helvetica, Arial, sans-serif;
-  position: fixed;
-  top: 0;
+  /* position: fixed;
+  top: 0; */
 }
 
 .main-page-nav > h1 > button {

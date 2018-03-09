@@ -21,10 +21,13 @@ class PostDropdownMenu extends React.Component {
   }
 
   handleEdit(e) {
+    e.stopPropagation();
     this.props.openModal({type: 'edit', postId: this.state.post.id});
   }
 
   handleDelete(e) {
+    e.stopPropagation();
+
     // make a modal later to ask if the user is sure
     this.props.deletePost(this.state.post.id);
   }
@@ -34,6 +37,7 @@ class PostDropdownMenu extends React.Component {
       <div>
         <div className="dropdown">
           <button onClick={this.toggleDropClass} className='dropdown-button'>...</button>
+          <div className={`dropdown-screen ${this.state.drop === 'closed' ? 'closed' : ''}`} onClick={this.toggleDropClass} />
           <div className={`dropdown-content ${this.state.drop}`}>
             <a onClick={this.handleEdit} href="#">Edit</a>
             <a onClick={this.handleDelete} href="#">Delete</a>

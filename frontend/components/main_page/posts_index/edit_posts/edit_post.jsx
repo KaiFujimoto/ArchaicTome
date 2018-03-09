@@ -48,7 +48,7 @@ class EditPost extends React.Component {
       <div className="edit-post-form">
         <h4>
           <p>Edit Post</p>
-          <button onClick={this.props.closeModal} className="close-x">x</button>
+          <button onClick={this.props.closeModal} className="close-x" value='x'>x</button>
         </h4>
         <ul className="edit-post-insides">
           <p>

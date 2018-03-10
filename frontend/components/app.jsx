@@ -19,7 +19,7 @@ const App = () => {
     <div>
       <AuthRoute path="/" exact component={SignIn} />
       <ProtectedRoute path="/feed" component={MainPage} />
-      <Route path="/profile/:id" component={UserProfileMain} />
+      <ProtectedRoute path="/profile/:id" component={UserProfileMain} />
     </div>
   );
 };

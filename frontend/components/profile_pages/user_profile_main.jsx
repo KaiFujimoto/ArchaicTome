@@ -10,6 +10,7 @@ import {
 import NavBarContainer from '../main_page/nav_bar_container';
 import CoverPhoto from './top_of_page/cover_photo';
 import ProfilePhoto from './top_of_page/profile_photo';
+import UserDescription from './user_description/render_description';
 import PostIndexContainer from '../main_page/posts_index/post_index_container';
 import CreatePostFormContainer from '../main_page/post_form/create_post_form_container';
 
@@ -48,7 +49,7 @@ const UserProfileMain = () => {
       </ul>
       <ul className='profile-page-main-body'>
         <ul className='description-column'>
-          <li>description</li>
+          <UserDescription />
           <ul>friend icons</ul>
           <ul>photo icons</ul>
         </ul>

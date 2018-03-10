@@ -9,7 +9,7 @@ import {
 } from 'react-router-dom';
 
 import NavBarContainer from './nav_bar_container';
-import FeedIndex from './feed_index.jsx';
+import FeedIndex from './feed_index';
 
 const MainPage = () => {
   return (

@@ -1,8 +1,5 @@
 class User < ApplicationRecord
-  GENDERS = {
-    male: 'M',
-    female: 'F'
-  }
+  
   has_attached_file :avatar, default_url: "FBdefault.jpg"
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
   has_attached_file :cover_photo, default_url: "default.jpg"
@@ -22,13 +19,13 @@ class User < ApplicationRecord
     class_name: :Post,
     foreign_key: :receiver_id
 
-  def self.is_male?
-    gender == 'M'
-  end
+  has_many :pending_friendships,
+    class_name: :Friendship,
+    foreign_key: :user_id
 
-  def self.is_female?
-    gender = 'F'
-  end
+  has_many :friend_requests,
+    class_name: :Friendship,
+    foreign_key: :friend_id
 
   def self.find_by_credentials(email, password)
     user = User.find_by(email: email)

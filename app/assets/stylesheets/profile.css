@@ -1,0 +1,92 @@
+.profile-page-top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-photos {
+  position: relative;
+  top: 15px;
+}
+
+.cover-photo-image {
+  overflow: hidden;
+  width: 850px;
+  height: 320px;
+  padding-right: 120px;
+  position: relative;
+}
+
+.cover-photo-image > img {
+  border-radius: 3px;
+  border: 1px solid #000;
+  border-color: rgba(0, 0, 0, .25);
+  border-top-color: rgba(0, 0, 0, .1);
+  box-shadow: 0.5px 0.5px 0.5px lightgray;
+  width: 100%;
+  height: 100%;
+}
+
+.profile-page-top-navbar {
+  display: flex;
+  flex-direction: row;
+  align-items: left;
+}
+
+.profile-photo-image {
+  width: 168px;
+  height: 168px;
+  position: absolute;
+  display: flex;
+  top: 175px;
+  left: 13px;
+  border: 1px solid gray;
+  border-radius: 2px;
+}
+
+.profile-photo-image > img {
+  border: 4px solid white;
+  position: relative;
+  overflow: hidden;
+}
+.profile-page-top-navbar {
+  background-color: white;
+  width: 850px;
+  height: 45px;
+}
+
+.profile-page-top-navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-right: 1px solid gray;
+  border-left: 1px solid gray;
+  border-bottom: 1px solid gray;
+  border-bottom-right-radius: 2px;
+  border-bottom-left-radius: 2px;
+  font-family: SF Optimized, system-ui, -apple-system, BlinkMacSystemFont, '.SFNSText-Regular', sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  color: #365899;
+}
+
+.profile-page-top-navbar > li {
+  padding: 5px 30px 10px 30px;
+  border-right: 1px solid lightgray;
+}
+
+.first-one {
+  padding-left: 190px;
+}
+
+.last-one {
+  padding-right: 175px;
+}
+
+.profile-page-main-body {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding-top: 30px;
+  padding-right: 70px;
+}

@@ -8,17 +8,26 @@ class NavBar extends React.Component {
     this.state = this.props.currentUser;
   }
 
+  handleClick() {
+
+  }
+
   render () {
     return (
       <div className="main-page-nav-right-side">
         <ul className="main-page-nav-ul">
-          <button>
-            <span>
-              <img src={this.props.currentUser.image_url}></img>
-            </span>
-          {this.props.currentUser.first_name}</button>
-          <ul>
-            <button>Home</button>
+          <Link to={`/profile/${this.props.currentUser.id}`}>
+            <button className="main-page-nav-ul-button">
+              <span className="main-page-nav-ul-span">
+                <img src={this.props.currentUser.image_url}></img>
+              </span>
+              {this.props.currentUser.first_name}
+            </button>
+          </Link>
+          <ul className="main-page-nav-ul-home">
+            <button className="main-page-nav-ul-button-home">
+              <Link to='/feed'>Home</Link>
+            </button>
           </ul>
         </ul>
         <ul className="nav-bar-pics">

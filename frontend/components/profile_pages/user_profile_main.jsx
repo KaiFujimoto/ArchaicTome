@@ -13,6 +13,7 @@ import ProfilePhoto from './top_of_page/profile_photo';
 import UserDescription from './user_description/render_description';
 import PostIndexContainer from '../main_page/posts_index/post_index_container';
 import CreatePostFormContainer from '../main_page/post_form/create_post_form_container';
+import Modal from './top_of_page/profilemodal';
 
 const UserProfileMain = () => {
   return (
@@ -35,6 +36,7 @@ const UserProfileMain = () => {
         <ul className='profile-page-top'>
           <ul className='profile-photos'>
               <CoverPhoto />
+              <Modal />
               <ProfilePhoto />
             <ul className='profile-page-top-navbar'>
               <li className='first-one'>Timeline</li>

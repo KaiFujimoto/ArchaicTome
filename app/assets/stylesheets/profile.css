@@ -27,6 +27,30 @@
   height: 100%;
 }
 
+.cover-photo-image > button {
+  position: absolute;
+  background-color: gray;
+  right: 320px;
+  bottom: 15px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, '.SFNSText-Regular', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  border-color: rgba(0, 0, 0, .4);
+  background-color: #f6f7f9;
+  color: #4b4f56;
+  border-radius: 2px;
+  padding: 0 10px 0 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.cover-photo-image > button > img {
+  width: 25px;
+  height: 22px;
+  padding: 2px;
+}
+
 .profile-page-top-navbar {
   display: flex;
   flex-direction: row;

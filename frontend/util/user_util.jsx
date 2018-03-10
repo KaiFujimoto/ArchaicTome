@@ -12,9 +12,10 @@ export const fetchUser = (userId) => {
   });
 };
 
-export const updateUser = (userId) => {
+export const updateUser = (user) => {
   return $.ajax({
-    url: `/api/users/${userId}`,
-    method: 'PATCH'
+    url: `/api/users/${user.id}`,
+    method: 'PATCH',
+    data: { user }
   });
 };

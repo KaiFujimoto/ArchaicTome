@@ -20,3 +20,26 @@
   padding-right: 15px;
   font-size: 16px;
 }
+
+.modal-background-two {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, .1);
+  z-index: 10;
+}
+
+.modal-child-two {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.close-x {
+  color: grey;
+  padding-right: 15px;
+  font-size: 16px;
+}

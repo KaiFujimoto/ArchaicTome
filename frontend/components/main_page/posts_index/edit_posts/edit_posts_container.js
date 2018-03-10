@@ -6,7 +6,7 @@ import { closeModal } from '../../../../actions/modal_actions';
 import EditPost from './edit_post';
 
 const mapStateToProps = (state, ownProps) => {
-
+  
   return ({
     post: ownProps.post,
     errors: state.postErrors,

@@ -39,7 +39,9 @@ class SignUpForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = this.userAttributes();
-    this.props.signup(user);
+    this.props.signup(user).then(() => {
+      this.props.clearErrors();
+    });
   }
 
   // componentWillReceiveProps(newProps) {

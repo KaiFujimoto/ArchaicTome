@@ -4,6 +4,11 @@ export const RECEIVE_ALL_POSTS = 'RECEIVE_ALL_POSTS';
 export const RECEIVE_POST = 'RECEIVE_POST';
 export const REMOVE_POST = 'REMOVE_POST';
 export const RECEIVE_POST_ERRORS = 'RECEIVE_POST_ERRORS';
+export const CLEAR_ERRORS = 'CLEAR_ERRORS';
+
+export const clearErrors = () => ({
+  type: CLEAR_ERRORS
+});
 
 export const receiveAllPosts = payload => {
   return ({
@@ -81,7 +86,7 @@ export const updatePost = (postId) => {
 
 export const deletePost = (postId) => {
   return dispatch => {
-     
+
     return PostsApiUtil.deletePost(postId).then((post) => {
       dispatch(removePost(post.id));
     });

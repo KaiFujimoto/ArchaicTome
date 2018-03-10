@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import React from 'react';
-import { createPost } from '../../../actions/post_actions';
+import { createPost, clearErrors } from '../../../actions/post_actions';
 
 import CreatePost from './create_post_form';
 
@@ -16,7 +16,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
 
   return ({
-    createPost: (post) => dispatch(createPost(post))
+    createPost: (post) => dispatch(createPost(post)),
+    clearErrors: () => dispatch(clearErrors())
   });
 };
 

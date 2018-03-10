@@ -4,6 +4,7 @@ export const RECEIVE_ALL_USERS = 'RECEIVE_ALL_USERS';
 export const RECEIVE_USER = 'RECEIVE_USER';
 export const RECEIVE_USER_ERRORS = 'RECEIVER_USER_ERRORS';
 export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
+export const CLEAR_ERRORS = 'CLEAR_ERRORS';
 
 export const receiveAllUsers = users => {
   return ({
@@ -33,6 +34,10 @@ export const receiveUserErrors = errors => {
     errors
   });
 };
+
+export const clearErrors = () => ({
+  type: CLEAR_ERRORS
+});
 
 export const fetchAllUsers = () => {
   return dispatch => {

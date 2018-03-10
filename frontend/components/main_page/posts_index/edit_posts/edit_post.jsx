@@ -25,6 +25,7 @@ class EditPost extends React.Component {
     e.preventDefault();
     this.props.updatePost(this.state).then(() => {
       this.props.closeModal();
+      this.props.clearErrors();
     });
   }
 

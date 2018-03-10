@@ -1,12 +1,12 @@
 import { connect } from 'react-redux';
 import React from 'react';
-import { updatePost } from '../../../../actions/post_actions';
+import { updatePost, clearErrors } from '../../../../actions/post_actions';
 import { closeModal } from '../../../../actions/modal_actions';
 
 import EditPost from './edit_post';
 
 const mapStateToProps = (state, ownProps) => {
-  
+
   return ({
     post: ownProps.post,
     errors: state.postErrors,
@@ -17,7 +17,8 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = dispatch => {
   return ({
     updatePost: (postId) => dispatch(updatePost(postId)),
-    closeModal: () => dispatch(closeModal())
+    closeModal: () => dispatch(closeModal()),
+    clearErrors: () => dispatch(clearErrors())
   });
 };
 

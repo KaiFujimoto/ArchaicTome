@@ -11,9 +11,21 @@ class UserDescription extends React.Component {
     return (
       <div className='user-description'>
         <div>
-          <img src={window.description}></img>
-          Intro
-          <p>{this.props.user.description}</p>
+          <div className='img-and-span-description'>
+            <img src={window.description}></img>
+            <span>Intro</span>
+          </div>
+          <p>
+            ✉️ Email: {this.props.user.email}
+            <br />
+            🎂 Birthday: {this.props.user.birth_date}
+            <br />
+            <br />
+            About {this.props.user.first_name}:
+            <br />
+            <br />
+            {this.props.user.description}
+          </p>
         </div>
       </div>
     );

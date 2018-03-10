@@ -3,6 +3,8 @@
   padding-top: 15px;
   padding-left: 0px;
   font-family: SF Optimized, system-ui, -apple-system, BlinkMacSystemFont, '.SFNSText-Regular', sans-serif;
+  display: flex;
+  align-items: center;
 }
 
 .user-description > div {
@@ -11,15 +13,37 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  width: 300px;
+  height: 260px;
+  top: 15px;
+  left: -50px;
+  padding-right: 40px;
+  border: 1px solid;
+  border-color: #e5e6e9 #dfe0e4 #d0d1d5;
+  border-radius: 3px;
 }
 
-.user-description > div > img {
-  width: 40px;
-  height: 40px;
+.img-and-span-description {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.img-and-span-description > img {
+  width: 30px;
+  height: 30px;
   padding: 10px 10px 10px 10px;
 }
 
 .user-description > div > p {
-  width: 300px;
-  height: 300px;
+  width: 310px;
+  height: 180px;
+  position: absolute;
+  top: 50px;
+  left: 10px;
+  background-color: white;
+  padding-right: 10px;
+  padding-top: 15px;
+  border-top: 1px solid #e9ebee;
+  font-size: 12px;
 }

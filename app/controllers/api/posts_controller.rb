@@ -50,7 +50,7 @@ class Api::PostsController < ApplicationController
   def destroy
     @post = current_user.authored_posts.find(params[:id])
     @post.destroy!
-    render :show
+    render :update
   end
 
   private

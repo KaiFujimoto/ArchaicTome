@@ -22,9 +22,13 @@ class Api::CommentsController < ApplicationController
   end
 
   def destroy
-    @comment = current_user.comments.find(params[:id])
-    @comment.destroy!
-    render :show
+    @comment = Comment.find(params[:id])
+    if @comment.author_id == current_user.id
+      @comment.destroy!
+      render :show
+    else
+      render json: ["you can't delete a comment that is not yours"]
+    end
   end
 
   private

@@ -49,4 +49,3 @@ const PostIndexItem = (props) => {
 };
 
 export default PostIndexItem;
-// <img src={"data:image/jpeg;" + imageBase64} />

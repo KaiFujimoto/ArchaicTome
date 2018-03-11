@@ -18,6 +18,7 @@ class Comments extends React.Component {
                 <p style={{paddingLeft: 10}}>{this.props.author.first_name + this.props.author.last_name}</p>
                 <p style={{paddingLeft: 10}} className='inner-comment-name'>{comment.body}</p>
               </div>
+              <button onClick={() => this.props.deleteComment(comment.id)}>x</button>
             </div>
           );
         })}

@@ -39,8 +39,8 @@ class CommentDropdownMenu extends React.Component {
           <button onClick={this.toggleDropClass} className='dropdown-button'>...</button>
           <div className={`dropdown-screen ${this.state.drop === 'closed' ? 'closed' : ''}`} onClick={this.toggleDropClass} />
           <div className={`dropdown-content ${this.state.drop}`}>
-            <a onClick={this.handleEdit} href="#">Edit</a>
-            <a onClick={this.handleDelete} href="#">Delete</a>
+            <a onClick={this.handleEdit}>Edit</a>
+            <a onClick={this.handleDelete}>Delete</a>
           </div>
         </div>
       </div>

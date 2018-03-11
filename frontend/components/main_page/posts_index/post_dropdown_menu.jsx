@@ -22,6 +22,7 @@ class PostDropdownMenu extends React.Component {
 
   handleEdit(e) {
     e.stopPropagation();
+    this.setState({drop: "closed"});
     this.props.openModal({type: 'edit', postId: this.state.post.id});
   }
 

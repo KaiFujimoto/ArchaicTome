@@ -31,7 +31,6 @@ class CommentDropdownMenu extends React.Component {
 
     // make a modal later to ask if the user is sure
     this.props.deleteComment(this.state.comment.id);
-    this.setState({drop: "closed"});
   }
 
   render() {

@@ -28,9 +28,10 @@
   align-items: flex-start;
   flex-direction: column;
   border: 1px solid rgba(0, 0, 0, .1);
-  width: 400px;
   background-color: white;
+  max-width: 385px;
   border-radius: 18px;
+  padding-right: 10px;
 }
 
 .inner-comment-name {
@@ -44,10 +45,30 @@
 
 .inner-comment textarea {
   resize: none;
-  border: 1px solid rgba(0, 0, 0, .1);
-  width: 385px;
+  border: none;
+  width: 380px;
   background-color: white;
   border-radius: 18px;
   padding-left: 10px;
   padding-top: 5px;
 }
+
+.button-hover button {
+  display: block;
+  color: grey;
+  padding-left: 5px;
+  user-select: none;
+  z-index: 0;
+}
+
+.button-hover:hover {
+  z-index: 1;
+}
+
+/* .hidden {
+  display: hidden;
+}
+
+.shown {
+  display: block;
+} */

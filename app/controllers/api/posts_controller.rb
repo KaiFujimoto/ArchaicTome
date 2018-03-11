@@ -6,7 +6,7 @@ class Api::PostsController < ApplicationController
     @post.author_id = current_user.id
     @post.receiver_id = current_user.id
     if @post.save
-      render :show
+      render :update
     else
       render json: {errors: @post.errors.full_messages}, status: 422
     end

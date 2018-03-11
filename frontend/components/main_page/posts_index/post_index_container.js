@@ -9,11 +9,12 @@ const mapStateToProps = state => {
     posts: Object.values(state.posts).reverse(),
     currentUser: state.session.currentUser,
     users: state.users,
+    comments: state.comments
   });
 };
 
 const mapDispatchToProps = dispatch => {
-   
+
   return ({
     fetchPosts: () => dispatch(fetchPosts())
   });

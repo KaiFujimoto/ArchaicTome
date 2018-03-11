@@ -14,7 +14,8 @@ export const receiveAllPosts = payload => {
   return ({
     type: RECEIVE_ALL_POSTS,
     posts: payload.posts,
-    users: payload.users
+    users: payload.users,
+    comments: payload.comments
   });
 };
 
@@ -44,7 +45,6 @@ export const fetchPosts = () => {
     return PostsApiUtil.fetchPosts().then(payload => {
       dispatch(receiveAllPosts(payload));
     }, err => {
-
       return (
       dispatch(receivePostErrors(err.responseJSON))
       );

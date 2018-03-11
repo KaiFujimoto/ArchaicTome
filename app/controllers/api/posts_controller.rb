@@ -22,11 +22,19 @@ class Api::PostsController < ApplicationController
     #
     # @post
     @post = Post.where(author_id: current_user.id) + Post.where(receiver_id: current_user.id)
+    @comments = []
+    Post.all.each do |post|
+      @comments.concat(post.comments)
+    end
+    @comments
     render :index
+
   end
 
   def show
     @post = current_user.authored_posts.find(params[:id])
+    @comments = @post.comments
+    render :show
   end
 
   def update

@@ -77,6 +77,8 @@
   flex-direction: row;
   align-items: center;
   padding-right: 10px;
+  font-weight: bold;
+  font-size: 12px;
 }
 
 .main-page-nav-ul-button > span {
@@ -137,6 +139,8 @@
   width: 40px;
   border-radius: 5px;
   border: 1px solid transparent;
+  font-weight: bold;
+  font-size: 12px;
 }
 
 .main-page-nav-ul-home:hover {

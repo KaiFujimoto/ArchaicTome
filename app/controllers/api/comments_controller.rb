@@ -12,10 +12,6 @@ class Api::CommentsController < ApplicationController
     end
   end
 
-  def show
-    @comment = Comment.find(params[:id])
-  end
-
   def update
     @comment = current_user.comments.find(params[:id])
     if @comment.update(comment_params)

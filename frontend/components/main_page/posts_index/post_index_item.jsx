@@ -2,11 +2,11 @@ import React from 'react';
 import { timeUtil } from '../../../util/time_util';
 import PostDropdownMenuContainer from './post_dropdown_menu_container';
 import Modal from './edit_posts/modal';
+import CommentsContainer from './comments/comments_container';
 
 const PostIndexItem = (props) => {
   const authorFullName = props.author.first_name + ' ' + props.author.last_name;
   const receiverFullName = props.receiver.first_name + ' ' + props.receiver.last_name;
-   
   return (
     <div className='post-index-detailed'>
       <Modal post={props.post}/>
@@ -42,6 +42,7 @@ const PostIndexItem = (props) => {
         </li>
       </ul>
       <ul>
+        <CommentsContainer comments={props.comments} author={props.author}/>
       </ul>
     </div>
   );

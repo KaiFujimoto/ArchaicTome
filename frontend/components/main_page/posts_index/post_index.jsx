@@ -20,6 +20,7 @@ class PostIndex extends React.Component {
           post={post}
           author={author}
           receiver={receiver}
+          comments={post.comments}
         />
       );
     });

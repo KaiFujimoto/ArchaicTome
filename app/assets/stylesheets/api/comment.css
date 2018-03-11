@@ -8,7 +8,7 @@
   font-size: 14px;
   padding-top: 8px;
   padding-bottom: 8px;
-  font-family: SF Optimized, system-ui, -apple-system, BlinkMacSystemFont, '.SFNSText-Regular', sans-serif; 
+  font-family: SF Optimized, system-ui, -apple-system, BlinkMacSystemFont, '.SFNSText-Regular', sans-serif;
 }
 
 .comment-profile-icon {
@@ -40,4 +40,14 @@
 .inner-comment > p:first-child {
   padding-top: 5px;
   font-weight: bold;
+}
+
+.inner-comment textarea {
+  resize: none;
+  border: 1px solid rgba(0, 0, 0, .1);
+  width: 390px;
+  background-color: white;
+  border-radius: 18px;
+  padding-left: 10px;
+  padding-top: 5px;
 }

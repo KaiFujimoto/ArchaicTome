@@ -7,6 +7,10 @@ import CommentsContainer from './comments/comments_container';
 const PostIndexItem = (props) => {
   const authorFullName = props.author.first_name + ' ' + props.author.last_name;
   const receiverFullName = props.receiver.first_name + ' ' + props.receiver.last_name;
+  const commentsArray = props.comments.map( comment => {
+    if (comment.post.id === props.post.id) return comment;
+  });
+  const comments = commentsArray.filter(el => el != undefined);
   return (
     <div className='post-index-detailed'>
       <Modal post={props.post}/>
@@ -42,7 +46,7 @@ const PostIndexItem = (props) => {
         </li>
       </ul>
       <ul>
-        <CommentsContainer comments={props.comments} author={props.author}/>
+        <CommentsContainer comments={comments} users={props.users} post={props.post}/>
       </ul>
     </div>
   );

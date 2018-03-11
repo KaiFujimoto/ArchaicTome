@@ -9,7 +9,6 @@ class PostIndex extends React.Component {
   }
 
   render() {
-
     const posts = this.props.posts.map( post => {
       const author = this.props.users[post.author_id];
       const receiver = this.props.users[post.receiver_id];
@@ -20,7 +19,8 @@ class PostIndex extends React.Component {
           post={post}
           author={author}
           receiver={receiver}
-          comments={post.comments}
+          comments={this.props.comments}
+          users={this.props.users}
         />
       );
     });

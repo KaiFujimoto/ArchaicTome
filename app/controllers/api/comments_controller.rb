@@ -4,7 +4,7 @@ class Api::CommentsController < ApplicationController
 
   def create
     @comment = Comment.new(comment_params)
-    @comment.user_id = current_user.id
+    @comment.author_id = current_user.id
     if @comment.save
       render :show
     else
@@ -22,19 +22,15 @@ class Api::CommentsController < ApplicationController
   end
 
   def destroy
-    @comment = Comment.find(params[:id])
-    if @comment.author_id == current_user.id
-      @comment.destroy!
-      render :show
-    else
-      render json: ["you can't delete a comment that is not yours"]
-    end
+    @comment = current_user.comments.find(params[:id])
+    @comment.destroy!
+    render :show
   end
 
   private
 
   def comment_params
-    params.require(:comment).permit(:body)
+    params.require(:comment).permit(:body, :post_id)
   end
 
 end

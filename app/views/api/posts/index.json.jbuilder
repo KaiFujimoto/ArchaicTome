@@ -19,6 +19,12 @@ json.users do
       json.partial! '/api/users/user', user: receiver
     end
   end
+
+  @comments.map(&:author).each do |author|
+    json.set! author.id do
+      json.partial! '/api/users/user', user: author
+    end
+  end
 end
 
 json.comments do

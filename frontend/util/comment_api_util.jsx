@@ -1,8 +1,13 @@
-export const createComment = (comment) => {
+export const createComment = (payload) => {
   return $.ajax({
     url: '/api/comments',
     method: 'POST',
-    data: { comment }
+    data: {
+      comment: {
+        body: payload.body,
+        post_id: payload.postId
+      }
+     }
   });
 };
 

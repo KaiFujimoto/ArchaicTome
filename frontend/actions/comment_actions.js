@@ -36,7 +36,7 @@ export const clearErrors = () => {
 export const createComment = (comment) => {
   return dispatch => {
     return CommentApiUtil.createComment(comment).then(comment => {
-      dispatch(receivePost(comment));
+      dispatch(receiveComment(comment));
     }, err => {
       return (
         dispatch(receiveCommentErrors(err.responseJSON))

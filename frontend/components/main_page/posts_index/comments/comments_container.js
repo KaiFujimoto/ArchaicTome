@@ -7,7 +7,9 @@ import Comments from './comments';
 export const mapStateToProps = (state, ownProps) => {
   return ({
     comments: ownProps.comments,
-    author: ownProps.author
+    author: ownProps.author,
+    currentUser: state.session.currentUser,
+    post: ownProps.post
   });
 };
 

@@ -27,20 +27,6 @@ class EditComment extends React.Component {
     });
   }
 
-  renderErrors() {
-    return(
-      <ul className='create-comment-errors'>
-        {this.props.errors.errors.map( (error, idx) => {
-          return (
-              <li key={idx}>
-                {error}
-              </li>
-          );
-        })}
-      </ul>
-    );
-  }
-
   render() {
 
     return (

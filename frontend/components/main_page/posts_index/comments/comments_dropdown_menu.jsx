@@ -22,6 +22,7 @@ class CommentDropdownMenu extends React.Component {
 
   handleEdit(e) {
     e.stopPropagation();
+    this.setState({drop: "closed"});
     this.props.openEditModal({type: 'editcomment', commentId: this.state.comment.id});
   }
 
@@ -30,6 +31,7 @@ class CommentDropdownMenu extends React.Component {
 
     // make a modal later to ask if the user is sure
     this.props.deleteComment(this.state.comment.id);
+    this.setState({drop: "closed"});
   }
 
   render() {

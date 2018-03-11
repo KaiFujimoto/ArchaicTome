@@ -41,7 +41,7 @@ class Api::PostsController < ApplicationController
     @post = current_user.authored_posts.find(params[:id])
     if @post.update(post_params)
       @post.updated_at = Time.new
-      render :show
+      render :update
     else
       render json: {errors: @post.errors.full_messages}, status: 422
     end

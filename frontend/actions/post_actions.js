@@ -76,8 +76,8 @@ export const createPost = (post) => {
 
 export const updatePost = (postId) => {
   return dispatch => {
-    return PostsApiUtil.updatePost(postId).then(post => {
-      dispatch(receivePost(post));
+    return PostsApiUtil.updatePost(postId).then(payload => {
+      dispatch(receivePost(payload));
     }, err => {
       dispatch(receivePostErrors(err.responseJSON));
     });

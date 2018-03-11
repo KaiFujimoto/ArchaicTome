@@ -76,3 +76,11 @@ Post.destroy_all
   Post.create!(author_id: users.all.sample.id, receiver_id: users.all.sample.id, body: Faker::OnePiece.quote)
   Post.create!(author_id: users.all.sample.id, receiver_id: users.all.sample.id, body: Faker::OnePiece.quote)
 end
+
+posts = Post.all
+
+Comment.destroy_all
+
+15.times do
+  Comment.create!(author_id: users.all.sample.id, post_id: posts.all.sample.id, body: Faker::RickAndMorty.quote)
+end

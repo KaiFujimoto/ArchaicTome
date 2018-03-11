@@ -16,7 +16,7 @@ class Comments extends React.Component {
                 <img src={this.props.users[comment.author.id].image_url}></img>
               </div>
               <div className='inner-comment'>
-                <p style={{paddingLeft: 10}}>{comment.author.first_name + comment.author.last_name}</p>
+                <p style={{paddingLeft: 10}}>{comment.author.first_name + ' ' + comment.author.last_name}</p>
                 <p style={{paddingLeft: 10}} className='inner-comment-name'>{comment.body}</p>
               </div>
                 {comment.author.id === this.props.currentUser.id ?

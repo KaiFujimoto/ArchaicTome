@@ -15,7 +15,7 @@ const SignIn = () => {
   return (
     <div className="sign-in-page">
       <nav className="sign-in-page-nav">
-        <h1>ancient tome</h1>
+        <h1>archaic tome</h1>
         <ul>
           <LoginFormContainer />
         </ul>
@@ -35,7 +35,7 @@ const SignIn = () => {
             alt="Visit My LinkedIn" />
           <p> Visit My LinkedIn! </p>
         </a>
-        <span>AncientTome © 2018</span>
+        <span>ArchaicTome © 2018</span>
       </footer>
     </div>
   );

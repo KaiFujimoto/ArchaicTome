@@ -2,33 +2,36 @@ class Api::FriendshipsController < ApplicationController
 
   before_action :require_login
 
-  def sendReq
-    @friend = Friendship.new()
-    @friend.requester = current_user
-    @friend.receiver_id = params[:user_id]
-    if @friend.save
+  def sendReq #new
+    @friendship = Friendship.new()
+    @friendship.user_id = current_user.id
+    @friendship.friend_id = params[:user_id]
+    if @friendship.save
       render :show
     else
-      render json: @friend.errors.full_messages, status: 422
+      render json: @friendship.errors.full_messages, status: 422
     end
   end
 
-  def approveReq
-    @friend = Friendship.includes(:requester, :receiver).where(requester_id: params[:user_id], receiver_id: current_user.id)[0]
-    @friend.status = 1
-    @friend.save!
-    render :remove
+  def approveReq #create
+    @friendship = Friendship.includes(:requester, :receiver).where(requester_id: params[:user_id], receiver_id: current_user.id)[0]
+    @friendship.status = 'APPROVED'
+    @friendship.save!
+    render :show
   end
 
-  def pending
-    @friendship = current_user.pending_friendships(params[:id])
+  def pending #show
+    @friendship = current_user.sent_requests(params[:id])
   end
 
-  def rejectReq
+  def rejectReq #destroy
+    @friendship = current_user.sent_requests(params[:id])
+    @friendship.destroy!
+    render :show
   end
 
   def index
-    @friends = current_user.friends
+    @friends = current_user.current_friends
     render :index
   end
 

@@ -19,17 +19,29 @@ class User < ApplicationRecord
     class_name: :Post,
     foreign_key: :receiver_id
 
-  has_many :pending_friendships,
+  has_many :sent_requests,
     class_name: :Friendship,
     foreign_key: :user_id
 
-  has_many :friend_requests,
+  has_many :received_requests,
     class_name: :Friendship,
     foreign_key: :friend_id
 
   has_many :comments,
     class_name: :Comment,
     foreign_key: :author_id
+
+  def current_friends
+    self.sent_requests.where("status = 'APPROVED'") + self.received_requests.where("status = 'APPROVED'")
+  end
+
+  def pending_friendships
+    self.pending_friendships.where("status = 'pending'")
+  end
+
+  def pending_requests
+     self.friend_requests.where("status='pending'")
+  end
 
   def self.find_by_credentials(email, password)
     user = User.find_by(email: email)

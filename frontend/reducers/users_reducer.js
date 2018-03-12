@@ -15,9 +15,6 @@ export default function(oldState = _defaultState, action) {
       return merge({}, oldState, { [action.currentUser.id]: action.currentUser });
     case RECEIVE_ALL_USERS:
       return merge({}, oldState, action.users);
-    case RECEIVE_USER:
-     
-      return merge({}, oldState, {[action.user.id]: action.user});
     default:
       return oldState;
   }

@@ -3,16 +3,18 @@
   flex-direction: row;
   justify-content: space-between;
   padding-top: 40px;
+  max-width: 900px;
+  margin: auto;
 }
 
 .main-page-left-menu {
   padding: 10px;
-  margin-left: 190px;
+
 }
 
 .main-page-news-feed {
   padding: 10px;
-  margin-right: 190px;
+
 }
 
 .create-post-form {

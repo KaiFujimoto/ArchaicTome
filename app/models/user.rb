@@ -55,4 +55,10 @@ class User < ApplicationRecord
     self.session_token
   end
 
+
+  # def asdf(id)
+  #   Friendship.find_by(user_id: id).where(status: 1)
+  #   Friendship.find_by(:friend_id: id).where(status: 1)
+  # end
+
 end

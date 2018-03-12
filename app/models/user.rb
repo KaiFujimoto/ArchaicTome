@@ -35,12 +35,24 @@ class User < ApplicationRecord
     self.sent_requests.where("status = 'APPROVED'") + self.received_requests.where("status = 'APPROVED'")
   end
 
+  def friends
+    friends = []
+    current_friends.each do |friend|
+      friends << (friend.receiver == self ? friend.requester : friend.receiver)
+    end
+    friends
+  end
+
+  def all_pending_requests
+    self.pending_friendships + self.pending_requests
+  end
+
   def pending_friendships
-    self.pending_friendships.where("status = 'pending'")
+    self.received_requests.where("status = 'PENDING'")
   end
 
   def pending_requests
-     self.friend_requests.where("status='pending'")
+     self.sent_requests.where("status='PENDING'")
   end
 
   def self.find_by_credentials(email, password)

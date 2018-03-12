@@ -6,10 +6,11 @@ export const RECEIVE_USER_ERRORS = 'RECEIVER_USER_ERRORS';
 export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
 export const CLEAR_ERRORS = 'CLEAR_ERRORS';
 
-export const receiveAllUsers = users => {
+export const receiveAllUsers = payload => {
   return ({
     type: RECEIVE_ALL_USERS,
-    users
+    users: payload.users,
+    friends: payload.friends
   });
 };
 
@@ -41,8 +42,8 @@ export const clearErrors = () => ({
 
 export const fetchAllUsers = () => {
   return dispatch => {
-    return UserApiUtil.fetchAllUsers().then(user => {
-      dispatch(receiveAllUsers(user));
+    return UserApiUtil.fetchAllUsers().then(payload => {
+      dispatch(receiveAllUsers(payload));
     }, err => {
       return (
         dispatch(receiveUserErrors(err.responseJSON))

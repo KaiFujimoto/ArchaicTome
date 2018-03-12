@@ -2,6 +2,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  max-width: 900px;
+  margin: auto;
 }
 
 .profile-photos {
@@ -11,9 +13,8 @@
 
 .cover-photo-image {
   overflow: hidden;
-  width: 850px;
+  width: 852px;
   height: 320px;
-  padding-right: 120px;
   position: relative;
 }
 
@@ -110,7 +111,8 @@
 .profile-page-main-body {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
-  padding-top: 30px;
-  padding-right: 70px;
+  justify-content: center;
+  max-width: 500px;
+  margin: auto;
+  padding-top: 15px;
 }

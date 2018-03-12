@@ -84,3 +84,14 @@ Comment.destroy_all
 15.times do
   Comment.create!(author_id: users.all.sample.id, post_id: posts.all.sample.id, body: Faker::RickAndMorty.quote)
 end
+
+Friendship.destroy_all
+
+Friendship.create!(user_id: chopper.id, friend_id: nami.id, status: 'APPROVED')
+Friendship.create!(user_id: chopper.id, friend_id: usopp.id, status: 'APPROVED')
+Friendship.create!(user_id: chopper.id, friend_id: zoro.id, status: 'APPROVED')
+Friendship.create!(user_id: chopper.id, friend_id: sanji.id, status: 'APPROVED')
+Friendship.create!(user_id: chopper.id, friend_id: robin.id, status: 'APPROVED')
+Friendship.create!(user_id: chopper.id, friend_id: brook.id, status: 'PENDING')
+Friendship.create!(user_id: chopper.id, friend_id: luffy.id, status: 'APPROVED')
+Friendship.create!(user_id: chopper.id, friend_id: franky.id, status: 'PENDING')

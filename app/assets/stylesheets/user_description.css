@@ -1,22 +1,22 @@
-.user-description {
-  position: relative;
-  padding-top: 15px;
-  padding-left: 0px;
-  font-family: SF Optimized, system-ui, -apple-system, BlinkMacSystemFont, '.SFNSText-Regular', sans-serif;
+.description-column {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+}
+
+.user-description {
+  padding-top: 15px;
+  font-family: SF Optimized, system-ui, -apple-system, BlinkMacSystemFont, '.SFNSText-Regular', sans-serif;
+  padding-right: 20px;
+  padding-bottom: 10px;
 }
 
 .user-description > div {
-  position: absolute;
   background-color: white;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  width: 300px;
+  width: 290px;
   height: 260px;
-  top: 15px;
-  left: -50px;
   padding-right: 40px;
   border: 1px solid;
   border-color: #e5e6e9 #dfe0e4 #d0d1d5;
@@ -27,6 +27,7 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  max-width: 450px;
 }
 
 .img-and-span-description > img {
@@ -35,14 +36,16 @@
   padding: 10px 10px 10px 10px;
 }
 
-.user-description > div > p {
+.user-information-list {
+  max-width: 350px;
+  margin: auto;
+  padding-left: 10px;
+}
+
+.user-information-list > p {
   width: 310px;
   height: 180px;
-  position: absolute;
-  top: 50px;
-  left: 10px;
   background-color: white;
-  padding-right: 10px;
   padding-top: 15px;
   border-top: 1px solid #e9ebee;
   font-size: 12px;

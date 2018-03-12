@@ -14,6 +14,7 @@ import UserDescription from './user_description/render_description';
 import PostIndexContainer from '../main_page/posts_index/post_index_container';
 import CreatePostFormContainer from '../main_page/post_form/create_post_form_container';
 import Modal from './top_of_page/profilemodal';
+import FriendsContainer from './friends/friends_container';
 
 const UserProfileMain = () => {
   return (
@@ -32,34 +33,35 @@ const UserProfileMain = () => {
           <NavBarContainer />
         </ul>
       </nav>
-      <ul className='profile-page-body'>
-        <ul className='profile-page-top'>
-          <ul className='profile-photos'>
+      <div className='profile-page-body'>
+        <div className='profile-page-top'>
+          <div className='profile-photos'>
               <CoverPhoto />
               <Modal />
               <ProfilePhoto />
-            <ul className='profile-page-top-navbar'>
+            <div className='profile-page-top-navbar'>
               <li className='first-one'>Timeline</li>
               <li>About</li>
               <li>Friends</li>
               <li className='last-one'>Photos</li>
-            </ul>
-          </ul>
-        </ul>
-        <ul>
-        </ul>
-      </ul>
-      <ul className='profile-page-main-body'>
-        <ul className='description-column'>
+            </div>
+          </div>
+        </div>
+        <div>
+        </div>
+      </div>
+      <div className='profile-page-main-body'>
+        <div className='description-column'>
           <UserDescription />
-          <ul>friend icons</ul>
-          <ul>photo icons</ul>
-        </ul>
-        <ul className='profile-page-postings'>
+          <div className='friend-icons'>
+            <FriendsContainer />
+          </div>
+        </div>
+        <div className='profile-page-postings'>
           <CreatePostFormContainer />
           <PostIndexContainer />
-        </ul>
-      </ul>
+        </div>
+      </div>
     </div>
   );
 };

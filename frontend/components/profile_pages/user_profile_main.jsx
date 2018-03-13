@@ -38,7 +38,7 @@ export class UserProfileMain extends React.Component {
         <div className='profile-page-body'>
           <div className='profile-page-top'>
             <div className='profile-photos'>
-                <CoverPhoto/>
+                <CoverPhoto />
                 <Modal />
                 <ProfilePhoto />
               <div className='profile-page-top-navbar'>

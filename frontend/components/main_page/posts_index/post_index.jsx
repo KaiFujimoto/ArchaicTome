@@ -5,24 +5,17 @@ import PostIndexItem from './post_index_item';
 class PostIndex extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      profileUser: this.props.profileUser
-    };
   }
 
   componentDidMount() {
-    this.props.fetchPosts(this.state.profileUser.id);
+    this.props.fetchPosts(this.props.match.params.id);
+    this.props.fetchAllUsers(this.props.match.params.id);
     window.scrollTo(0, 0);
   }
 
   componentWillReceiveProps(newProps) {
-    let user;
     if (this.props.match.params.id != newProps.match.params.id) {
-      user = this.props.users[newProps.match.params.id];
-
-      this.setState({profileUser: user});
-      this.props.fetchPosts(user.id);
-      window.scrollTo(0, 0);
+      this.props.fetchPosts(this.props.match.params.id);
     }
   }
 
@@ -44,7 +37,6 @@ class PostIndex extends React.Component {
     });
     return (
       <div className="post-index">
-
         {posts}
       </div>
     );

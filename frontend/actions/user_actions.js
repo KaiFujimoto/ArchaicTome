@@ -44,10 +44,6 @@ export const fetchAllUsers = () => {
   return dispatch => {
     return UserApiUtil.fetchAllUsers().then(payload => {
       dispatch(receiveAllUsers(payload));
-    }, err => {
-      return (
-        dispatch(receiveUserErrors(err.responseJSON))
-      );
     });
   };
 };

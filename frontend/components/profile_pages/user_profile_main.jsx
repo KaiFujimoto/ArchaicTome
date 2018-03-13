@@ -31,8 +31,6 @@ export class UserProfileMain extends React.Component {
     if (this.props.match.params.id !== newProps.match.params.id) {
       user = this.props.users[newProps.match.params.id];
       this.setState({profileUser: user});
-    } else {
-      this.setState({profileUser: this.props.currentUser});
     }
   }
   render() {

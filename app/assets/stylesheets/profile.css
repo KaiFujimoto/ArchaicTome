@@ -84,9 +84,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border-right: 1px solid gray;
-  border-left: 1px solid gray;
-  border-bottom: 1px solid gray;
+  border: 1px solid gray;
   border-bottom-right-radius: 2px;
   border-bottom-left-radius: 2px;
   font-family: SF Optimized, system-ui, -apple-system, BlinkMacSystemFont, '.SFNSText-Regular', sans-serif;

@@ -3,14 +3,24 @@ import { withRouter } from 'react-router-dom';
 import PostIndexItem from './post_index_item';
 
 class PostIndex extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      profileUser: this.props.profileUser
+    };
+  }
 
   componentDidMount() {
-    if (this.props.profileUser != undefined && this.props.profileUser.id === this.props.currentUser.id) {
-      this.props.fetchPosts(this.props.currentUser.id);
-    } else if (this.props.profileUser != undefined) {
-      this.props.fetchPosts(this.props.profileUser.id);
-    } else {
-      this.props.fetchPosts(this.props.currentUser.id);
+    this.props.fetchPosts(this.state.profileUser.id);
+  }
+
+  componentWillReceiveProps(newProps) {
+    let user;
+    if (this.props.match.params.id != newProps.match.params.id) {
+      user = this.props.users[newProps.match.params.id];
+
+      this.setState({profileUser: user});
+      this.props.fetchPosts(user.id);
     }
   }
 
@@ -21,7 +31,7 @@ class PostIndex extends React.Component {
       return (
         <PostIndexItem
           key={post.id}
-          currentUser={this.props.currentUser}
+          profileUser={this.props.profileUser}
           post={post}
           author={author}
           receiver={receiver}

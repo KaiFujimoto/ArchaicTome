@@ -1,17 +1,16 @@
 import { connect } from 'react-redux';
 import React from 'react';
-import { withRouter } from 'react-router-dom';
 import { fetchPosts } from '../../../actions/post_actions';
+import { withRouter } from 'react-router-dom';
 
 import PostIndex from './post_index';
 
-const mapStateToProps = (state, ownProps) => {
-
+const mapStateToProps = (state) => {
   return ({
     posts: Object.values(state.posts).reverse(),
+    profileUser: state.session.currentUser,
     users: state.users,
-    comments: Object.values(state.comments),
-    profileUser: ownProps.profileUser
+    comments: Object.values(state.comments)
   });
 };
 

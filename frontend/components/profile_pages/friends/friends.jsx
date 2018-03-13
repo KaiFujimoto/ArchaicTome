@@ -5,10 +5,19 @@ import { Link } from 'react-router-dom';
 class FriendsIndex extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      profileUser: this.props.currentUser
+    };
   }
 
   componentDidMount() {
-    this.props.fetchCurrentFriendships(this.props.currentUser.id);
+    this.props.fetchCurrentFriendships(this.state.profileUser.id);
+  }
+
+  componentWillReceiveProps(newProps) {
+    if (this.props.profileUser.id != newProps.profileUser.id) {
+      this.props.fetchCurrentFriendships(newProps.profileUser.id);
+    }
   }
 
   render() {

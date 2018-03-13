@@ -5,10 +5,11 @@ import { closeProModal } from '../../../actions/modal_actions';
 
 import FriendsIndex from './friends';
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
   return ({
     currentUser: state.session.currentUser,
-    friends: Object.values(state.friends)
+    friends: Object.values(state.friends),
+    profileUser: ownProps.profileUser
   });
 };
 

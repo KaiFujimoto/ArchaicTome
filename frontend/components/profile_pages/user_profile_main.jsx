@@ -59,7 +59,7 @@ export class UserProfileMain extends React.Component {
           <div className='description-column'>
             <UserDescription profileUser={this.state.profileUser}/>
             <div className='friend-icons'>
-              <FriendsContainer />
+              <FriendsContainer profileUser={this.state.profileUser}/>
             </div>
           </div>
           <div className='profile-page-postings'>

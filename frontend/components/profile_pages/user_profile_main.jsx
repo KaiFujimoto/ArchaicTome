@@ -42,7 +42,7 @@ export class UserProfileMain extends React.Component {
           <div className='profile-page-top'>
             <div className='profile-photos'>
                 <CoverPhoto profileUser={this.state.profileUser}/>
-                <Modal />
+                  {this.state.profileUser.id === this.props.currentUser.id ? <Modal /> : '' }
                 <ProfilePhoto profileUser={this.state.profileUser}/>
               <div className='profile-page-top-navbar'>
                 <li className='first-one'>Timeline</li>

@@ -17,10 +17,10 @@ export class CoverPhoto extends React.Component {
     return (
       <div className='cover-photo-image'>
         <img src={this.props.profileUser.cover_url}></img>
-        <button onClick={this.handleEdit}>
-          <img src={window.pencil2}></img>
-          Edit Profile
-        </button>
+        {this.props.currentUser.id === this.props.profileUser.id ? <button onClick={this.handleEdit}>
+            <img src={window.pencil2}></img>
+            Edit Profile
+          </button> : '' }
       </div>
     );
   }

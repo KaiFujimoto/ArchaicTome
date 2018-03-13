@@ -22,6 +22,9 @@ class FriendsIndex extends React.Component {
     if (Object.values(this.props.users).length < 2) {
       return null;
     }
+    if (this.props.match.params.id === undefined) {
+      return null;
+    }
     return (
       <div className="friend-list">
         { this.props.friends.length < 1 ? 'No friends yet' :
@@ -33,13 +36,13 @@ class FriendsIndex extends React.Component {
           <div className="friends-list">
             {this.props.friends.map(friend => {
               let friendName;
-              if (friend.user_id === this.props.match.params.id) {
+              if (friend.user_id === parseInt(this.props.match.params.id)) {
                 friendName = this.props.users[friend.friend_id];
               } else {
                 friendName = this.props.users[friend.user_id];
               }
               return (
-                <div key={friendName.id} className="friends-list-item">
+                <div key={friend.updated_at} className="friends-list-item">
                   <Link to={`/profile/${friendName.id}`}><img src={friendName.image_url}></img></Link>
                 </div>
               );

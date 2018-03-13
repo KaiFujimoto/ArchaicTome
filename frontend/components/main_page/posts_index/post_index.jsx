@@ -8,8 +8,13 @@ class PostIndex extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchPosts(this.props.match.params.id);
-    this.props.fetchAllUsers(this.props.match.params.id);
+    if (this.props.match.path === "/feed") {
+      this.props.fetchPosts(this.props.currentUser.id);
+      this.props.fetchAllUsers(this.props.currentUser.id);
+    } else {
+      this.props.fetchPosts(this.props.match.params.id);
+      this.props.fetchAllUsers(this.props.match.params.id);
+    }
     window.scrollTo(0, 0);
   }
 
@@ -20,13 +25,19 @@ class PostIndex extends React.Component {
   }
 
   render() {
+    let profileUser;
+    if (this.props.match.params.id === undefined) {
+      profileUser = this.props.currentUser;
+    } else {
+      profileUser = this.props.match.params.id;
+    }
     const posts = this.props.posts.map( post => {
       const author = this.props.users[post.author_id];
       const receiver = this.props.users[post.receiver_id];
       return (
         <PostIndexItem
           key={post.id}
-          profileUser={this.props.profileUser}
+          profileUser={profileUser}
           post={post}
           author={author}
           receiver={receiver}

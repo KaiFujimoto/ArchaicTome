@@ -6,6 +6,12 @@ import CommentsContainer from './comments/comments_container';
 import { Link } from 'react-router-dom';
 
 const PostIndexItem = (props) => {
+  if (props.author === undefined) {
+    return null;
+  }
+  if (props.receiver === undefined) {
+    return null;
+  }
   const authorFullName = props.author.first_name + ' ' + props.author.last_name;
   const receiverFullName = props.receiver.first_name + ' ' + props.receiver.last_name;
   const commentsArray = props.comments.map( comment => {

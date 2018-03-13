@@ -5,22 +5,23 @@ import { Link } from 'react-router-dom';
 class FriendsIndex extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      profileUser: this.props.currentUser
-    };
   }
 
   componentDidMount() {
-    this.props.fetchCurrentFriendships(this.state.profileUser.id);
+    this.props.fetchCurrentFriendships(this.props.match.params.id);
+    this.props.fetchAllUsers();
   }
 
   componentWillReceiveProps(newProps) {
-    if (this.props.profileUser.id != newProps.profileUser.id) {
-      this.props.fetchCurrentFriendships(newProps.profileUser.id);
+    if (this.props.match.params.id != newProps.match.params.id) {
+      this.props.fetchCurrentFriendships(this.props.match.params.id);
     }
   }
 
   render() {
+    if (Object.values(this.props.users).length < 2) {
+      return null;
+    }
     return (
       <div className="friend-list">
         { this.props.friends.length < 1 ? 'No friends yet' :
@@ -31,9 +32,15 @@ class FriendsIndex extends React.Component {
 
           <div className="friends-list">
             {this.props.friends.map(friend => {
+              let friendName;
+              if (friend.user_id === this.props.match.params.id) {
+                friendName = this.props.users[friend.friend_id];
+              } else {
+                friendName = this.props.users[friend.user_id];
+              }
               return (
-                <div key={friend.id} className="friends-list-item">
-                  <Link to={`/profile/${friend.id}`}><img src={friend.image_url}></img></Link>
+                <div key={friendName.id} className="friends-list-item">
+                  <Link to={`/profile/${friendName.id}`}><img src={friendName.image_url}></img></Link>
                 </div>
               );
             })}

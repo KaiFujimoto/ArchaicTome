@@ -42,7 +42,6 @@ export const receivePostErrors = (errors) => {
 };
 
 export const fetchPosts = (userId) => {
-   
   return dispatch => {
     return PostsApiUtil.fetchPosts(userId).then(payload => {
       dispatch(receiveAllPosts(payload));

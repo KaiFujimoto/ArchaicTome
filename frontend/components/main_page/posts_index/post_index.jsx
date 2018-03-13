@@ -12,6 +12,7 @@ class PostIndex extends React.Component {
 
   componentDidMount() {
     this.props.fetchPosts(this.state.profileUser.id);
+    window.scrollTo(0, 0);
   }
 
   componentWillReceiveProps(newProps) {
@@ -21,6 +22,7 @@ class PostIndex extends React.Component {
 
       this.setState({profileUser: user});
       this.props.fetchPosts(user.id);
+      window.scrollTo(0, 0);
     }
   }
 

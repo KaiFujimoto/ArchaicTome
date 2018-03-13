@@ -33,7 +33,7 @@ class FriendsIndex extends React.Component {
             {this.props.friends.map(friend => {
               return (
                 <div key={friend.id} className="friends-list-item">
-                  <img src={friend.image_url}></img>
+                  <Link to={`/profile/${friend.id}`}><img src={friend.image_url}></img></Link>
                 </div>
               );
             })}

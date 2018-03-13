@@ -2,6 +2,7 @@ import React from 'react';
 import NewCommentContainer from './new_comment_container';
 import CommentsDropdownMenuContainer from './comments_dropdown_container';
 import Modal from './edit_comments/edit_modal';
+import { Link } from 'react-router-dom';
 
 class Comments extends React.Component {
   constructor(props) {
@@ -31,10 +32,14 @@ class Comments extends React.Component {
               className='comment'>
               <Modal comment={comment}/>
               <div className='comment-profile-icon'>
-                <img src={this.props.users[comment.author.id].image_url}></img>
+                <Link to={`/profile/${comment.author.id}`}>
+                  <img src={this.props.users[comment.author.id].image_url}></img>
+                </Link>
               </div>
               <div className='inner-comment'>
-                <p style={{paddingLeft: 10}}>{comment.author.first_name + ' ' + comment.author.last_name}</p>
+                <Link to={`/profile/${comment.author.id}`}>
+                  <p style={{paddingLeft: 10}}>{comment.author.first_name + ' ' + comment.author.last_name}</p>
+                </Link>
                 <p style={{paddingLeft: 10}} className='inner-comment-name'>{comment.body}</p>
               </div>
               <div className='button-hover'>

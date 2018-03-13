@@ -3,6 +3,7 @@ import { timeUtil } from '../../../util/time_util';
 import PostDropdownMenuContainer from './post_dropdown_menu_container';
 import Modal from './edit_posts/modal';
 import CommentsContainer from './comments/comments_container';
+import { Link } from 'react-router-dom';
 
 const PostIndexItem = (props) => {
   const authorFullName = props.author.first_name + ' ' + props.author.last_name;
@@ -17,12 +18,15 @@ const PostIndexItem = (props) => {
       <ul className="user-related-things">
         <ul className="user-related-things-left">
           <ul>
-            <img src={props.author.image_url}></img>
+            <Link to={`/profile/${props.author.id}`}>
+              <img src={props.author.image_url}></img>
+            </Link>
           </ul>
           <ul className="user-name-timestamps">
             <li>
-              {authorFullName}
-              {receiverFullName === authorFullName ? '' : ' ▸ ' + receiverFullName}
+              <Link to={`/profile/${props.author.id}`}>{authorFullName}</Link>
+              {receiverFullName === authorFullName ? '' :
+                <Link to={`/profile/${props.receiver.id}`}>{' ▸ ' + receiverFullName}</Link>}
             </li>
             <span>{timeUtil(props.post.updated_at)}</span>
           </ul>

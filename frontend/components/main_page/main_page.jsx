@@ -14,20 +14,6 @@ import FeedIndex from './feed_index';
 const MainPage = () => {
   return (
     <div className="main-page">
-      <nav className="main-page-nav">
-        <h1>
-          <button>
-            <Link to='/feed'>a</Link>
-          </button>
-        </h1>
-        <ul>
-          Placeholder for Searchbar
-          🔍
-        </ul>
-        <ul>
-          <NavBarContainer />
-        </ul>
-      </nav>
       <ul className='main-page-body'>
         <ul className='main-page-left-menu'>
           Placeholder

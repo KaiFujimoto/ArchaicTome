@@ -39,20 +39,6 @@ export class UserProfileMain extends React.Component {
   render() {
     return (
       <div className="profile-page">
-        <nav className="profile-page-nav">
-          <h1>
-            <button>
-              <Link to='/feed'>a</Link>
-            </button>
-          </h1>
-          <ul>
-            Placeholder for Searchbar
-            🔍
-          </ul>
-          <ul>
-            <NavBarContainer />
-          </ul>
-        </nav>
         <div className='profile-page-body'>
           <div className='profile-page-top'>
             <div className='profile-photos'>

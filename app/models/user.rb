@@ -38,7 +38,7 @@ class User < ApplicationRecord
   def friends
     friends = []
     current_friends.each do |friend|
-      friends << (friend.receiver == self ? friend.requester : friend.receiver)
+      friends << (friend.receiver.id == self.id ? friend.requester.id : friend.receiver.id)
     end
     friends
   end

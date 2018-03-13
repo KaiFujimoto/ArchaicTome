@@ -1,6 +1,6 @@
 class Api::UsersController < ApplicationController
   def index
-    @user = User.find_possible_users(params[:query])
+    @user = User.all
   end
 
   def create

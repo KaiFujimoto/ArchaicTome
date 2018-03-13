@@ -22,18 +22,14 @@ export class UserProfileMain extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      user: this.props.currentUser
+      profileUser: this.props.currentUser
     };
-  }
-
-  componentDidMount() {
-    this.props.fetchUser(this.props.match.params.id);
   }
 
   componentWillReceiveProps(newProps, oldProps) {
     debugger
     if (this.props.match.params.id !== newProps.match.params.id) {
-      this.props.fetchUser(newProps.match.params.id).then((user) => this.setState({user: user}) );
+      this.props.fetchUser(newProps.match.params.id).then((user) => this.setState({profileUser: user}) );
     }
   }
   render() {
@@ -42,7 +38,7 @@ export class UserProfileMain extends React.Component {
         <div className='profile-page-body'>
           <div className='profile-page-top'>
             <div className='profile-photos'>
-                <CoverPhoto />
+                <CoverPhoto/>
                 <Modal />
                 <ProfilePhoto />
               <div className='profile-page-top-navbar'>
@@ -75,7 +71,6 @@ export class UserProfileMain extends React.Component {
 
 const mapStateToProps = state => {
   return ({
-    user: state.user,
     currentUser: state.session.currentUser
   });
 };

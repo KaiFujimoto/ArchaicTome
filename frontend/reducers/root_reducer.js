@@ -3,7 +3,6 @@ import sessionReducer from './session_reducer';
 import sessionErrorsReducer from './session_errors_reducer';
 import postReducer from './post_reducer';
 import usersReducer from './users_reducer';
-import user from './user';
 import uiReducer from './ui_reducer';
 import postErrorsReducer from './post_errors_reducer';
 import userErrorsReducer from './user_errors_reducer';
@@ -17,7 +16,6 @@ const RootReducer = combineReducers({
   posts: postReducer,
   users: usersReducer,
   userErrors: userErrorsReducer,
-  user: user,
   ui: uiReducer,
   postErrors: postErrorsReducer,
   comments: commentReducer,

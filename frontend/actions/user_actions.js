@@ -2,7 +2,7 @@ import * as UserApiUtil from '../util/user_util';
 
 export const RECEIVE_ALL_USERS = 'RECEIVE_ALL_USERS';
 export const RECEIVE_USER = 'RECEIVE_USER';
-export const RECEIVE_USER_ERRORS = 'RECEIVER_USER_ERRORS';
+export const RECEIVE_USER_ERRORS = 'RECEIVE_USER_ERRORS';
 export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
 export const CLEAR_ERRORS = 'CLEAR_ERRORS';
 

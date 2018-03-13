@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+// import Typed from 'typed.js';
 
 class LoginForm extends React.Component {
   constructor(props) {
@@ -18,6 +19,10 @@ class LoginForm extends React.Component {
   }
 
   demo(e) {
+  // var options = {
+  //   strings: ["<i>First</i> sentence.", "&amp; a second sentence."],
+  //   typeSpeed: 40,
+  // };
     this.setState({email: 'chopper@strawhats.com', password: 'starwars'});
   }
 

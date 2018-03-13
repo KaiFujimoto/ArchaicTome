@@ -7,6 +7,7 @@ import {
   Link,
   HashRouter
 } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 import NavBarContainer from './nav_bar_container';
 import FeedIndex from './feed_index';

@@ -8,11 +8,6 @@ json.posts do
 end
 
 json.users do
-  @post.map(&:author).each do |author|
-    json.set! author.id do
-      json.partial! '/api/users/user', user: author
-    end
-  end
 
   @post.map(&:receiver).each do |receiver|
     json.set! receiver.id do

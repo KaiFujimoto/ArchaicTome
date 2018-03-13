@@ -4,15 +4,16 @@ import React from 'react';
 export const ProfilePhoto = (props) => {
   return (
     <div className='profile-photo-image'>
-      <img src={props.currentUser.image_url}></img>
+      <img src={props.profileUser.image_url}></img>
     </div>
   );
 };
 
 
-const mapStateToProps = state => {
+const mapStateToProps = (state, ownProps) => {
   return ({
-    currentUser: state.session.currentUser
+    currentUser: state.session.currentUser,
+    profileUser: ownProps.profileUser
   });
 };
 

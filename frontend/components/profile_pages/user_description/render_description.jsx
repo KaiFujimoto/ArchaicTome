@@ -17,15 +17,15 @@ class UserDescription extends React.Component {
           </div>
           <div className='user-information-list'>
             <p>
-              ✉️ Email: {this.props.user.email}
+              ✉️ Email: {this.props.profileUser.email}
               <br />
-              🎂 Birthday: {this.props.user.birth_date}
-              <br />
-              <br />
-              About {this.props.user.first_name}:
+              🎂 Birthday: {this.props.profileUser.birth_date}
               <br />
               <br />
-              {this.props.user.description}
+              About {this.props.profileUser.first_name}:
+              <br />
+              <br />
+              {this.props.profileUser.description}
             </p>
           </div>
         </div>
@@ -35,9 +35,9 @@ class UserDescription extends React.Component {
 }
 
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
   return ({
-    user: state.session.currentUser
+    profileUser: ownProps.profileUser
   });
 };
 

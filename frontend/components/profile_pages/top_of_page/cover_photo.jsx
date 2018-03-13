@@ -16,7 +16,7 @@ export class CoverPhoto extends React.Component {
   render() {
     return (
       <div className='cover-photo-image'>
-        <img src={this.props.currentUser.cover_url}></img>
+        <img src={this.props.profileUser.cover_url}></img>
         <button onClick={this.handleEdit}>
           <img src={window.pencil2}></img>
           Edit Profile
@@ -27,9 +27,10 @@ export class CoverPhoto extends React.Component {
 }
 
 
-const mapStateToProps = state => {
+const mapStateToProps = (state, ownProps) => {
   return ({
-    currentUser: state.session.currentUser
+    currentUser: state.session.currentUser,
+    profileUser: ownProps.profileUser
   });
 };
 

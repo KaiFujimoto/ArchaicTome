@@ -5,7 +5,13 @@ import PostIndexItem from './post_index_item';
 class PostIndex extends React.Component {
 
   componentDidMount() {
-    this.props.fetchPosts();
+    if (this.props.profileUser != undefined && this.props.profileUser.id === this.props.currentUser.id) {
+      this.props.fetchPosts(this.props.currentUser.id);
+    } else if (this.props.profileUser != undefined) {
+      this.props.fetchPosts(this.props.profileUser.id);
+    } else {
+      this.props.fetchPosts(this.props.currentUser.id);
+    }
   }
 
   render() {

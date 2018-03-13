@@ -40,9 +40,9 @@ export const receivePostErrors = (errors) => {
   });
 };
 
-export const fetchPosts = () => {
+export const fetchPosts = (userId) => {
   return dispatch => {
-    return PostsApiUtil.fetchPosts().then(payload => {
+    return PostsApiUtil.fetchPosts(userId).then(payload => {
       dispatch(receiveAllPosts(payload));
     }, err => {
       return (

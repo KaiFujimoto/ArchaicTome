@@ -27,9 +27,12 @@ export class UserProfileMain extends React.Component {
   }
 
   componentWillReceiveProps(newProps, oldProps) {
-    debugger
+    let user;
     if (this.props.match.params.id !== newProps.match.params.id) {
-      this.props.fetchUser(newProps.match.params.id).then((user) => this.setState({profileUser: user}) );
+      user = this.props.users[newProps.match.params.id];
+      this.setState({profileUser: user});
+    } else {
+      this.setState({profileUser: this.props.currentUser});
     }
   }
   render() {
@@ -38,9 +41,9 @@ export class UserProfileMain extends React.Component {
         <div className='profile-page-body'>
           <div className='profile-page-top'>
             <div className='profile-photos'>
-                <CoverPhoto />
+                <CoverPhoto profileUser={this.state.profileUser}/>
                 <Modal />
-                <ProfilePhoto />
+                <ProfilePhoto profileUser={this.state.profileUser}/>
               <div className='profile-page-top-navbar'>
                 <li className='first-one'>Timeline</li>
                 <li>About</li>
@@ -54,14 +57,14 @@ export class UserProfileMain extends React.Component {
         </div>
         <div className='profile-page-main-body'>
           <div className='description-column'>
-            <UserDescription />
+            <UserDescription profileUser={this.state.profileUser}/>
             <div className='friend-icons'>
               <FriendsContainer />
             </div>
           </div>
           <div className='profile-page-postings'>
             <CreatePostFormContainer />
-            <PostIndexContainer />
+            <PostIndexContainer profileUser={this.state.profileUser}/>
           </div>
         </div>
       </div>
@@ -71,7 +74,8 @@ export class UserProfileMain extends React.Component {
 
 const mapStateToProps = state => {
   return ({
-    currentUser: state.session.currentUser
+    currentUser: state.session.currentUser,
+    users: state.users
   });
 };
 

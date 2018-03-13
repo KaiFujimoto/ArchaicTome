@@ -21,7 +21,7 @@ class Api::PostsController < ApplicationController
     # end
     #
     # @post
-    @post = Post.where(author_id: current_user.id) + Post.where(receiver_id: current_user.id)
+    @post = Post.where(author_id: params[:userId]) + Post.where(receiver_id: params[:userId])
     @comments = []
     Post.all.each do |post|
       @comments.concat(post.comments)

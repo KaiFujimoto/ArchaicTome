@@ -35,10 +35,18 @@ class User < ApplicationRecord
     self.sent_requests.where("status = 'APPROVED'") + self.received_requests.where("status = 'APPROVED'")
   end
 
+  def friend_ids
+    friend_ids = []
+    current_friends.each do |friend|
+      friend_ids << (friend.receiver.id == self.id ? friend.requester.id : friend.receiver.id)
+    end
+    friend_ids
+  end
+
   def friends
     friends = []
     current_friends.each do |friend|
-      friends << (friend.receiver.id == self.id ? friend.requester.id : friend.receiver.id)
+      friends << (friend.receiver == self ? friend.requester : friend.receiver)
     end
     friends
   end

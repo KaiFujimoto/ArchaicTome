@@ -9,12 +9,12 @@ export const CLEAR_ERRORS = 'CLEAR_ERRORS';
 export const receiveAllUsers = payload => {
   return ({
     type: RECEIVE_ALL_USERS,
-    users: payload.users,
-    friends: payload.friends
+    users: payload
   });
 };
 
 export const receiveUser = user => {
+   
   return ({
     type: RECEIVE_USER,
     user

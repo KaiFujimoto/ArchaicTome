@@ -12,10 +12,11 @@ const PostIndexItem = (props) => {
   if (props.receiver === undefined) {
     return null;
   }
+
   const authorFullName = props.author.first_name + ' ' + props.author.last_name;
   const receiverFullName = props.receiver.first_name + ' ' + props.receiver.last_name;
   const commentsArray = props.comments.map( comment => {
-    if (comment.post.id === props.post.id) return comment;
+    if (comment.post_id === props.post.id) return comment;
   });
   const comments = commentsArray.filter(el => el != undefined);
   return (

@@ -9,7 +9,6 @@ import postErrorsReducer from './post_errors_reducer';
 import userErrorsReducer from './user_errors_reducer';
 import commentReducer from './comments_reducer';
 import commentErrorsReducer from './comments_errors_reducer';
-import friendsReducer from './friends_reducer';
 
 const RootReducer = combineReducers({
   session: sessionReducer,
@@ -21,8 +20,7 @@ const RootReducer = combineReducers({
   ui: uiReducer,
   postErrors: postErrorsReducer,
   comments: commentReducer,
-  commentErrors: commentErrorsReducer,
-  friends: friendsReducer
+  commentErrors: commentErrorsReducer
 });
 
 export default RootReducer;

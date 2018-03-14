@@ -10,7 +10,6 @@ import FriendsIndex from './friends';
 const mapStateToProps = (state, ownProps) => {
   return ({
     currentUser: state.session.currentUser,
-    friends: Object.values(state.friends),
     profileUser: ownProps.profileUser,
     users: state.users
   });

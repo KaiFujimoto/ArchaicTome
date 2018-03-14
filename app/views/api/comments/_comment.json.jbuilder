@@ -1,1 +1,1 @@
-json.extract! comment, :id, :body, :author, :post, :created_at, :updated_at
+json.extract! comment, :id, :body, :author_id, :post_id, :created_at, :updated_at

@@ -63,9 +63,9 @@ export const fetchPost = (postId) => {
   };
 };
 
-export const createPost = (post) => {
+export const createPost = (data) => {
   return dispatch => {
-    return PostsApiUtil.createPost(post).then(post => {
+    return PostsApiUtil.createPost(data).then(post => {
       dispatch(receivePost(post));
     }, err => {
       return (

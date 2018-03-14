@@ -7,20 +7,8 @@ import { Link } from 'react-router-dom';
 class Comments extends React.Component {
   constructor(props) {
     super(props);
-    // this.state = {
-    //   hidden: 'hidden'
-    // };
-    // this.handleMouse = this.handleMouse.bind(this);
+
   }
-  //
-  // handleMouse(e) {
-  //   e.stopPropagation();
-  //   if (this.state.hidden === "hidden") {
-  //     return this.setState({hidden: "shown"});
-  //   } else {
-  //     return this.setState({hidden: "hidden"});
-  //   }
-  // }
 
   render() {
     return (
@@ -32,18 +20,18 @@ class Comments extends React.Component {
               className='comment'>
               <Modal comment={comment}/>
               <div className='comment-profile-icon'>
-                <Link to={`/profile/${comment.author.id}`}>
-                  <img src={this.props.users[comment.author.id].image_url}></img>
+                <Link to={`/profile/${comment.author_id}`}>
+                  <img src={this.props.users[comment.author_id].image_url}></img>
                 </Link>
               </div>
               <div className='inner-comment'>
-                <Link to={`/profile/${comment.author.id}`}>
-                  <p style={{paddingLeft: 10}}>{comment.author.first_name + ' ' + comment.author.last_name}</p>
+                <Link to={`/profile/${comment.author_id}`}>
+                  <p style={{paddingLeft: 10}}>{this.props.users[comment.author_id].first_name + ' ' + this.props.users[comment.author_id].last_name}</p>
                 </Link>
                 <p style={{paddingLeft: 10}} className='inner-comment-name'>{comment.body}</p>
               </div>
               <div className='button-hover'>
-                {comment.author.id === this.props.currentUser.id ?
+                {comment.author_id === this.props.currentUser.id ?
                 <CommentsDropdownMenuContainer comment={comment}/> : ''}
               </div>
             </div>

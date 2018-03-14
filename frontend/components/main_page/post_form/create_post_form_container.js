@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import React from 'react';
 import { createPost, clearErrors } from '../../../actions/post_actions';
+import { withRouter } from 'react-router-dom';
 
 import CreatePost from './create_post_form';
 
@@ -16,12 +17,12 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
 
   return ({
-    createPost: (post) => dispatch(createPost(post)),
+    createPost: (data) => dispatch(createPost(data)),
     clearErrors: () => dispatch(clearErrors())
   });
 };
 
-export default connect(
+export default withRouter(connect(
   mapStateToProps,
   mapDispatchToProps
-)(CreatePost);
+)(CreatePost));

@@ -10,11 +10,13 @@ class FriendsIndex extends React.Component {
   componentDidMount() {
     this.props.fetchCurrentFriendships(this.props.match.params.id);
     this.props.fetchAllUsers();
+    window.scrollTo(0, 0);
   }
 
   componentWillReceiveProps(newProps) {
     if (this.props.match.params.id != newProps.match.params.id) {
       this.props.fetchCurrentFriendships(this.props.match.params.id);
+      window.scrollTo(0, 0);
     }
   }
 
@@ -25,30 +27,29 @@ class FriendsIndex extends React.Component {
     if (this.props.match.params.id === undefined) {
       return null;
     }
-
-    let friendMap = this.props.friends.map(friend => {
+    let friendMap = this.props.profileUser.friend_ids.map(id => {
       let friendName;
-        if (friend.user_id === parseInt(this.props.match.params.id)) {
-          friendName = this.props.users[friend.friend_id];
+        if (id === parseInt(this.props.match.params.id)) {
+          friendName = this.props.users[this.props.profileUser.id];
         } else {
-          friendName = this.props.users[friend.user_id];
+          friendName = this.props.users[id];
         }
         return (
-          <div key={friend.updated_at} className="friends-list-item">
+          <div key={id} className="friends-list-item">
             <Link to={`/profile/${friendName.id}`}><img src={friendName.image_url}></img></Link>
           </div>
         );
       });
 
     let friends;
-    if (this.props.friends.length < 1) {
+    if (this.props.profileUser.friend_ids.length < 1) {
       friends = 'No friends yet';
     } else {
       friends = (
         <div>
           <p>
             <img src={window.friends}></img>
-            Friends · {this.props.friends.length}
+            Friends · {this.props.profileUser.friend_ids.length}
           </p>
 
           <div className="friends-list">

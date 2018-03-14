@@ -5,6 +5,7 @@ class CreatePost extends React.Component {
     super(props);
     this.state = {
       body: '',
+      receiver_id: this.props.currentUser.id,
       imageFile: null,
       imageUrl: null
     };
@@ -51,6 +52,11 @@ class CreatePost extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    if (this.props.match.params.id != this.props.currentUser.id) {
+      this.setState({receiver_id: this.props.match.params.id});
+    } else {
+      this.setState({receiver_id: this.props.currentUser.id});
+    }
     this.props.createPost(this.state).then(() => {
       this.setState({body: ""});
     });

@@ -6,21 +6,10 @@ class PostIndex extends React.Component {
   constructor(props) {
     super(props);
   }
-
-  componentDidMount() {
-    if (this.props.match.path === "/feed") {
-      this.props.fetchPosts(this.props.currentUser.id);
-      this.props.fetchAllUsers(this.props.currentUser.id);
-    } else {
-      this.props.fetchPosts(this.props.match.params.id);
-      this.props.fetchAllUsers(this.props.match.params.id);
-    }
-    window.scrollTo(0, 0);
-  }
-
+  
   componentWillReceiveProps(newProps) {
     if (this.props.match.params.id != newProps.match.params.id) {
-      this.props.fetchPosts(this.props.match.params.id);
+      this.props.fetchPosts(newProps.match.params.id);
     }
   }
 
@@ -54,4 +43,5 @@ class PostIndex extends React.Component {
   }
 }
 
+// {posts}
 export default PostIndex;

@@ -15,11 +15,17 @@ export const fetchPost = (postId) => {
   });
 };
 
-export const createPost = (post) => {
+export const createPost = (data) => {
   return $.ajax({
     url: `/api/posts`,
     method: 'POST',
-    data: { post }
+    data: {
+      post:
+      {
+        body: data.body,
+        receiver_id: data.receiver_id
+      }
+   }
   });
 };
 

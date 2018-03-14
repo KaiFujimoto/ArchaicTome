@@ -1,6 +1,6 @@
 @user.each do |user|
   json.set! user.id do
     json.partial! "api/users/user", user: user
-    json.friends user.friends
+    json.friend_ids user.friend_ids
   end
 end

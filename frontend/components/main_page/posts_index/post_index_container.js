@@ -7,6 +7,7 @@ import { fetchAllUsers } from '../../../actions/user_actions';
 import PostIndex from './post_index';
 
 const mapStateToProps = (state, ownProps) => {
+  debugger
   return ({
     posts: Object.values(state.posts).reverse(),
     users: state.users,

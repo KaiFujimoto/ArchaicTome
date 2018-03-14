@@ -18,18 +18,21 @@ import CreatePostFormContainer from '../main_page/post_form/create_post_form_con
 import Modal from './top_of_page/profilemodal';
 import FriendsContainer from './friends/friends_container';
 
-export class UserProfileMain extends React.Component {
+export default class UserProfileMain extends React.Component {
   constructor(props) {
     super(props);
   }
 
   componentDidMount() {
+    this.props.fetchAllUsers();
+    this.props.fetchPosts(this.props.match.params.id);
     this.props.fetchUser(this.props.match.params.id);
   }
 
   componentWillReceiveProps(newProps) {
     if (this.props.match.params.id !== newProps.match.params.id) {
       this.props.fetchUser(this.props.match.params.id);
+      this.props.fetchPosts(this.props.match.params.id);
     }
   }
   render() {
@@ -71,18 +74,4 @@ export class UserProfileMain extends React.Component {
     );
   }
 }
-
-const mapStateToProps = (state, ownProps) => {
-  return ({
-    currentUser: state.session.currentUser,
-    user: state.users[ownProps.match.params.id]
-  });
-};
-
-const mapDispatchToProps = dispatch => {
-  return ({
-    fetchUser: (userId) => dispatch(fetchUser(userId))
-  });
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(UserProfileMain);
+//

@@ -11,8 +11,8 @@ import {
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 import SignIn from './session_form/sign_in';
-import MainPage from './main_page/main_page';
-import UserProfileMain from './profile_pages/user_profile_main';
+import MainPageContainer from './main_page/main_page_container';
+import UserProfileMainContainer from './profile_pages/user_profile_main_container';
 import NavBarContainer from './main_page/nav_bar_container';
 
 const App = () => {
@@ -20,8 +20,8 @@ const App = () => {
     <div>
       <AuthRoute path="/" exact component={SignIn} />
       <ProtectedRoute path="/" component={NavBarContainer}/>
-      <ProtectedRoute path="/feed" component={MainPage} />
-      <ProtectedRoute path="/profile/:id" component={UserProfileMain} />
+      <ProtectedRoute path="/feed" component={MainPageContainer} />
+      <ProtectedRoute path="/profile/:id" component={UserProfileMainContainer} />
     </div>
   );
 };

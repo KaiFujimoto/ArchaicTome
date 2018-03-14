@@ -66,7 +66,7 @@ class CreatePost extends React.Component {
   }
 
   render() {
-    debugger
+     
     return (
       <div className="create-post-form">
         <h4>

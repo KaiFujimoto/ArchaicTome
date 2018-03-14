@@ -21,12 +21,12 @@ export default class CoverPhoto extends React.Component {
 
   handleEdit(e) {
     e.stopPropagation();
-    this.props.openProModal();
+    this.props.openProModal('edit');
   }
 
   render() {
 
-     
+
 
     return (
       <div className='cover-photo-image'>

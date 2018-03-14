@@ -38,6 +38,7 @@ export default class UserProfileMain extends React.Component {
     if (this.props.user === undefined) {
       return null;
     }
+
     return (
       <div className="profile-page">
         <div className='profile-page-body'>
@@ -74,3 +75,8 @@ export default class UserProfileMain extends React.Component {
   }
 }
 //
+
+
+    // if ((!this.props.user.friend_ids.includes(this.props.currentUser.id)) && (this.props.user.id != currentUser.id)) {
+    //   return "You can't see thing person's newsfeed yet! You must friend them first!";
+    // }

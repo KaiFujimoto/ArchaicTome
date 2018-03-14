@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import { sendFriendRequest, deleteFriendRequest } from '../../../actions/friend_actions';
+import { openProModal } from '../../../actions/modal_actions';
 
 import CoverPhoto from './cover_photo';
 

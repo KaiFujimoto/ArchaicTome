@@ -3,6 +3,7 @@ import { Provider } from 'react-redux';
 
 import NavBarContainer from './nav_bar_container';
 import FeedIndex from './feed_index';
+import MainPageLeftSidebar from './main_page_left_sidebar';
 
 export default class MainPage extends React.Component {
     constructor(props) {
@@ -25,9 +26,7 @@ export default class MainPage extends React.Component {
       return (
         <div className="main-page">
           <ul className='main-page-body'>
-            <ul className='main-page-left-menu'>
-              Placeholder
-            </ul>
+            <MainPageLeftSidebar />
             <ul>
               <FeedIndex posts={this.props.posts} users={this.props.users}/>
             </ul>

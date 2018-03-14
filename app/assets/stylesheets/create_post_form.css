@@ -7,10 +7,24 @@
   margin: auto;
 }
 
-.main-page-left-menu {
-  padding: 10px;
-
+.main-page-sidebar-left-side {
+  padding-top: 15px;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  padding-right: 10px;
 }
+
+.main-page-sidebar-left-side > div {
+  padding-top: 10px;
+  border: 1px solid grey;
+}
+
+.main-page-sidebar-left-side a {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 5px 5px 5px 5px;
+}
+
 
 .main-page-news-feed {
   padding: 10px;

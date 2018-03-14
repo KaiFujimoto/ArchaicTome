@@ -2,7 +2,7 @@ class Api::FriendshipsController < ApplicationController
 
   before_action :require_login
 
-  def send_req #new
+  def send_req #create
     @friendship = Friendship.new()
     @friendship.user_id = current_user.id
     @friendship.friend_id = params[:user_id]
@@ -13,7 +13,7 @@ class Api::FriendshipsController < ApplicationController
     end
   end
 
-  def approve_req #create
+  def approve_req #update
     @friendship = current_user.pending_requests.find_by(friend_id: params[:id])
     @friendship.status = 'APPROVED'
     @friendship.save!

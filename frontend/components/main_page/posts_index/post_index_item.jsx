@@ -39,7 +39,7 @@ const PostIndexItem = (props) => {
           </ul>
         </ul>
         <ul className="user-related-things-right">
-          { props.post.author_id === props.profileUser.id ?
+          { props.post.author_id === props.currentUser.id ?
           <PostDropdownMenuContainer post={props.post}/> : '' }
         </ul>
       </ul>

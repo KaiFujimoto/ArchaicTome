@@ -32,7 +32,6 @@ export default class UserProfileMain extends React.Component {
   componentWillReceiveProps(newProps) {
     if (this.props.match.params.id !== newProps.match.params.id) {
       this.props.fetchUser(this.props.match.params.id);
-      this.props.fetchPosts(this.props.match.params.id);
     }
   }
   render() {

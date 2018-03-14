@@ -7,11 +7,11 @@ import { fetchAllUsers } from '../../../actions/user_actions';
 import PostIndex from './post_index';
 
 const mapStateToProps = (state, ownProps) => {
-   
   return ({
     posts: Object.values(state.posts).reverse(),
     users: state.users,
-    comments: Object.values(state.comments)
+    comments: Object.values(state.comments),
+    currentUser: state.session.currentUser
   });
 };
 

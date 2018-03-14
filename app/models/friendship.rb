@@ -1,5 +1,5 @@
 class Friendship < ApplicationRecord
-  STATUS_STATES = %w(APPROVED DENIED PENDING).freeze
+  STATUS_STATES = %w(APPROVED PENDING).freeze
   after_initialize :assign_pending_status
 
   validates :status, inclusion: STATUS_STATES
@@ -17,15 +17,6 @@ class Friendship < ApplicationRecord
 
   def approved?
     self.status == 'APPROVED'
-  end
-
-  def denied?
-    self.status == 'DENIED'
-  end
-
-  def deny!
-    self.status = 'DENIED'
-    self.save!
   end
 
   def pending?

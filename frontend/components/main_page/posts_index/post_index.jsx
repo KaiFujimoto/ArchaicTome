@@ -6,7 +6,7 @@ class PostIndex extends React.Component {
   constructor(props) {
     super(props);
   }
-  
+
   componentWillReceiveProps(newProps) {
     if (this.props.match.params.id != newProps.match.params.id) {
       this.props.fetchPosts(newProps.match.params.id);
@@ -15,10 +15,10 @@ class PostIndex extends React.Component {
 
   render() {
     let profileUser;
-    if (this.props.match.params.id === undefined) {
-      profileUser = this.props.currentUser;
-    } else {
+    if (this.props.match.params.id) {
       profileUser = this.props.match.params.id;
+    } else {
+      profileUser = this.props.currentUser.id;
     }
     const posts = this.props.posts.map( post => {
       const author = this.props.users[post.author_id];
@@ -28,6 +28,7 @@ class PostIndex extends React.Component {
           key={post.id}
           profileUser={profileUser}
           post={post}
+          currentUser={this.props.currentUser}
           author={author}
           receiver={receiver}
           comments={this.props.comments}

@@ -1,5 +1,5 @@
 import React from 'react';
-import Textarea from 'react-expanding-textarea'
+import Textarea from 'react-expanding-textarea';
 
 class CommentForm extends React.Component {
   constructor(props) {

@@ -1,15 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
+import NavBarDropdownMenuContainer from './nav_bar_dropdown_menu_container';
 
 class NavBar extends React.Component {
   constructor(props) {
     super(props);
     this.state = this.props.currentUser;
-  }
-
-  handleClick() {
-
   }
 
   render () {
@@ -41,9 +38,7 @@ class NavBar extends React.Component {
             </ul>
           </ul>
           <ul className="nav-bar-pics">
-            <li className="nav-bar-people">
-              <img src={window.people}></img>
-            </li>
+            <NavBarDropdownMenuContainer users={this.props.users}/>
             <li className="nav-bar-people">
               <img src={window.message}></img>
             </li>

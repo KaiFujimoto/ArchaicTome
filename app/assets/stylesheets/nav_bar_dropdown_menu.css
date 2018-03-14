@@ -1,0 +1,141 @@
+.open-nav {
+  background-color: #fff;
+  min-width: 430px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  font-family: SF Optimized, system-ui, -apple-system, BlinkMacSystemFont, '.SFNSText-Regular', sans-serif;
+  z-index: 100;
+  letter-spacing: -0.01em;
+  font-size: 12px;
+  border: 1px solid rgba(0, 0, 0, .15);
+  border-radius: 3px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, .3);
+  color: black;
+}
+
+.friend-request-header {
+  width: 430px;
+  height: 15px;
+  border-bottom: 1px solid rgba(0, 0, 0, .15);
+}
+
+.friend-request-header p {
+  font-weight: bold;
+}
+
+.closed-nav {
+  display: none !important;
+}
+
+.dropdown-content-nav {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  text-align: left;
+  right: 8px;
+}
+
+.dropdown-content-nav div {
+    color: black;
+    padding: 5px 10px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.dropdown-button-nav {
+    color: grey;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown-button-nav img {
+  height: 30px;
+  width: 30px;
+}
+
+.dropdown-nav {
+  position: relative;
+}
+
+.dropdown-screen-nav {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: transparent;
+}
+
+.friend-dropdown-menu {
+  border-bottom: 1px solid rgba(0, 0, 0, .15);
+}
+
+.friend-dropdown-menu div {
+  display: flex;
+}
+
+.link-to-profile-dropdown a {
+  display: flex;
+  align-items: center;
+}
+
+.friend-dropdown-menu div img {
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(0, 0, 0, .1);
+  border-radius: 50%;
+}
+
+.friend-dropdown-menu p {
+  padding-left: 10px;
+  font-weight: bold;
+  color: #4267b2;
+}
+
+.friend-dropdown-menu p:hover {
+  text-decoration: underline;
+}
+
+.div-for-accept-button {
+  padding-left: 5px;
+}
+
+.accept-friend-button {
+  background-color: #4267b2;
+  border-color: #4267b2;
+  font-size: 12px;
+  color: white;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, '.SFNSText-Regular', sans-serif;
+  line-height: 22px;
+  margin: auto;
+  max-width: 70px;
+  padding: 0px 10px 0px 10px;
+  border-radius: 2px;
+  font-weight: bold;
+  height: 25px;
+}
+
+.accept-friend-button:hover {
+  background-color: #365899;
+  border-color: #365899;
+}
+
+.reject-friend-button {
+  border-color: #ced0d4;
+  background-color: #f6f7f9;
+  border-color: darkgrey;
+  color: #4b4f56;
+  padding: 0px 10px 0px 10px;
+  line-height: 22px;
+  border-radius: 2px;
+  font-weight: bold;
+  height: 25px;
+}
+
+.reject-friend-button:hover {
+  background-color: #e9ebee;
+  border-color: #ced0d4;
+  color: #4b4f56;
+}

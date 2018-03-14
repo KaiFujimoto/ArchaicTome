@@ -32,6 +32,8 @@ class CreatePost extends React.Component {
   handleKeypress(e){
     if (e.charCode == 13) {
       this.handleSubmit(e);
+    } else {
+      this.props.clearErrors();
     }
   }
 
@@ -66,7 +68,7 @@ class CreatePost extends React.Component {
   }
 
   render() {
-     
+
     return (
       <div className="create-post-form">
         <h4>

@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import React from 'react';
-import { fetchCurrentFriendships } from '../../../actions/friend_actions';
+// import { fetchCurrentFriendships } from '../../../actions/friend_actions';
 import { fetchAllUsers } from '../../../actions/user_actions';
 import { closeProModal } from '../../../actions/modal_actions';
 import { withRouter } from 'react-router-dom';
@@ -17,7 +17,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = dispatch => {
   return ({
-    fetchCurrentFriendships: (userId) => dispatch(fetchCurrentFriendships(userId)),
+    // fetchCurrentFriendships: (userId) => dispatch(fetchCurrentFriendships(userId)),
     fetchAllUsers: () => dispatch(fetchAllUsers())
   });
 };

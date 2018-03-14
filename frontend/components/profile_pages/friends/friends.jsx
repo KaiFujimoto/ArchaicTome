@@ -8,14 +8,12 @@ class FriendsIndex extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchCurrentFriendships(this.props.match.params.id);
     this.props.fetchAllUsers();
     window.scrollTo(0, 0);
   }
 
   componentWillReceiveProps(newProps) {
     if (this.props.match.params.id != newProps.match.params.id) {
-      this.props.fetchCurrentFriendships(this.props.match.params.id);
       window.scrollTo(0, 0);
     }
   }

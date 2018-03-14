@@ -10,7 +10,7 @@ export class CoverPhoto extends React.Component {
 
   handleEdit(e) {
     e.stopPropagation();
-    this.props.openProModal('edit');
+    this.props.openProModal();
   }
 
   render() {

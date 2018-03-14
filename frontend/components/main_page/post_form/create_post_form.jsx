@@ -5,15 +5,14 @@ class CreatePost extends React.Component {
     super(props);
     this.state = {
       body: '',
-      receiver_id: this.props.currentUser.id,
-      imageFile: null,
-      imageUrl: null
+      receiver_id: null
     };
 
     this.updateBody = this.updateBody.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleKeypress = this.handleKeypress.bind(this);
   }
+
 
   updateBody(e) {
     this.setState({body: e.target.value});
@@ -29,6 +28,7 @@ class CreatePost extends React.Component {
   //     fileReader.readAsDataURL(file);
   //   }
   // }
+
   handleKeypress(e){
     if (e.charCode == 13) {
       this.handleSubmit(e);
@@ -52,10 +52,11 @@ class CreatePost extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    if (this.props.match.params.id != this.props.currentUser.id) {
+     
+    if (this.props.match.params.id) {
       this.setState({receiver_id: this.props.match.params.id});
     } else {
-      this.setState({receiver_id: this.props.currentUser.id});
+      this.setState({receiver_id: this.props.currentUser});
     }
     this.props.createPost(this.state).then(() => {
       this.setState({body: ""});

@@ -1,23 +1,16 @@
 import * as FriendApiUtil from '../util/friends_api_util';
 
-export const RECEIVE_ALL_CURRENT_FRIENDS = 'RECEIVE_ALL_CURRENT_FRIENDS';
-// export const RECEIVE_ALL_PENDING_FRIENDS = 'RECEIVE_ALL_PENDING_FRIENDS';
+export const RECEIVE_ALL_PENDING_FRIENDS = 'RECEIVE_ALL_PENDING_FRIENDS';
 export const RECEIVE_FRIEND_REQUEST = 'RECEIVE_FRIEND_REQUEST';
 export const REMOVE_FRIEND_REQUEST = 'DELETE_FRIEND_REQUEST';
 
-export const receiveAllCurrentFriends = (friends) => {
+//
+export const receiveAllPendingFriends = (friends) => {
   return ({
-    type: RECEIVE_ALL_CURRENT_FRIENDS,
+    type: RECEIVE_ALL_PENDING_FRIENDS,
     friends
   });
 };
-//
-// export const receiveAllPendingFriends = (friends) => {
-//   return ({
-//     type: RECEIVE_ALL_PENDING_FRIENDS,
-//     friends
-//   });
-// };
 
 export const receiveFriendRequest = (friend) => {
   return ({
@@ -33,21 +26,13 @@ export const removeFriendRequest = (friend) => {
   });
 };
 
-export const fetchCurrentFriendships = (userId) => {
+export const fetchPendingFriendships = (userId) => {
   return dispatch => {
-    return FriendApiUtil.fetchCurrentFriendships(userId).then( friends => {
-      dispatch(receiveAllCurrentFriends(friends));
+    return FriendApiUtil.fetchPendingFriendships(userId).then( friendIds => {
+      dispatch(receiveAllPendingFriends(friendIds));
     });
   };
 };
-//
-// export const fetchPendingFriendships = (userId) => {
-//   return dispatch => {
-//     return FriendApiUtil.fetchPendingFriendships(userId).then( friends => {
-//       dispatch(receiveAllPendingFriends(friends));
-//     });
-//   };
-// };
 
 export const sendFriendRequest = (userId) => {
   return dispatch => {

@@ -1,10 +1,3 @@
-export const fetchCurrentFriendships = (userId) => {
-  return $.ajax({
-    method: 'GET',
-    url: `/api/users/${userId}/friends`
-  });
-};
-
 export const fetchPendingFriendships = (userId) => {
   return $.ajax({
     method: 'GET',

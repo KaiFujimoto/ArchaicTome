@@ -10,7 +10,8 @@ const mapStateToProps = state => {
     post: {body: ''},
     receiver: state.session.currentUser,
     errors: state.postErrors,
-    currentUser: state.session.currentUser
+    currentUser: state.session.currentUser,
+    users: state.users
   });
 };
 

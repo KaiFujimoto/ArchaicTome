@@ -66,12 +66,17 @@ class CreatePost extends React.Component {
   }
 
   render() {
+    debugger
     return (
       <div className="create-post-form">
         <h4>
           <span>
             <img src={window.pencil}></img>
-            <p>Make Post</p>
+            { parseInt(this.props.match.params.id) === this.props.currentUser.id ?
+              <p>Make Post</p>
+                :
+              <p>Post on {this.props.users[this.props.match.params.id].first_name + "'" + 's'} Wall</p>
+            }
           </span>
         </h4>
         <ul className="create-post-insides">
@@ -80,7 +85,11 @@ class CreatePost extends React.Component {
           </p>
           <form onSubmit={this.handleSubmit}>
             <textarea
-              placeholder="What's On Your Mind?"
+              placeholder=  { parseInt(this.props.match.params.id) === this.props.currentUser.id ?
+                  "What's on your mind?"
+                    :
+                  `Post on ${this.props.users[this.props.match.params.id].first_name + "'" + 's'} Wall`
+                }
               onChange={this.updateBody}
               onKeyPress={this.handleKeypress}
               value={this.state.body}

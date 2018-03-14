@@ -59,6 +59,14 @@ class User < ApplicationRecord
     self.received_requests.where("status = 'PENDING'")
   end
 
+  def pending_friend_ids
+    pending_friends = []
+    self.received_requests.where("status = 'PENDING'").each do |friendship|
+      pending_friends << (friendship.receiver.id == self.id ? friendship.requester.id : friendship.receiver.id)
+    end
+    pending_friends
+  end
+
   def pending_requests
      self.sent_requests.where("status='PENDING'")
   end

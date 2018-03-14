@@ -14,19 +14,20 @@ class Api::FriendshipsController < ApplicationController
   end
 
   def approve_req #update
-    @friendship = current_user.pending_requests.find_by(friend_id: params[:id])
+    @friendship = current_user.pending_friendships.find_by(user_id: params[:user_id])
+
     @friendship.status = 'APPROVED'
     @friendship.save!
     render :show
   end
 
   def pending #index 2
-    @friendship = current_user.all_pending_requests
+    @friendship = current_user.pending_friend_ids
     render :index
   end
 
   def reject_req #destroy
-    @friendship = current_user.pending_friendships.find_by(user_id: params[:id])
+    @friendship = current_user.pending_friendships.find_by(user_id: params[:user_id])
     @friendship.destroy!
     render :show
   end

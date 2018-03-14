@@ -12,9 +12,7 @@ export default class CoverPhoto extends React.Component {
   }
 
   addFriend(e) {
-    this.props.sendFriendRequest(this.props.profileUser.id).then(() => {
-      this.setState({request: 'Pending'});
-    });
+    this.props.sendFriendRequest(this.props.profileUser.id);
   }
 
   removeFriend(e) {
@@ -28,10 +26,7 @@ export default class CoverPhoto extends React.Component {
 
   render() {
 
-    if ((this.props.currentUser.id != this.props.profileUser.id) &&
-      (this.props.profileUser.friend_ids.includes(this.props.currentUser.id))) {
-      <button> ✔ Friends</button>;
-    }
+     
 
     return (
       <div className='cover-photo-image'>

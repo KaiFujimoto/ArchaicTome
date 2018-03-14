@@ -12,10 +12,10 @@ export const REMOVE_FRIEND_REQUEST = 'DELETE_FRIEND_REQUEST';
 //   });
 // };
 
-export const receiveFriendRequest = (friend) => {
+export const receiveFriendRequest = (payload) => {
   return ({
     type: RECEIVE_FRIEND_REQUEST,
-    friend
+    payload
   });
 };
 
@@ -36,8 +36,8 @@ export const removeFriendRequest = (friend) => {
 
 export const sendFriendRequest = (userId) => {
   return dispatch => {
-    return FriendApiUtil.sendFriendRequest(userId).then( friend => {
-      dispatch(receiveFriendRequest(friend));
+    return FriendApiUtil.sendFriendRequest(userId).then( payload => {
+      dispatch(receiveFriendRequest(payload));
     });
   };
 };

@@ -5,7 +5,7 @@ class CreatePost extends React.Component {
     super(props);
     this.state = {
       body: '',
-      receiver_id: null
+      receiver_id: this.props.currentUser.id
     };
 
     this.updateBody = this.updateBody.bind(this);
@@ -52,15 +52,17 @@ class CreatePost extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-     
     if (this.props.match.params.id) {
-      this.setState({receiver_id: this.props.match.params.id});
+      const newState = Object.assign({}, this.state, {receiver_id: this.props.match.params.id});
+      this.props.createPost(newState).then(() => {
+        this.setState({body: ""});
+      });
     } else {
-      this.setState({receiver_id: this.props.currentUser});
+      const newState = Object.assign({}, this.state, {receiver_id: this.props.currentUser.id});
+      this.props.createPost(newState).then(() => {
+        this.setState({body: ""});
+      });
     }
-    this.props.createPost(this.state).then(() => {
-      this.setState({body: ""});
-    });
   }
 
   render() {

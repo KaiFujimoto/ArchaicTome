@@ -5,12 +5,12 @@ export const RECEIVE_FRIEND_REQUEST = 'RECEIVE_FRIEND_REQUEST';
 export const REMOVE_FRIEND_REQUEST = 'DELETE_FRIEND_REQUEST';
 
 //
-export const receiveAllPendingFriends = (friends) => {
-  return ({
-    type: RECEIVE_ALL_PENDING_FRIENDS,
-    friends
-  });
-};
+// export const receiveAllPendingFriends = (friends) => {
+//   return ({
+//     type: RECEIVE_ALL_PENDING_FRIENDS,
+//     friends
+//   });
+// };
 
 export const receiveFriendRequest = (friend) => {
   return ({
@@ -25,14 +25,14 @@ export const removeFriendRequest = (friend) => {
     friend
   });
 };
-
-export const fetchPendingFriendships = (userId) => {
-  return dispatch => {
-    return FriendApiUtil.fetchPendingFriendships(userId).then( friendIds => {
-      dispatch(receiveAllPendingFriends(friendIds));
-    });
-  };
-};
+//
+// export const fetchPendingFriendships = (userId) => {
+//   return dispatch => {
+//     return FriendApiUtil.fetchPendingFriendships(userId).then( friendIds => {
+//       dispatch(receiveAllPendingFriends(friendIds));
+//     });
+//   };
+// };
 
 export const sendFriendRequest = (userId) => {
   return dispatch => {

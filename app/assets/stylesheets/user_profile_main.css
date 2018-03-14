@@ -11,3 +11,42 @@
 .profile-page-body {
   padding-top: 25px;
 }
+
+.add-friend {
+  font-size: 14px;
+  height: 30px;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.add-friend p:first-child {
+  padding-left: 10px;
+}
+
+.add-friend:hover {
+  background-color: grey;
+  color: white;
+}
+
+/* .hover-to-unfriend {
+  position: absolute;
+  opacity: 0;
+  z-index: 0;
+}
+
+.hover-to-unfriend:hover {
+  opacity: 1;
+  z-index: 1;
+} */
+
+.add-friend-pending {
+  font-size: 14px;
+  height: 30px;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  background-color: darkgrey;
+  user-select: none
+}

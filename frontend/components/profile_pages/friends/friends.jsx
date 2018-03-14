@@ -8,7 +8,6 @@ class FriendsIndex extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchAllUsers();
     window.scrollTo(0, 0);
   }
 

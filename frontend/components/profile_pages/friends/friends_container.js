@@ -11,7 +11,8 @@ const mapStateToProps = (state, ownProps) => {
   return ({
     currentUser: state.session.currentUser,
     profileUser: ownProps.profileUser,
-    users: state.users
+    users: state.users,
+    pendingFriends: state.friendRequests
   });
 };
 

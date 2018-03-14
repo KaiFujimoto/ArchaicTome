@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { sendFriendRequest } from '../../../actions/friend_actions';
+import { sendFriendRequest, deleteFriendRequest } from '../../../actions/friend_actions';
 
 import CoverPhoto from './cover_photo';
 
@@ -14,7 +14,9 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = dispatch => {
   return ({
     openProModal: modal => dispatch(openProModal(modal)),
-
+    sendFriendRequest: (userId) => dispatch(sendFriendRequest(userId)),
+    deleteFriendRequest: (userId) => dispatch(deleteFriendRequest(userId))
+    // fetchPendingFriendships: (userId) => dispatch(fetchPendingFriendships(userId))
   });
 };
 

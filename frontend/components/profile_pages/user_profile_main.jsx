@@ -10,7 +10,7 @@ import {
 import { connect } from 'react-redux';
 import { fetchUser } from '../../actions/user_actions';
 import NavBarContainer from '../main_page/nav_bar_container';
-import CoverPhoto from './top_of_page/cover_photo';
+import CoverPhotoContainer from './top_of_page/cover_photo_container';
 import ProfilePhoto from './top_of_page/profile_photo';
 import UserDescription from './user_description/render_description';
 import PostIndexContainer from '../main_page/posts_index/post_index_container';
@@ -43,7 +43,7 @@ export default class UserProfileMain extends React.Component {
         <div className='profile-page-body'>
           <div className='profile-page-top'>
             <div className='profile-photos'>
-                <CoverPhoto profileUser={this.props.user}/>
+                <CoverPhotoContainer profileUser={this.props.user}/>
                   {this.props.user.id === this.props.currentUser.id ? <Modal /> : '' }
                 <ProfilePhoto profileUser={this.props.user}/>
               <div className='profile-page-top-navbar'>

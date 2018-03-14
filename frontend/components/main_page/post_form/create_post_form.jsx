@@ -72,7 +72,7 @@ class CreatePost extends React.Component {
         <h4>
           <span>
             <img src={window.pencil}></img>
-            { parseInt(this.props.match.params.id) === this.props.currentUser.id ?
+            { (this.props.match.params.id === undefined) || (parseInt(this.props.match.params.id) === this.props.currentUser.id) ?
               <p>Make Post</p>
                 :
               <p>Post on {this.props.users[this.props.match.params.id].first_name + "'" + 's'} Wall</p>
@@ -85,7 +85,7 @@ class CreatePost extends React.Component {
           </p>
           <form onSubmit={this.handleSubmit}>
             <textarea
-              placeholder=  { parseInt(this.props.match.params.id) === this.props.currentUser.id ?
+              placeholder=  { (this.props.match.params.id === undefined) || (parseInt(this.props.match.params.id) === this.props.currentUser.id) ?
                   "What's on your mind?"
                     :
                   `Post on ${this.props.users[this.props.match.params.id].first_name + "'" + 's'} Wall`

@@ -6,6 +6,7 @@ class Friendship < ApplicationRecord
   validates :user_id, :friend_id, :status, presence: true
   validates :user_id, uniqueness: { scope: :friend_id }
   validate :cannot_friend_yourself, on: :create
+  validate :check_friendship_exists, on: :create
 
   belongs_to :requester,
     foreign_key: :user_id,
@@ -32,6 +33,12 @@ class Friendship < ApplicationRecord
   def cannot_friend_yourself
     if self.user_id == self.friend_id
       errors[:user_id] << 'you cannot friend yourself lonely human'
+    end
+  end
+
+  def check_friendship_exists
+    if !(Friendship.all.where("friend_id = '#{self.user_id}'").empty?)
+      errors[:user_id] << 'this person already friended you! check your notifications!'
     end
   end
 

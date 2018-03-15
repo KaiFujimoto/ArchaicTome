@@ -1,7 +1,8 @@
 .logo-and-search-bar {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  justify-content: flex-start;
+  margin-right: 150px;
 }
 
 .search-bar {

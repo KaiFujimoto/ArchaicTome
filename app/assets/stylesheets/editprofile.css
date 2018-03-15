@@ -188,3 +188,16 @@
   margin: 4px;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, '.SFNSText-Regular', sans-serif;
 }
+
+.button-to-edit-cover-photo {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  height: 25px;
+  width: 20px;
+  opacity: .3;
+}
+
+.button-to-edit-cover-photo:hover {
+  opacity: .8;
+}

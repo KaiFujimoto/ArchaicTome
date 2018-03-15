@@ -7,6 +7,7 @@ export default class CoverPhoto extends React.Component {
     super(props);
 
     this.handleEdit = this.handleEdit.bind(this);
+    this.handleCover = this.handleCover.bind(this);
     this.addFriend = this.addFriend.bind(this);
     this.removeFriend = this.removeFriend.bind(this);
   }
@@ -24,6 +25,11 @@ export default class CoverPhoto extends React.Component {
     this.props.openProModal('edit');
   }
 
+  handleCover(e) {
+    e.stopPropagation();
+    this.props.openProModal('cover');
+  }
+
   render() {
     return (
       <div className='cover-photo-image'>
@@ -32,6 +38,13 @@ export default class CoverPhoto extends React.Component {
           <button onClick={this.handleEdit}>
             <img src={window.pencil2}></img>
             Edit Profile
+          </button> : '' }
+
+        {this.props.currentUser.id === this.props.profileUser.id ?
+          <button
+            className="button-to-edit-cover-photo"
+            onClick={this.handleCover}>
+            <img src={window.camera}></img>
           </button> : '' }
 
           { ((this.props.currentUser.id != this.props.profileUser.id) &&
@@ -76,9 +89,3 @@ export default class CoverPhoto extends React.Component {
     );
   }
 }
-
-// {this.props.currentUser.id === this.props.profileUser.id ?
-//   <button onClick={this.handleEdit}>
-//     <img src={window.pencil2}></img>
-//     Edit Profile
-//   </button> : '' }

@@ -2,6 +2,7 @@ import React from 'react';
 import { closeProModal } from '../../../actions/modal_actions';
 import { connect } from 'react-redux';
 import EditProfileContainer from './edit_profile_container';
+import EditCoverPhotoContainer from './edit_cover_photo_container';
 
 function Modal({modal, closeProModal}) {
   if (!modal) {
@@ -11,6 +12,9 @@ function Modal({modal, closeProModal}) {
   switch (modal) {
     case 'edit':
       component = <EditProfileContainer />;
+      break;
+    case 'cover':
+      component = <EditCoverPhotoContainer />;
       break;
     default:
       return null;

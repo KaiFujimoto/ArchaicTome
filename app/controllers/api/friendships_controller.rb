@@ -15,7 +15,6 @@ class Api::FriendshipsController < ApplicationController
 
   def approve_req #update
     @friendship = current_user.pending_friendships.find_by(user_id: params[:user_id])
-
     @friendship.status = 'APPROVED'
     @friendship.save!
     render :show

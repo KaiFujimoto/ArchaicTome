@@ -9,15 +9,10 @@ export default class CoverPhoto extends React.Component {
     this.handleEdit = this.handleEdit.bind(this);
     this.addFriend = this.addFriend.bind(this);
     this.removeFriend = this.removeFriend.bind(this);
-    this.acceptFriend = this.acceptFriend.bind(this);
   }
 
   addFriend(e) {
     this.props.sendFriendRequest(this.props.profileUser.id);
-  }
-
-  acceptFriend(e) {
-    this.props.acceptFriendRequest(this.props.profileUser.id);
   }
 
   removeFriend(e) {
@@ -61,7 +56,7 @@ export default class CoverPhoto extends React.Component {
 
           { ((this.props.currentUser.id != this.props.profileUser.id) && !(this.props.profileUser.friend_ids.includes(this.props.currentUser.id)) &&
             (this.props.users[this.props.currentUser.id].pending_friends.includes(this.props.profileUser.id))) ?
-           <button className='add-friend' onClick={this.acceptFriend}>
+           <button className='add-friend-pending'>
              <p>Pending Friend</p>
            </button>
            :

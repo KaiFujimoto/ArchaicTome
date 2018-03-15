@@ -5,9 +5,9 @@ class EditCoverPhoto extends React.Component {
     super(props);
 
     this.state = {
-      user: this.props.currentUser,
       imageFile: null,
-      imageUrl: null
+      imageUrl: null,
+      clickable: 'not'
     };
     this.updateFile = this.updateFile.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -15,7 +15,7 @@ class EditCoverPhoto extends React.Component {
 
   handleSubmit(e) {
     const formData = new FormData();
-    formData.append('user[cover_photo]', this.state.imageFile);
+    formData.append(`user[${this.props.type}]`, this.state.imageFile);
     // let cover = formData.get('user[cover_photo]');
     // formData.append(`user`, this.props.currentUser);
     // const newUser = Object.assign({}, this.state.user, { cover_photo: cover });
@@ -36,7 +36,7 @@ class EditCoverPhoto extends React.Component {
     let fileReader = new FileReader();
 
     fileReader.onloadend = () => {
-      this.setState({ imageFile: file, imageUrl: fileReader.result });
+      this.setState({ imageFile: file, imageUrl: fileReader.result, clickable: 'yes' });
     };
     if (file) {
       fileReader.readAsDataURL(file);
@@ -46,15 +46,23 @@ class EditCoverPhoto extends React.Component {
   render() {
     return (
       <div className="upload-cover-photo">
-        <h2>Upload Cover Photo</h2>
+        <h2>Upload Your Photo</h2>
         <img src={this.state.imageUrl}></img>
-        <input
-          type='file'
-          onChange={this.updateFile}
-          ></input>
-        <button onClick={this.handleSubmit}>
-          Update Cover Photo
-        </button>
+        <div className="upload-button-and-input">
+          <input
+            type='file'
+            onChange={this.updateFile}
+            ></input>
+          { this.state.clickable === 'not' ?
+            <button>
+              Select A File First
+            </button>
+            :
+            <button onClick={this.handleSubmit}>
+              Update Your Photo
+            </button>
+          }
+        </div>
       </div>
     );
   }

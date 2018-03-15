@@ -198,6 +198,45 @@
   opacity: .3;
 }
 
+.button-to-edit-profile-photo {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  height: 40px;
+  width: 168px;
+  opacity: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 12px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, '.SFNSText-Regular', sans-serif;
+  transition: opacity .13s ease-out;
+  -moz-transition: opacity .13s ease-out;
+  -webkit-transition: opacity .13s ease-out;
+  -o-transition: opacity .13s ease-out;
+}
+
+.button-to-edit-profile-photo img {
+  height: 25px;
+  width: 20px;
+  background-color: white;
+  margin-left: 7px;
+  border-radius: 50%;
+}
+
+.button-to-edit-profile-photo p {
+  padding-right: 5px;
+  padding-left: 10px;
+  margin-left: 4px;
+}
+
+.button-to-edit-profile-photo:hover {
+  opacity: .9;
+  background-color: black;
+  color: white;
+}
+
 .button-to-edit-cover-photo:hover {
   opacity: .8;
+
 }

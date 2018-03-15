@@ -8,7 +8,7 @@ import EditCoverPhoto from './edit_cover_photo';
 const mapStateToProps = (state) => {
   return ({
     currentUser: state.session.currentUser,
-    type: 'cover_photo'
+    type: 'avatar'
   });
 };
 

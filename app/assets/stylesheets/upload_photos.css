@@ -3,24 +3,40 @@
   flex-direction: column;
   align-items: center;
   margin-top: 15px;
-  height: 265px;
-  width: 900px;
+  width: 500px;
   background-color: white;
   border-radius: 3px;
   border: 1px solid #dddfe2;
   box-shadow: 1px 1px 1px black;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, '.SFNSText-Regular', sans-serif;
 }
 
 .upload-cover-photo img {
-  width: 850px;
-  height: 400px;
+  max-width: 700px;
+  max-height: 400px;
 }
 
-.upload-cover-photo button {
+.upload-button-and-input button {
   height: 30px;
   width: 150px;
-  background-color: grey;
-  border: 1px solid #dddfe2;
+  background-color: #4267b2;
+  border-bottom: 1px solid #29487d;
   color: white;
   text-align: center;
+  border-radius: 5px;
+  padding: 2px 2px 2px 2px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+.upload-button-and-input {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.upload-button-and-input input {
+  margin-top: 5px;
+  margin-bottom: 5px;
 }

@@ -11,6 +11,11 @@
   font-family: system-ui, -apple-system, BlinkMacSystemFont, '.SFNSText-Regular', sans-serif;
 }
 
+.upload-cover-photo h2 {
+  font-size: 30px;
+  padding: 5px 5px 5px 5px;
+}
+
 .upload-cover-photo img {
   max-width: 700px;
   max-height: 400px;

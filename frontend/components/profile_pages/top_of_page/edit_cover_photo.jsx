@@ -46,7 +46,7 @@ class EditCoverPhoto extends React.Component {
   render() {
     return (
       <div className="upload-cover-photo">
-        <h2>Upload Your Photo</h2>
+        <h2>Upload Your Awesome Photo</h2>
         <img src={this.state.imageUrl}></img>
         <div className="upload-button-and-input">
           <input

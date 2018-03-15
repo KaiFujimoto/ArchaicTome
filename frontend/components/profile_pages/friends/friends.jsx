@@ -50,7 +50,7 @@ class FriendsIndex extends React.Component {
           </p>
 
           <div className="friends-list">
-            {friendMap}
+            {friendMap.length > 9 ? friendMap.slice(0,9) : friendMap}
           </div>
         </div>
       );

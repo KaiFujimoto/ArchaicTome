@@ -37,7 +37,8 @@ class Friendship < ApplicationRecord
   end
 
   # def check_friendship_exists
-  #   if !((Friendship.all.where("friend_id = '#{self.user_id}'") + Friendship.all.where("user_id = '#{self.friend_id}'")).empty?)
+  #   if !((Friendship.all.
+  #     where("friend_id = '#{self.user_id}' AND user_id = '#{self.friend_id}'")).empty?)
   #     errors[:user_id] << 'this person already friended you! check your notifications!'
   #   end
   # end

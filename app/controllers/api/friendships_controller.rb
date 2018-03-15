@@ -27,6 +27,7 @@ class Api::FriendshipsController < ApplicationController
 
   def reject_req #destroy
     @friendship = current_user.pending_friendships.find_by(user_id: params[:user_id])
+    debugger
     @friendship.destroy!
     render :show
   end

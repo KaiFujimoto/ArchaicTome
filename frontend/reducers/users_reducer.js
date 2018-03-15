@@ -24,7 +24,7 @@ export default function(oldState = _defaultState, action) {
       return merge({}, oldState, action.users);
 
     case REMOVE_FRIEND_REQUEST:
-      const array = oldState[action.payload.friend_id].friend_ids;
+      const array = oldState[action.payload.friend_id].pending_friends;
       const user3 = oldState[action.payload.friend_id];
       user3.pending_friends = array.filter( el => el != action.payload.user_id);
       return merge({}, oldState, {[user3.id]: user3});

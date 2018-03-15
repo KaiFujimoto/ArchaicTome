@@ -71,12 +71,19 @@ class NavbarDropDownMenu extends React.Component {
       return null;
     }
 
+    let people;
+    if (this.props.users[this.props.currentUser.id].pending_friends.length > 0) {
+        people = <img src={window.peoplenote}></img>;
+    } else {
+        people = <img src={window.people}></img>;
+    }
+
     return (
       <div>
         <div className="dropdown-nav">
           <button onClick={this.toggleDropClass} className='dropdown-button-nav'>
             { this.state.drop === 'closed-nav' ?
-              <img src={window.people}></img>
+              people
               :
               <img src={window.whitepeople}></img>
             }
@@ -90,7 +97,7 @@ class NavbarDropDownMenu extends React.Component {
               this.props.users[this.props.currentUser.id].pending_friends.length > 0 ?
               this.friendRequests()
               :
-              'none'
+              <p className="no-friend-requests-yet">No Requests</p>
             }
           </div>
         </div>

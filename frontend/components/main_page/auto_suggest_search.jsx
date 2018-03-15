@@ -8,7 +8,7 @@ class AutoSuggestSearch extends React.Component {
     this.state = {
         searchText: '',
         searchResults: [],
-        dropdown: 'closed'
+        dropdown: 'closed-search'
     };
     this.handleChange = this.handleChange.bind(this);
     this.openDropClass = this.openDropClass.bind(this);
@@ -21,11 +21,11 @@ class AutoSuggestSearch extends React.Component {
   }
 
   openDropClass() {
-    this.setState({dropdown: 'open'});
+    this.setState({dropdown: 'open-search'});
   }
 
   closeDropClass() {
-    this.setState({dropdown: 'closed'});
+    this.setState({dropdown: 'closed-search'});
   }
 
   handleChoice(e) {
@@ -69,8 +69,7 @@ class AutoSuggestSearch extends React.Component {
               to={`/profile/${user.id}`}>
               <button className="nav-search-user-info">
                 <img
-                  src={user.image_url}
-                  alt="user profile thumbnail"/>
+                  src={user.image_url}/>
                 <span>
                   {user.first_name + ' ' + user.last_name}
                 </span>
@@ -91,6 +90,11 @@ class AutoSuggestSearch extends React.Component {
                 placeholder="Search"
                 ref={el => this.inputSearch = el}
              />
+           { this.state.dropdown === 'open-search' ?
+             <img src={window.blueSearch}/>
+             :
+             <img src={window.whiteSearch}/>
+           }
           </div>
           <div className='search-bar-dropdown'>
             <div className={`search-bar-list ${this.state.dropdown}`}>

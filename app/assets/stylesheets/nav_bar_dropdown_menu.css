@@ -139,3 +139,10 @@
   border-color: #ced0d4;
   color: #4b4f56;
 }
+
+.no-friend-requests-yet {
+  padding-left: 10px;
+  font-size: 14px;
+  padding-bottom: 5px;
+  padding-top: 5px;
+}

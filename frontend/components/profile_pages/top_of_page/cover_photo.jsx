@@ -33,6 +33,7 @@ export default class CoverPhoto extends React.Component {
             <img src={window.pencil2}></img>
             Edit Profile
           </button> : '' }
+
           { ((this.props.currentUser.id != this.props.profileUser.id) &&
             (this.props.profileUser.friend_ids.includes(this.props.currentUser.id))) ?
             <button
@@ -75,3 +76,9 @@ export default class CoverPhoto extends React.Component {
     );
   }
 }
+
+// {this.props.currentUser.id === this.props.profileUser.id ?
+//   <button onClick={this.handleEdit}>
+//     <img src={window.pencil2}></img>
+//     Edit Profile
+//   </button> : '' }

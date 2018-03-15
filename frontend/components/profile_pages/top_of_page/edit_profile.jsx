@@ -18,11 +18,20 @@ class EditProfile extends React.Component {
   }
 
   handleSubmit(e) {
-    e.preventDefault();
-    this.props.updateUser(this.state).then(() => {
+    const formData = new FormData();
+    formData.append('user[first_name]', this.state.first_name);
+    formData.append('user[last_name]', this.state.last_name);
+    formData.append('user[email]', this.state.email);
+    formData.append('user[gender]', this.state.gender);
+
+    this.props.updateUser(formData).then(() => {
       this.props.closeProModal();
-      this.props.clearErrors();
     });
+    // e.preventDefault();
+    // this.props.updateUser(this.state).then(() => {
+    //   this.props.closeProModal();
+    //   this.props.clearErrors();
+    // });
   }
 
   renderErrors() {

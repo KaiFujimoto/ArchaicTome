@@ -10,6 +10,7 @@ import postErrorsReducer from './post_errors_reducer';
 import userErrorsReducer from './user_errors_reducer';
 import commentReducer from './comments_reducer';
 import commentErrorsReducer from './comments_errors_reducer';
+import searchReducer from './search_reducer';
 
 const RootReducer = combineReducers({
   session: sessionReducer,
@@ -22,7 +23,8 @@ const RootReducer = combineReducers({
   ui: uiReducer,
   postErrors: postErrorsReducer,
   comments: commentReducer,
-  commentErrors: commentErrorsReducer
+  commentErrors: commentErrorsReducer,
+  searchResults: searchReducer
 });
 
 export default RootReducer;

@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 import NavBarDropdownMenuContainer from './nav_bar_dropdown_menu_container';
+import AutoSuggestSearchContainer from './auto_suggest_search_container';
 
 class NavBar extends React.Component {
   constructor(props) {
@@ -12,15 +13,12 @@ class NavBar extends React.Component {
   render () {
     return (
       <nav className="main-page-nav">
-          <h1>
+          <h1 className='logo-and-search-bar'>
             <button>
               <Link to='/feed'>a</Link>
             </button>
+            <AutoSuggestSearchContainer />
           </h1>
-          <ul>
-            Placeholder for Searchbar
-            🔍
-          </ul>
         <div className="main-page-nav-right-side">
           <ul className="main-page-nav-ul">
             <Link to={`/profile/${this.props.currentUser.id}`}>

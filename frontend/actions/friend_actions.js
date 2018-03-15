@@ -53,10 +53,10 @@ export const sendFriendRequest = (userId) => {
 export const acceptFriendRequest = (userId) => {
   return dispatch => {
     return FriendApiUtil.acceptFriendRequest(userId).then( payload => {
-      debugger
+      
       return dispatch(removeFriendRequest(payload));
     }).then((payload) => {
-      debugger
+      
       return dispatch(receiveNewFriend(payload));
     });
   };

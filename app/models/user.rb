@@ -35,6 +35,13 @@ class User < ApplicationRecord
     self.sent_requests.where("status = 'APPROVED'") + self.received_requests.where("status = 'APPROVED'")
   end
 
+  def self.search(query)
+    sql = "%" + query.downcase + "%"
+    User
+      .where('lower(first_name) LIKE ? OR lower(last_name) LIKE ?', sql, sql)
+      .limit(8)
+  end
+
   def friend_ids
     friend_ids = []
     current_friends.each do |friend|

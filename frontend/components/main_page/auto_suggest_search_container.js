@@ -1,18 +1,18 @@
 import { connect } from 'react-redux';
 import React from 'react';
-import { fetchAllUsers } from '../../actions/user_actions';
+import { userSearch } from '../../actions/search_actions';
 
 import AutoSuggestSearch from './auto_suggest_search';
 
 const mapStateToProps = (state) => {
   return ({
-    users: state.users
+    searchResults: state.searchResults
   });
 };
 
 const mapDispatchToProps = dispatch => {
   return ({
-    fetchAllUsers: () => dispatch(fetchAllUsers())
+    userSearch: (query) => dispatch(userSearch(query))
   });
 };
 

@@ -19,3 +19,11 @@ export const updateUser = (user) => {
     data: { user }
   });
 };
+
+export const searchUsers = query => {
+    return $.ajax({
+      url: '/api/users/',
+      method: 'GET',
+      data: { query }
+    });
+};

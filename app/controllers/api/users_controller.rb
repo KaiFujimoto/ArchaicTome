@@ -1,6 +1,12 @@
 class Api::UsersController < ApplicationController
   def index
-    @user = User.all
+    if params[:query].present?
+      @users = User.search(params[:query])
+      render :search
+    else
+      @user = User.all
+      render :index
+    end
   end
 
   def create
@@ -26,6 +32,11 @@ class Api::UsersController < ApplicationController
       render json: {errors: @user.errors.full_messages}, status: 422
     end
   end
+  #
+  # def search
+  #   
+  #
+  # end
 
   private
 

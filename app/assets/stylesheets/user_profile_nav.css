@@ -9,7 +9,7 @@
   align-items: center;
   height: 42px;
   width: 100%;
-  min-width: 1000px;
+  min-width: 900px;
   background-color: #4267b2;
   color: white;
   font-family: Helvetica, Arial, sans-serif;
@@ -38,7 +38,7 @@
   padding: 5px;
 }
 
-.nav-bar-pics {
+/* .nav-bar-pics {
   display: flex;
   padding: 10px;
   align-items: center;
@@ -60,7 +60,7 @@
   border: 1px solid #29487d;
   font-family: Arial;
   font-weight: bold;
-}
+} */
 
 .profile-page-nav-ul {
   display: flex;

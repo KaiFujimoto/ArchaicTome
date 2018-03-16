@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  liker_id: 1
+  liked_id: 1
+  liked_type: MyString
+  created_at: 2018-03-15 19:40:10
+  updated_at: 2018-03-15 19:40:10
+
+two:
+  liker_id: 1
+  liked_id: 1
+  liked_type: MyString
+  created_at: 2018-03-15 19:40:10
+  updated_at: 2018-03-15 19:40:10

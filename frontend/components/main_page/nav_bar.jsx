@@ -13,6 +13,7 @@ class NavBar extends React.Component {
   render () {
     return (
         <nav className="main-page-nav">
+          <div className="main-page-nav-inside">
             <h1 className='logo-and-search-bar'>
               <button>
                 <Link to='/feed'>a</Link>
@@ -29,6 +30,7 @@ class NavBar extends React.Component {
                     {this.props.currentUser.first_name}
                   </button>
                 </Link>
+                <div className='random-break-div'></div>
                 <ul className="main-page-nav-ul-home">
                   <button className="main-page-nav-ul-button-home">
                     <Link to='/feed'>Home</Link>
@@ -50,6 +52,7 @@ class NavBar extends React.Component {
                 </li>
               </ul>
             </div>
+          </div>
         </nav>
     );
   }

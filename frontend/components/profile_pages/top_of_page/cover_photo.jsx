@@ -17,7 +17,7 @@ export default class CoverPhoto extends React.Component {
   }
 
   removeFriend(e) {
-    this.props.deleteFriendRequest(this.props.profileUser.id);
+    this.props.deleteFriend(this.props.profileUser.id);
   }
 
   handleEdit(e) {

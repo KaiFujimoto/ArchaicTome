@@ -70,10 +70,18 @@ export const acceptFriendRequest = (userId) => {
   };
 };
 
-export const deleteFriendRequest = (userId) => {
+export const deleteFriend = (userId) => {
   return dispatch => {
     return FriendApiUtil.deleteFriendRequest(userId).then( payload => {
       dispatch(removeFriend(payload));
+    });
+  };
+};
+
+export const deleteFriendRequest = (userId) => {
+  return dispatch => {
+    return FriendApiUtil.deleteFriendRequest(userId).then( payload => {
+      dispatch(removeFriendRequest(payload));
     });
   };
 };

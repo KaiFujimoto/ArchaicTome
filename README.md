@@ -1,4 +1,4 @@
-![alt text](https://raw.githubusercontent.com/KaiFujimoto/ArchaicTome/master/PrepWork/_depreciated/Example1.png)
+![alt text](https://raw.githubusercontent.com/KaiFujimoto/ArchaicTome/master/PrepWork/_depreciated/Example.png)
 --------------
 # Archaic Tome
 

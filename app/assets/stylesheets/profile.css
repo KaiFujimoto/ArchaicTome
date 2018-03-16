@@ -122,12 +122,12 @@
   font-family: SF Optimized, system-ui, -apple-system, BlinkMacSystemFont, '.SFNSText-Regular', sans-serif;
   padding-top: 15px;
   min-width: 500px;
-  max-width: 600px;
+  max-width: 900px;
 }
 
 .private-profile-div p:first-child {
   background-color: white;
-  width: 370px;
+  width: 480px;
   height: 30px;
   text-align: center;
   font-size: 24px;

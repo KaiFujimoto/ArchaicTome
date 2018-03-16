@@ -19,7 +19,6 @@ const mapDispatchToProps = dispatch => {
     sendFriendRequest: (userId) => dispatch(sendFriendRequest(userId)),
     deleteFriend: (userId) => dispatch(deleteFriend(userId)),
     acceptFriendRequest: (userId) => dispatch(acceptFriendRequest(userId))
-    // fetchPendingFriendships: (userId) => dispatch(fetchPendingFriendships(userId))
   });
 };
 

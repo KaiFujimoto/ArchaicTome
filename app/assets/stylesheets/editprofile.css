@@ -3,7 +3,7 @@
   flex-direction: column;
   align-items: center;
   margin-top: 15px;
-  height: 265px;
+  max-height: 555px;
   width: 500px;
   background-color: white;
   border-radius: 3px;
@@ -127,14 +127,6 @@
   font-size: 14px;
 }
 
-.buttons-ul {
-  display: flex;
-  align-self: flex-end;
-  justify-content: center;
-  padding-right: 20px;
-  padding-top: 15px;
-}
-
 .button-to-save-edit {
   padding: 2px 5px 5px 2px;
   background-color: #4267b2;
@@ -187,6 +179,19 @@
   padding: 8px 10px 8px 10px;
   margin: 4px;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, '.SFNSText-Regular', sans-serif;
+}
+
+.edit-profile-form-emails textarea {
+  width: 354px;
+  height:21px;
+  border: 1px solid #bdc7d8;
+  text-align: left;
+  border-radius: 5px;
+  background-color: white;
+  padding: 8px 10px 8px 10px;
+  margin: 4px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, '.SFNSText-Regular', sans-serif;
+  resize: none;
 }
 
 .button-to-edit-cover-photo {

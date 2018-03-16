@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Modal from 'react-modal';
 import { days, months, years } from '../../../util/date_util';
+import Textarea from 'react-expanding-textarea';
 
 class EditProfile extends React.Component {
   constructor(props) {
@@ -32,6 +33,7 @@ class EditProfile extends React.Component {
     formData.append('user[last_name]', this.state.last_name);
     formData.append('user[email]', this.state.email);
     formData.append('user[gender]', this.state.gender);
+    formData.append('user[description]', this.state.description);
 
     this.props.updateUser(formData).then(() => {
       this.props.closeProModal();
@@ -90,6 +92,15 @@ class EditProfile extends React.Component {
                 type="text"
                 defaultValue={this.state.email}
                 ></input>
+              <Textarea
+                onKeyPress={this.handleKeypress}
+                onChange={this.updateBody('description')}
+                placeholder="Update Description"
+                type='text'
+                defaultValue={this.state.description}
+                maxLength="500"
+                >
+              </Textarea>
             </ul>
             <ul className="other-half-of-form-profile">
               <li>

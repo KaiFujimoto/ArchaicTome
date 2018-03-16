@@ -15,11 +15,12 @@
 
 .sign-in-page-body {
   display: flex;
+  margin-top: 20px;
 }
 
 .sign-in-page-body > img {
   overflow: hidden;
-  width: 620px;
+  width: 680px;
   height: 450px;
   border-radius: 10px;
 }
@@ -30,7 +31,9 @@
   justify-content: space-around;
   margin-bottom: 25px;
   height: 85px;
+  min-width: 1200px;
   width: 100%;
+  margin: auto;
   align-items: center;
 }
 

@@ -2,7 +2,8 @@ import { RECEIVE_CURRENT_USER } from '../actions/session_actions';
 import {
   RECEIVE_FRIEND_REQUEST,
   RECEIVE_NEW_FRIEND,
-  REMOVE_FRIEND_REQUEST
+  REMOVE_FRIEND_REQUEST,
+  REMOVE_FRIEND
 } from '../actions/friend_actions';
 import { merge } from 'lodash';
 import {
@@ -41,6 +42,16 @@ export default function(oldState = _defaultState, action) {
       const user = merge({}, oldState[action.payload.friend_id]);
       user.pending_friends.push(action.payload.user_id);
       return merge({}, oldState, {[user.id]: user});
+
+    case REMOVE_FRIEND:
+      const array2 = oldState[action.payload.user_id].friend_ids;
+      const user4 = oldState[action.payload.user_id];
+      user4.friend_ids = array2.filter( el => el != action.payload.friend_id);
+      const newStuff = merge({}, oldState, {[user4.id]: user4});
+      const array3 = newStuff[action.payload.friend_id].friend_ids;
+      const user5 = newStuff[action.payload.friend_id];
+      user5.friend_ids = array3.filter( el => el != action.payload.user_id);
+      return merge({}, newStuff, {[user5.id]: user5});
     default:
       return oldState;
   }

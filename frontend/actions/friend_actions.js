@@ -4,6 +4,7 @@ export const RECEIVE_ALL_PENDING_FRIENDS = 'RECEIVE_ALL_PENDING_FRIENDS';
 export const RECEIVE_FRIEND_REQUEST = 'RECEIVE_FRIEND_REQUEST';
 export const REMOVE_FRIEND_REQUEST = 'DELETE_FRIEND_REQUEST';
 export const RECEIVE_NEW_FRIEND = 'RECEIVE_NEW_FRIEND';
+export const REMOVE_FRIEND = 'REMOVE_FRIEND';
 
 //
 // export const receiveAllPendingFriends = (friends) => {
@@ -33,6 +34,13 @@ export const removeFriendRequest = (payload) => {
     payload
   });
 };
+
+export const removeFriend = (payload) => {
+  return ({
+    type: REMOVE_FRIEND,
+    payload
+  });
+};
 //
 // export const fetchPendingFriendships = (userId) => {
 //   return dispatch => {
@@ -53,10 +61,10 @@ export const sendFriendRequest = (userId) => {
 export const acceptFriendRequest = (userId) => {
   return dispatch => {
     return FriendApiUtil.acceptFriendRequest(userId).then( payload => {
-      
+
       return dispatch(removeFriendRequest(payload));
     }).then((payload) => {
-      
+
       return dispatch(receiveNewFriend(payload));
     });
   };
@@ -64,8 +72,8 @@ export const acceptFriendRequest = (userId) => {
 
 export const deleteFriendRequest = (userId) => {
   return dispatch => {
-    return FriendApiUtil.deleteFriendRequest(userId).then( friend => {
-      dispatch(removeFriendRequest(friend));
+    return FriendApiUtil.deleteFriendRequest(userId).then( payload => {
+      dispatch(removeFriend(payload));
     });
   };
 };

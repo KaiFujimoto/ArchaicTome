@@ -32,7 +32,7 @@ class FriendsIndex extends React.Component {
           friendName = this.props.users[id];
         }
         return (
-          <div key={id} className="friends-list-item">
+          <div key={Math.floor(Math.random() * 10000)} className="friends-list-item">
             <Link to={`/profile/${friendName.id}`}><img src={friendName.image_url}></img></Link>
           </div>
         );

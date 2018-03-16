@@ -74,7 +74,7 @@ export default class UserProfileMain extends React.Component {
             :
             <div className='private-profile-div'>
               <p>You can't view this user's posts yet.</p>
-              <p>Do you know {this.props.user.first_name}? Add him as a friend!</p>
+              <p>Do you know {this.props.user.first_name}? Press the Add Friend button!</p>
             </div>
           }
         </div>

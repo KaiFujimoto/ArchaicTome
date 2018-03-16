@@ -20,6 +20,8 @@
 
 .friend-request-header p {
   font-weight: bold;
+  font-size: 14px;
+  margin: 3px 3px 3px 3px;
 }
 
 .closed-nav {
@@ -36,7 +38,7 @@
 
 .dropdown-content-nav div {
     color: black;
-    padding: 5px 10px;
+    padding: 5px 5px;
     text-decoration: none;
     display: flex;
     align-items: center;
@@ -132,6 +134,7 @@
   border-radius: 2px;
   font-weight: bold;
   height: 25px;
+  width: 110px;
 }
 
 .reject-friend-button:hover {

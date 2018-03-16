@@ -22,7 +22,7 @@ export const PersonalInfo = (props) => {
               className="footer-logo"
               src="http://www.free-icons-download.net/images/linkedin-logo-icon-786.png"
               alt="Visit My LinkedIn" />
-            <p> Visit Kai's LinkedIn! </p>
+            <p> Visit My LinkedIn! </p>
           </div>
         </a>
           <a href="https://github.com/KaiFujimoto">
@@ -31,7 +31,7 @@ export const PersonalInfo = (props) => {
                 className="footer-logo"
                 src="https://image.flaticon.com/icons/svg/25/25231.svg"
                 alt="Visit My Github" />
-              <p> Link to Kai's Github! </p>
+              <p> Link to My Github! </p>
             </div>
           </a>
       </div>

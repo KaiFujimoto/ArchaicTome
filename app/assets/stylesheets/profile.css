@@ -125,7 +125,7 @@
   max-width: 600px;
 }
 
-.private-profile-div p {
+.private-profile-div p:first-child {
   background-color: white;
   width: 370px;
   height: 30px;

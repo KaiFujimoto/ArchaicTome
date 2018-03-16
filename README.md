@@ -87,6 +87,7 @@ Posting (adding timestamps)
 ![alt text](https://raw.githubusercontent.com/KaiFujimoto/ArchaicTome/master/PrepWork/_depreciated/posting.gif)
 
 and they update if you update!
+
 ![alt text](https://raw.githubusercontent.com/KaiFujimoto/ArchaicTome/master/PrepWork/_depreciated/editposttime.gif)
 
 ------------------------------------------------------------

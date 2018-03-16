@@ -26,6 +26,7 @@ class EditProfile extends React.Component {
 
     this.props.updateUser(formData).then(() => {
       this.props.closeProModal();
+      this.props.clearErrors();
     });
     // e.preventDefault();
     // this.props.updateUser(this.state).then(() => {

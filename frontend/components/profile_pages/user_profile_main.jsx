@@ -65,10 +65,17 @@ export default class UserProfileMain extends React.Component {
               <FriendsContainer profileUser={this.props.user}/>
             </div>
           </div>
-          <div className='profile-page-postings'>
-            <CreatePostFormContainer />
-            <PostIndexContainer profileUser={this.props.user}/>
-          </div>
+
+          { (this.props.user.id === this.props.currentUser.id) || (this.props.users[this.props.currentUser.id].friend_ids.includes(this.props.user.id)) ?
+            <div className='profile-page-postings'>
+              <CreatePostFormContainer />
+              <PostIndexContainer profileUser={this.props.user}/>
+            </div>
+            :
+            <div className='private-profile-div'>
+              <p>You can't view this user's posts yet.</p>
+            </div>
+          }
         </div>
       </div>
     );

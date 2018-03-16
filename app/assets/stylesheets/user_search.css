@@ -52,7 +52,8 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  /* width: 300px; */
+  width: 100%;
+  min-width: 300px;
 }
 
 .open-search {
@@ -94,3 +95,7 @@
   padding-bottom: 5px;
   font-size: 14px;
 }
+
+/* .nav-search-results {
+  max-width: 300px;
+} */

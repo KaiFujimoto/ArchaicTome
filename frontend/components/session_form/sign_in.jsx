@@ -28,7 +28,7 @@ const SignIn = () => {
         </ul>
       </div>
       <footer className="footer">
-        <a href="https://www.linkedin.com/in/1ironsochen/">
+        <a href="https://www.linkedin.com/in/1ironsochen/" target="_blank">
           <img
             className="footer-logo"
             src="http://www.free-icons-download.net/images/linkedin-logo-icon-786.png"

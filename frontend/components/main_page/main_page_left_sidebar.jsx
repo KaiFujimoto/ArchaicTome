@@ -16,7 +16,7 @@ export const PersonalInfo = (props) => {
             <p className="this-specific-news-feed-p">News Feed</p>
           </div>
         </Link>
-        <a href="https://www.linkedin.com/in/1ironsochen/">
+        <a href="https://www.linkedin.com/in/1ironsochen/" target="_blank">
           <div className="main-page-sidebar-left-side-user">
             <img
               className="footer-logo"
@@ -25,7 +25,7 @@ export const PersonalInfo = (props) => {
             <p> Visit My LinkedIn! </p>
           </div>
         </a>
-          <a href="https://github.com/KaiFujimoto">
+          <a href="https://github.com/KaiFujimoto" target="_blank">
             <div className="main-page-sidebar-left-side-user">
               <img
                 className="footer-logo"

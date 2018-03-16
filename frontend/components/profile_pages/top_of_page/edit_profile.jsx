@@ -93,7 +93,6 @@ class EditProfile extends React.Component {
                 defaultValue={this.state.email}
                 ></input>
               <Textarea
-                onKeyPress={this.handleKeypress}
                 onChange={this.updateBody('description')}
                 placeholder="Update Description"
                 type='text'

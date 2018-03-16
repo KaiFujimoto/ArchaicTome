@@ -15,6 +15,7 @@ class UserDescription extends React.Component {
             <img src={window.description}></img>
             <span>Intro</span>
           </div>
+          <div className="random-line-divider"></div>
           <div className='user-information-list'>
             <p>
               ✉️ Email: {this.props.profileUser.email}

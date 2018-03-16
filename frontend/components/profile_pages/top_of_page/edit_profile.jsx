@@ -9,6 +9,15 @@ class EditProfile extends React.Component {
     this.state = this.props.currentUser;
     this.handleSubmit = this.handleSubmit.bind(this);
     this.updateBody = this.updateBody.bind(this);
+    this.handleKeypress = this.handleKeypress.bind(this);
+  }
+
+  handleKeypress(e){
+    if (e.charCode == 13) {
+      this.handleSubmit(e);
+    } else {
+      this.props.clearErrors();
+    }
   }
 
   updateBody(input) {
@@ -38,7 +47,7 @@ class EditProfile extends React.Component {
   renderErrors() {
     return(
       <ul className='edit-profile-errors'>
-        <li>Some fields appear to be blank. Please fill them out</li>
+        <li>Some fields appear to be incorrect. Please fill them out</li>
       </ul>
     );
   }
@@ -58,6 +67,7 @@ class EditProfile extends React.Component {
           <form className="edit-profile-form-form" onSubmit={this.handleSubmit}>
             <div className="edit-profile-form-names">
                 <input
+                  onKeyPress={this.handleKeypress}
                   defaultValue={this.state.first_name}
                   placeholder="Update First name"
                   type="text"
@@ -65,6 +75,7 @@ class EditProfile extends React.Component {
                  />
 
                 <input
+                  onKeyPress={this.handleKeypress}
                   onChange={this.updateBody('last_name')}
                   placeholder="Update Last name"
                   type="text"
@@ -73,6 +84,7 @@ class EditProfile extends React.Component {
             </div>
             <ul className="edit-profile-form-emails">
               <input
+                onKeyPress={this.handleKeypress}
                 onChange={this.updateBody('email')}
                 placeholder="Update Email"
                 type="text"

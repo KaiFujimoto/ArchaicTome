@@ -42,18 +42,44 @@ The main feed page has a nice gif on the right that will be replaced with a news
 The main features of this feed are: `creating posts`, `navigating to profile` (top right), `commenting on posts`, `editing both posts and comments`, `adding friends` (top right people button creates a dropdown to add friends), `user search`, `button to log out`
 
 --------------------
+Main Feed
 
 ![alt text](https://raw.githubusercontent.com/KaiFujimoto/ArchaicTome/master/PrepWork/_depreciated/mainfeed.png)
+------------------------------------------------------------
+Friend Notification
+
 ![alt text](https://raw.githubusercontent.com/KaiFujimoto/ArchaicTome/master/PrepWork/_depreciated/notificationfriend.png)
+------------------------------------------------------------
+Friend Dropdown Menu
+
 ![alt text](https://raw.githubusercontent.com/KaiFujimoto/ArchaicTome/master/PrepWork/_depreciated/dropdownfriend.png)
+------------------------------------------------------------
+User Search Dropdown Menu
+
 ![alt text](https://raw.githubusercontent.com/KaiFujimoto/ArchaicTome/master/PrepWork/_depreciated/usersearch.png)
+------------------------------------------------------------
 
 Live Examples:
 
+Posting
+
 ![alt text](https://raw.githubusercontent.com/KaiFujimoto/ArchaicTome/master/PrepWork/_depreciated/posting.gif)
+------------------------------------------------------------
+Confirming a Friend
+
 ![alt text](https://raw.githubusercontent.com/KaiFujimoto/ArchaicTome/master/PrepWork/_depreciated/confirmfriend.gif)
+------------------------------------------------------------
+Finding Friends
+
 ![alt text](https://raw.githubusercontent.com/KaiFujimoto/ArchaicTome/master/PrepWork/_depreciated/findingfriend.gif)
+------------------------------------------------------------
+Commenting and Editing
+
 ![alt text](https://raw.githubusercontent.com/KaiFujimoto/ArchaicTome/master/PrepWork/_depreciated/commentingandedit.gif)
+------------------------------------------------------------
+Editing a Post
+
 ![alt text](https://raw.githubusercontent.com/KaiFujimoto/ArchaicTome/master/PrepWork/_depreciated/editposts.gif)
+------------------------------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------

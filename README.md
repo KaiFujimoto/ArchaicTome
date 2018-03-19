@@ -94,15 +94,13 @@ and they update if you update!
 Used Moment from react and created a util file
 
 ```
-// ./util/time_util.js
-
 import moment from "moment";
 
-// src: https://momentjs.com/
+// https://momentjs.com/
 
 export function timeUtil(time) {
   if (moment(time).isAfter(moment().subtract(24,'hours'))) {
-    return moment(time).fromNow();
+    return moment(time).startOf(time).fromNow();
   } else if (moment(time).isAfter(moment().subtract(24,'hours').startOf('day'))) {
     return moment(time).format('[Yesterday] [at] h:mma' );
   } else {

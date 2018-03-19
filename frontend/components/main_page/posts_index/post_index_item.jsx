@@ -46,16 +46,6 @@ const PostIndexItem = (props) => {
       <ul className="post-body-details">
         <p>{props.post.body}</p>
       </ul>
-      <ul className="user-related-interactions">
-        <li>
-          <img className='difficult-like' src={window.like}/>
-          <p className='sadlyfe'>Like</p>
-        </li>
-        <li>
-          <img className='difficult-comment' src={window.comment}/>
-          <p className='difficult-comment-label'>Comment</p>
-        </li>
-      </ul>
       <ul>
         <CommentsContainer comments={comments} users={props.users} post={props.post}/>
       </ul>
@@ -64,3 +54,14 @@ const PostIndexItem = (props) => {
 };
 
 export default PostIndexItem;
+
+// <ul className="user-related-interactions">
+//   <li>
+//     <img className='difficult-like' src={window.like}/>
+//     <p className='sadlyfe'>Like</p>
+//   </li>
+//   <li>
+//     <img className='difficult-comment' src={window.comment}/>
+//     <p className='difficult-comment-label'>Comment</p>
+//   </li>
+// </ul>

@@ -49,9 +49,6 @@ export default class UserProfileMain extends React.Component {
                 <ProfilePhotoContainer profileUser={this.props.user}/>
               <div className='profile-page-top-navbar'>
                 <li className='first-one'>Timeline</li>
-                <li>About</li>
-                <li>Friends</li>
-                <li className='last-one'>Photos</li>
               </div>
             </div>
           </div>
@@ -82,9 +79,9 @@ export default class UserProfileMain extends React.Component {
     );
   }
 }
-//
 
-
-    // if ((!this.props.user.friend_ids.includes(this.props.currentUser.id)) && (this.props.user.id != currentUser.id)) {
-    //   return "You can't see thing person's newsfeed yet! You must friend them first!";
-    // }
+    // <li className='last-one'>
+    //   <button>
+    //     Friends ({this.props.user.friend_ids.length})
+    //   </button>
+    // </li>

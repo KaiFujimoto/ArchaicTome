@@ -39,12 +39,6 @@ class NavBar extends React.Component {
               </ul>
               <ul className="nav-bar-pics">
                 <NavBarDropdownMenuContainer users={this.props.users}/>
-                <li className="nav-bar-people">
-                  <img src={window.message}></img>
-                </li>
-                <li className="nav-bar-people">
-                  <img src={window.globe}></img>
-                </li>
               </ul>
               <ul>
                 <li className="nav-bar-main-button">
@@ -59,3 +53,10 @@ class NavBar extends React.Component {
 }
 
 export default NavBar;
+
+// <li className="nav-bar-people">
+//   <img src={window.message}></img>
+// </li>
+// <li className="nav-bar-people">
+//   <img src={window.globe}></img>
+// </li>

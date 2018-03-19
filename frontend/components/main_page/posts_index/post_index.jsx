@@ -43,6 +43,4 @@ class PostIndex extends React.Component {
     );
   }
 }
-
-// {posts}
 export default PostIndex;

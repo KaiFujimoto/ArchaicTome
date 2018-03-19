@@ -24,10 +24,3 @@ const mapDispatchToProps = dispatch => {
 };
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(UserProfileMain));
-
-
-
-
-// const friends = Object.values(state.users).filter( user => {
-//   state.users[ownProps.match.params.id].friend_ids.includes(user.id);
-// });

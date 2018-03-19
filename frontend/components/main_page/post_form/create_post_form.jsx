@@ -18,17 +18,6 @@ class CreatePost extends React.Component {
     this.setState({body: e.target.value});
   }
 
-  // updateFile(e) {
-  //   let file = e.currentTarget.files[0];
-  //   let fileReader = new FileReader();
-  //   fileReader.onloadend = function () {
-  //     this.setState({ imageFile: file, imageUrl: fileReader.result }).bind(this);
-  //   };
-  //   if (file) {
-  //     fileReader.readAsDataURL(file);
-  //   }
-  // }
-
   handleKeypress(e){
     if (e.charCode == 13) {
       this.handleSubmit(e);
@@ -107,13 +96,3 @@ class CreatePost extends React.Component {
 }
 
 export default CreatePost;
-
-
-// <img src={this.state.imageUrl} />
-
-// <input
-//   placeholder="What's On Your Mind?"
-//   onChange={this.updateFile}
-//   type="file"
-//   value={this.state.body}
-//   ></input>

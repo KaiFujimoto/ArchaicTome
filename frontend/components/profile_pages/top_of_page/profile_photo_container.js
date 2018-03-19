@@ -17,7 +17,6 @@ const mapDispatchToProps = dispatch => {
   return ({
     openProModal: modal => dispatch(openProModal(modal)),
     updateUser: (user) => dispatch(updateUser(user))
-    // fetchPendingFriendships: (userId) => dispatch(fetchPendingFriendships(userId))
   });
 };
 

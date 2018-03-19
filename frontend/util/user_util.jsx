@@ -12,8 +12,6 @@ export const fetchUser = (userId) => {
   });
 };
 
-
-// create new action for the updates
 export const updateUser = (user) => {
   return $.ajax({
     url: `/api/users/${user.id}`,

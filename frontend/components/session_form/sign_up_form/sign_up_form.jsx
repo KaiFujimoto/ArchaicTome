@@ -6,23 +6,9 @@ import { merge } from 'lodash';
 class SignUpForm extends React.Component {
   constructor(props) {
     super(props);
-    // this.state = {
-    //     first_name: '',
-    //     last_name: '',
-    //     email: '',
-    //     password: '',
-    //     birth_date: '',
-    //     gender: ''
-    // };
     this.handleSubmit = this.handleSubmit.bind(this);
 
   }
-
-  // updateInput(input) {
-  //   return e => {
-  //     this.setState({[input]: e.currentTarget.value});
-  //   };
-  // }
 
   userAttributes() {
     const first_name = this.first_name.value;
@@ -44,43 +30,6 @@ class SignUpForm extends React.Component {
     });
   }
 
-  // componentWillReceiveProps(newProps) {
-  //   if (newProps.errors.length > 0) {
-  //
-  //     this.toggleErrorClass(newProps);
-  //   }
-  // }
-
-  // mouseOver(gender) {
-  //   this.setState({gender: gender});
-  // }
-
-  // toggleErrorClass(newProps) {
-  //   const errorTypes = ["Email", "Password", "First", "Last"];
-  //
-  //     if (newProps.errors.join(' ').includes(errorTypes[0])) {
-  //       this.setState({email: true });
-  //     }
-  //
-  //     if (newProps.errors.join(' ').includes(errorTypes[1])) {
-  //       this.setState({password: true });
-  //     }
-  //     if (newProps.errors.join(' ').includes(errorTypes[2])) {
-  //       this.setState({first: true });
-  //     }
-  //     if (newProps.errors.join(' ').includes(errorTypes[3])) {
-  //       this.setState({last: true });
-  //     }
-  //     // const that = this;
-  //     // errorTypes.forEach(type => {
-  //     //   if (newProps.errors.join(' ').includes(type)) {
-  //     //     const newState = merge({}, this.state.errors, {`${type}`: true});
-  //     //
-  //     //     that.setState({errors: newState});
-  //     //   }
-  //     // });
-  // }
-
   validate() {
     return {
       first_name: this.first_name,
@@ -89,11 +38,6 @@ class SignUpForm extends React.Component {
       password: this.password
     };
   }
-  // {this.props.errors.map((error, i) => (
-  //   <li key={`error-${i}`}>
-  //     {error}
-  //   </li>
-// ))}
 
   renderErrors() {
     return(

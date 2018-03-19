@@ -1,7 +1,5 @@
 import moment from "moment";
 
-// https://momentjs.com/
-
 export function timeUtil(time) {
   if (moment(time).isAfter(moment().subtract(24,'hours'))) {
     return moment(time).startOf(time).fromNow();

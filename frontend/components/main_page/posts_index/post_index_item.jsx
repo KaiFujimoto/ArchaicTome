@@ -54,14 +54,3 @@ const PostIndexItem = (props) => {
 };
 
 export default PostIndexItem;
-
-// <ul className="user-related-interactions">
-//   <li>
-//     <img className='difficult-like' src={window.like}/>
-//     <p className='sadlyfe'>Like</p>
-//   </li>
-//   <li>
-//     <img className='difficult-comment' src={window.comment}/>
-//     <p className='difficult-comment-label'>Comment</p>
-//   </li>
-// </ul>

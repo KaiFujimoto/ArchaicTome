@@ -39,11 +39,6 @@ class EditProfile extends React.Component {
       this.props.closeProModal();
       this.props.clearErrors();
     });
-    // e.preventDefault();
-    // this.props.updateUser(this.state).then(() => {
-    //   this.props.closeProModal();
-    //   this.props.clearErrors();
-    // });
   }
 
   renderErrors() {

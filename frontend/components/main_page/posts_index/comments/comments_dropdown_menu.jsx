@@ -28,8 +28,6 @@ class CommentDropdownMenu extends React.Component {
 
   handleDelete(e) {
     e.stopPropagation();
-
-    // make a modal later to ask if the user is sure
     this.props.deleteComment(this.state.comment.id);
   }
 

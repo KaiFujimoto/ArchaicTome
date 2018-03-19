@@ -53,10 +53,3 @@ class NavBar extends React.Component {
 }
 
 export default NavBar;
-
-// <li className="nav-bar-people">
-//   <img src={window.message}></img>
-// </li>
-// <li className="nav-bar-people">
-//   <img src={window.globe}></img>
-// </li>

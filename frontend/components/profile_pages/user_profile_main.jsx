@@ -79,9 +79,3 @@ export default class UserProfileMain extends React.Component {
     );
   }
 }
-
-    // <li className='last-one'>
-    //   <button>
-    //     Friends ({this.props.user.friend_ids.length})
-    //   </button>
-    // </li>

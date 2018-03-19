@@ -9,8 +9,6 @@ class NavbarDropDownMenu extends React.Component {
     };
     this.toggleDropClass = this.toggleDropClass.bind(this);
     this.friendRequests = this.friendRequests.bind(this);
-    // this.handleDelete = this.handleDelete.bind(this);
-    // this.handleEdit = this.handleEdit.bind(this);
   }
 
   toggleDropClass(e) {

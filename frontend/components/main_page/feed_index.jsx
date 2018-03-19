@@ -5,7 +5,7 @@ import CreatePostFormContainer from './post_form/create_post_form_container';
 import FeedIndexContainer from './posts_index/feed_index_container';
 
 const FeedIndex = (props) => {
-  
+
   if (Object.values(props.users).length < 1) {
     return null;
   }
@@ -20,7 +20,5 @@ const FeedIndex = (props) => {
       </div>
     );
 };
-
-// <FeedIndexContainer />
 
 export default FeedIndex;

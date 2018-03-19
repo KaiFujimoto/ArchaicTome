@@ -16,16 +16,6 @@ class EditCoverPhoto extends React.Component {
   handleSubmit(e) {
     const formData = new FormData();
     formData.append(`user[${this.props.type}]`, this.state.imageFile);
-    // let cover = formData.get('user[cover_photo]');
-    // formData.append(`user`, this.props.currentUser);
-    // const newUser = Object.assign({}, this.state.user, { cover_photo: cover });
-    // const file = this.state.imageFile;
-    // formData.append("user[id]", this.props.currentUser.id);
-    // if (file) formData.append(this.props.photoType, file);
-    // this.props.updatePhoto(formData).then(
-    //     this.props.closeModal
-    // );
-
     this.props.updateUser(formData).then(() => {
       this.props.closeProModal();
     });

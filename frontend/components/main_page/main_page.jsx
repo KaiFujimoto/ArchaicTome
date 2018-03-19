@@ -40,16 +40,3 @@ export default class MainPage extends React.Component {
       );
     }
 }
-
-//
-// const mapStateToProps = (state) => {
-//
-// };
-//
-// const mapDispatchToProps = dispatch => {
-//   return ({
-//
-//   });
-// };
-//
-// export default connect(mapStateToProps, mapDispatchToProps)(MainPage);

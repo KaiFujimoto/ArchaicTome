@@ -9,7 +9,7 @@
   background-color: white;
   height: 20%;
   width: 100%;
-  position: absolute;
+  position: fixed;
   bottom: 0;
 }
 

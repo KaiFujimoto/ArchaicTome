@@ -25,15 +25,24 @@ export const PersonalInfo = (props) => {
             <p> Visit My LinkedIn! </p>
           </div>
         </a>
-          <a href="https://github.com/KaiFujimoto" target="_blank">
-            <div className="main-page-sidebar-left-side-user">
-              <img
-                className="footer-logo"
-                src="https://image.flaticon.com/icons/svg/25/25231.svg"
-                alt="Visit My Github" />
-              <p> Link to My Github! </p>
-            </div>
-          </a>
+        <a href="https://github.com/KaiFujimoto" target="_blank">
+          <div className="main-page-sidebar-left-side-user">
+            <img
+              className="footer-logo"
+              src="https://image.flaticon.com/icons/svg/25/25231.svg"
+              alt="Visit My Github" />
+            <p> Link to My Github! </p>
+          </div>
+        </a>
+        <a href="http://kai-sophia-chen.com/docToJS/" target="_blank">
+          <div className="main-page-sidebar-left-side-user">
+            <img
+              className="footer-logo"
+              src={window.snake}
+              alt="Visit My Github" />
+            <p> Link to My Snake Game! </p>
+          </div>
+        </a>
       </div>
     );
 };
